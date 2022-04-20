@@ -1,5 +1,4 @@
-import path from 'node:path';
-// import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'node:url';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
@@ -66,8 +65,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      // '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@/': `${path.resolve('src')}/`,
+      '@': fileURLToPath(new URL('src', import.meta.url)),
     },
   },
   // server: {
