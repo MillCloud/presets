@@ -1,12 +1,12 @@
 import path from 'node:path';
 // import { fileURLToPath } from 'url';
+import { defineConfig } from 'vite';
 import uni from '@dcloudio/vite-plugin-uni';
-import eslint from '@modyqyw/vite-plugin-eslint';
 import tailwindcss from 'tailwindcss';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
-import { defineConfig } from 'vite';
 import env from 'vite-plugin-env-compatible';
+import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
 
