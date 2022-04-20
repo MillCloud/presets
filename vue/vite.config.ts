@@ -1,17 +1,17 @@
 import { fileURLToPath } from 'node:url';
-import eslint from '@modyqyw/vite-plugin-eslint';
+import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import vueDefineOptions from 'unplugin-vue-define-options/vite';
+import pages from 'vite-plugin-pages';
+import layouts from 'vite-plugin-vue-layouts';
+import vueComponents from 'unplugin-vue-components/vite';
 import iconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
-import vueComponents from 'unplugin-vue-components/vite';
-import vueDefineOptions from 'unplugin-vue-define-options/vite';
-import { defineConfig } from 'vite';
-import compression from 'vite-plugin-compression';
 import env from 'vite-plugin-env-compatible';
-import pages from 'vite-plugin-pages';
+import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
-import layouts from 'vite-plugin-vue-layouts';
+import compression from 'vite-plugin-compression';
 // import mkcert from 'vite-plugin-mkcert';
 import inspect from 'vite-plugin-inspect';
 
