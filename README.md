@@ -1,6 +1,6 @@
 # presets
 
-项目模板合集。
+JavaScript / TypeScript 项目模板合集。
 
 **[degit](https://github.com/Rich-Harris/degit) 不支持 gitee，如果你想要寻找更便捷的方法，不妨看看 [这里](https://www.google.com/search?q=git+clone+subdirectory&oq=git+clone+subdirectory&ie=UTF-8)。**
 
