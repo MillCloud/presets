@@ -135,10 +135,10 @@ export const queryClient = new QueryClient({
         // console.log('queryKey', queryKey);
         // console.log('');
         const urlParams = Array.isArray(queryKey[1]) ? queryKey[1] : [];
-        const url = urlParams.reduce(
-          (acc, cur, idx) => acc.replace(`:${idx}`, cur.toString()),
-          (queryKey[0] as any).toString(),
-        );
+        let url = (queryKey[0] as any).toString() as string;
+        for (const [idx, param] of urlParams.entries()) {
+          url = url.replace(`:${idx}`, param.toString() as string);
+        }
         const params = queryKey[2] as Record<string, any>;
         const config = queryKey[3] as IRequestConfig;
         const { data } = await request<IResponseData>({
