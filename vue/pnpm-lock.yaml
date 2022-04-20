@@ -9,7 +9,7 @@ specifiers:
   '@element-plus/icons-vue': ^1.1.4
   '@iconify/json': ^2.1.29
   '@iconify/vue': ^3.2.1
-  '@modyqyw/fabric': ^5.0.0-0
+  '@modyqyw/fabric': ^5.0.1
   '@modyqyw/vite-plugin-eslint': ^1.2.0
   '@tailwindcss/aspect-ratio': ^0.4.0
   '@tailwindcss/line-clamp': ^0.3.1
@@ -108,7 +108,7 @@ devDependencies:
   '@commitlint/config-conventional': 16.2.1
   '@commitlint/prompt': 16.2.3
   '@iconify/json': 2.1.29
-  '@modyqyw/fabric': 5.0.0-beta.1_2154a79f7d4c073c1470afa315fca903
+  '@modyqyw/fabric': 5.0.1_2154a79f7d4c073c1470afa315fca903
   '@modyqyw/vite-plugin-eslint': 1.2.0_vite@2.9.5
   '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.24
   '@tailwindcss/line-clamp': 0.3.1_tailwindcss@3.0.24
@@ -954,8 +954,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.11
     dev: true
 
-  /@modyqyw/fabric/5.0.0-beta.1_2154a79f7d4c073c1470afa315fca903:
-    resolution: {integrity: sha512-y4L5FPsL1LX19HuzNTtilKTvM6pm7p7wDtZLKDJ5s+oRR63u0Niyspm9AXgHhIwl38+LkEth34mq2G9HEJm6rQ==}
+  /@modyqyw/fabric/5.0.1_2154a79f7d4c073c1470afa315fca903:
+    resolution: {integrity: sha512-r7KsqUp6WYaMqj5WclN9L68JoXMTFMJzuOfOLOFMwAsLxfQkDrQ8ml76L+0WMqIF3dTP+WmUdsqvFxd6yPiIpw==}
     dependencies:
       '@babel/core': 7.17.9
       '@babel/eslint-parser': 7.17.0_@babel+core@7.17.9+eslint@8.13.0
@@ -982,6 +982,7 @@ packages:
       eslint-plugin-jest: 26.1.4_e06181d882b708b40d26b8c5ee689a6f
       eslint-plugin-jsonc: 2.2.1_eslint@8.13.0
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.13.0
+      eslint-plugin-nuxt: 3.2.0_eslint@8.13.0
       eslint-plugin-prettier: 4.0.0_1815ac95b7fb26c13c7d48a8eef62d0f
       eslint-plugin-promise: 6.0.0_eslint@8.13.0
       eslint-plugin-react: 7.29.4_eslint@8.13.0
@@ -1001,7 +1002,7 @@ packages:
       postcss-scss: 4.0.3_postcss@8.4.12
       prettier-plugin-jsdoc: 0.3.38_prettier@2.6.2
       prettier-plugin-packagejson: 2.2.17_prettier@2.6.2
-      prettier-plugin-tailwindcss: 0.1.8_prettier@2.6.2
+      prettier-plugin-tailwindcss: 0.1.9_prettier@2.6.2
       stylelint-config-prettier: 9.0.3_stylelint@14.7.1
       stylelint-config-prettier-scss: 0.0.1_stylelint@14.7.1
       stylelint-config-recess-order: 3.0.0_stylelint@14.7.1
@@ -3865,6 +3866,17 @@ packages:
       jsx-ast-utils: 3.2.2
       language-tags: 1.0.5
       minimatch: 3.1.2
+    dev: true
+
+  /eslint-plugin-nuxt/3.2.0_eslint@8.13.0:
+    resolution: {integrity: sha512-SWpmJALwagdrlMooajFX9IFxFEKdBxD+e4NFOVw9FGc22HQpNKdiljRHchS/3O5e2R7sPZYv8xdCtoordqIXFQ==}
+    dependencies:
+      eslint-plugin-vue: 8.6.0_eslint@8.13.0
+      semver: 7.3.7
+      vue-eslint-parser: 8.3.0_eslint@8.13.0
+    transitivePeerDependencies:
+      - eslint
+      - supports-color
     dev: true
 
   /eslint-plugin-prettier/4.0.0_1815ac95b7fb26c13c7d48a8eef62d0f:
@@ -7410,8 +7422,8 @@ packages:
       sort-package-json: 1.55.0
     dev: true
 
-  /prettier-plugin-tailwindcss/0.1.8_prettier@2.6.2:
-    resolution: {integrity: sha512-hwarSBCswAXa+kqYtaAkFr3Vop9o04WOyZs0qo3NyvW8L7f1rif61wRyq0+ArmVThOuRBcJF5hjGXYk86cwemg==}
+  /prettier-plugin-tailwindcss/0.1.9_prettier@2.6.2:
+    resolution: {integrity: sha512-xqoDNnFfYhz3PxaptKO5lXwVU/MAfT6PTZPxiKKutKTgaLeQBjxts6j7BLbkI0FezDrGDUZQjDZpmnF9dv2hdg==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
       prettier: '>=2.2.0'
