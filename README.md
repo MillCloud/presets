@@ -6,6 +6,17 @@
 
 **[degit](https://github.com/Rich-Harris/degit) 不支持 gitee，如果你想要寻找更便捷的方法，不妨看看 [这里](https://www.google.com/search?q=git+clone+subdirectory&oq=git+clone+subdirectory&ie=UTF-8)。**
 
+## [Git](https://git-scm.com/)
+
+```sh
+git config --global core.autocrlf false
+git config --global init.defaultBranch main
+```
+
+## [Node.js](https://nodejs.org/)
+
+使用最新的 Node.js LTS。
+
 ## [Vue 3](https://vuejs.org/)
 
 ```sh
