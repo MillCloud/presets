@@ -82,8 +82,6 @@ rm -rf presets
 
 ## [UniApp with Vue 3](https://uniapp.dcloud.io/)
 
-**WIP**
-
 ```sh
 # github
 degit MillCloud/presets/uni-app-vue your-project-name

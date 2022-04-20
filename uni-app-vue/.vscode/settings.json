@@ -1,0 +1,144 @@
+{
+  "cSpell.language": "en,en-US",
+  "cSpell.enabledLanguageIds": [
+    "css",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "json5",
+    "less",
+    "markdown",
+    "plaintext",
+    "sass",
+    "scss",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "yaml",
+    "yml"
+  ],
+  "css.validate": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue"],
+  "eslint.alwaysShowStatus": true,
+  "files.eol": "\n",
+  "files.associations": {
+    "*.wxml": "html",
+    "*.wxs": "javascript",
+    "*.wxss": "css",
+    "*.axml": "html",
+    "*.sjs": "javascript",
+    "*.acss": "css",
+    "*.swan": "html",
+    "*.ttml": "html",
+    "*.ttss": "css",
+    "*.jxml": "html",
+    "*.jxss": "css",
+    "*.json": "jsonc",
+    "*.json5": "jsonc",
+    "*.nvue": "vue",
+    "*.ux": "vue"
+  },
+  "git.autofetch": true,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.snippet": ["css", "less", "sass", "scss", "vue"],
+  "stylelint.validate": ["css", "less", "sass", "scss", "vue"],
+  "todo-tree.highlights.customHighlight": {
+    "FIX": {
+      "background": "#d32029",
+      "foreground": "#fff",
+      "icon": "bug",
+      "iconColour": "#d32029"
+    },
+    "PERF": {
+      "background": "#2b4acb",
+      "foreground": "#fff",
+      "icon": "flame",
+      "iconColour": "#2b4acb"
+    },
+    "TODO": {
+      "background": "#d89614",
+      "foreground": "#fff",
+      "icon": "alert",
+      "iconColour": "#d89614"
+    },
+    "[ ]": {
+      "icon": "circle"
+    },
+    "[x]": {
+      "icon": "check"
+    }
+  },
+  "todo-tree.highlights.defaultHighlight": {
+    "gutterIcon": true
+  },
+  "todo-tree.general.tagGroups": {
+    "FIX": ["FIXME", "FIXIT", "FIX", "BUG"]
+  },
+  "todo-tree.general.tags": ["FIX", "FIXME", "FITIT", "BUG", "PERF", "TODO", "[ ]", "[x]"],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[javascriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[css]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
+  },
+  "[less]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
+  },
+  "[sass]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
+  },
+  "[scss]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    }
+  },
+  "[vue]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.stylelint": true
+    }
+  },
+  "[markdown]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": true
+    }
+  }
+}
