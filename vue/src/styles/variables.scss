@@ -1,0 +1,35 @@
+/* stylelint-disable scss/dollar-variable-pattern */
+$--sm: 576px;
+$--md: 768px;
+$--lg: 992px;
+$--xl: 1200px;
+$--xxl: 1600px;
+
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $breakpoints: (
+    "xs": "(max-width: #{$--sm - 1})",
+    "sm": "(min-width: #{$--sm})",
+    "md": "(min-width: #{$--md})",
+    "lg": "(min-width: #{$--lg})",
+    "xl": "(min-width: #{$--xl})",
+    "xxl": "(min-width: #{$--xxl})",
+    "2xl": "(min-width: #{$--xxl})"
+  ),
+  $breakpoints-spec: (
+    "xs-only": "(max-width: #{$--sm - 1})",
+    "sm-and-up": "(min-width: #{$--sm})",
+    "sm-only": "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
+    "sm-and-down": "(max-width: #{$--md - 1})",
+    "md-and-up": "(min-width: #{$--md})",
+    "md-only": "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
+    "md-and-down": "(max-width: #{$--lg - 1})",
+    "lg-and-up": "(min-width: #{$--lg})",
+    "lg-only": "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
+    "lg-and-down": "(max-width: #{$--xl - 1})",
+    "xl-and-up": "(min-width: #{$--xl})",
+    "xl-only": "(min-width: #{$--xl}) and (max-width: #{$--xxl - 1})",
+    "xl-and-down": "(max-width: #{$--xxl - 1})",
+    "xxl-only": "(min-width: #{$--xxl})",
+    "2xl-only": "(min-width: #{$--xxl})"
+  )
+);
