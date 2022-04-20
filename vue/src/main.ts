@@ -10,7 +10,7 @@ import App from './App.vue';
 import Components from './components';
 import router from './router';
 import { vueQueryPluginOptions } from './helpers';
-import 'modern-normalize';
+import '@/styles/preflight.scss';
 import '@/styles/element.scss';
 import 'nprogress/nprogress.css';
 import '@/styles/tailwind.css';
