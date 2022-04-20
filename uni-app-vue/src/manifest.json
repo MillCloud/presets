@@ -79,7 +79,7 @@
   "mp-weixin": {
     "appid": "touristappid",
     "usingComponents": true,
-    "libVersion": "",
+    "libVersion": "2.11.2",
     "permission": {},
     "setting": {
       "es6": false,
