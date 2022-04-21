@@ -26,19 +26,13 @@ npm uninstall -g corepack
 npm i -g npm yarn pnpm
 ```
 
-项目目录下有 `package-lock.json`：
+所有 `uni-app` 相关项目使用以下命令安装依赖：
 
 ```sh
 npm install --legacy-peer-deps
 ```
 
-项目目录下有 `yarn.lock`：
-
-```sh
-yarn install
-```
-
-项目目录下有 `pnpm-lock.yaml`：
+其它项目使用以下命令安装依赖：
 
 ```sh
 pnpm install
