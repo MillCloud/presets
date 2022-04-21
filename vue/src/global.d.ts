@@ -1,6 +1,10 @@
 import type { AxiosError, AxiosResponse, AxiosRequestConfig } from 'axios';
+import type { ElForm, ElTable } from 'element-plus';
 
 declare global {
+  type ElFormInstance = InstanceType<typeof ElForm>;
+  type ElTableInstance = InstanceType<typeof ElTable>;
+
   interface IResponseData {
     success: boolean;
     code: string;
