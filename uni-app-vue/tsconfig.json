@@ -2,11 +2,30 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "allowJs": true,
     "jsx": "preserve",
     "paths": {
       "@/*": ["./src/*"]
     },
     "types": ["@dcloudio/types", "type-fest", "vite/client", "vue/macros-global"]
   },
+  "include": [
+    "**/.*.js",
+    "**/.*.cjs",
+    "**/.*.mjs",
+    "**/.*.ts",
+    "**/.*.cts",
+    "**/.*.mts",
+    "**/*.js",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.cts",
+    "**/*.mts",
+    "**/*.tsx",
+    "**/*.vue",
+    "**/*.svelte"
+  ],
   "exclude": [".cache", ".temp", ".tmp", "cache", "temp", "tmp", "dist*", "node_modules"]
 }
