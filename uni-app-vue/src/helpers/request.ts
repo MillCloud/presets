@@ -13,7 +13,7 @@ export async function request<T = BaseData, R = BaseResponse<T>, D = BaseData>(
   config: BaseRequestConfig<D>,
 ) {
   const baseURL =
-    process.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/todos/';
+    import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/todos/';
   const stringifiedParams = qs.stringify(
     Object.fromEntries(
       Object.entries(config.params ?? {}).filter(

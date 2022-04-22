@@ -10,7 +10,7 @@ import type { VueQueryPluginOptions } from 'vue-query';
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
 const instance = axios.create({
-  baseURL: process.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/todos/',
+  baseURL: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/todos/',
   timeout: 30_000,
   headers: {
     ...Headers,
