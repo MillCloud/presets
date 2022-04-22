@@ -29,12 +29,12 @@ const colorMap = {
   'primary-text': '#303133',
   'regular-text': '#606266',
   'secondary-text': '#909399',
-  'placeholder-text': '#c0c4cc',
+  'placeholder-text': '#a8abb2',
+  border: '#dcdfe6',
   'base-border': '#dcdfe6',
   'light-border': '#e4e7ed',
   'lighter-border': '#ebeef5',
   'extra-light-border': '#f2f6fc',
-  bg: '#f5f7fa',
 };
 const types = ['primary', 'success', 'warning', 'danger', 'info'];
 for (const type of types) {
@@ -64,8 +64,10 @@ module.exports = {
         ...Object.fromEntries(Object.entries(colorMap).map(([key, value]) => [key, value])),
       },
       boxShadow: {
-        base: '0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04)',
-        light: '0 2px 12px 0 rgba(0, 0, 0, 0.1)',
+        base: '0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08),',
+        light: '0px 0px 12px rgba(0, 0, 0, 0.12)',
+        lighter: '0px 0px 6px rgba(0, 0, 0, 0.12)',
+        dark: '0px 16px 48px 16px rgba(0, 0, 0, 0.08), 0px 12px 32px rgba(0, 0, 0, 0.12), 0px 8px 16px -8px rgba(0, 0, 0, 0.16),',
       },
     },
   },
