@@ -85,7 +85,7 @@
     "@dcloudio/uni-automator": "^3.0.0-alpha-3040620220419003",
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3040620220419003",
     "@dcloudio/vite-plugin-uni": "^3.0.0-alpha-3040620220419003",
-    "@modyqyw/fabric": "^5.0.5",
+    "@modyqyw/fabric": "^5.0.6",
     "@modyqyw/vite-plugin-eslint": "^1.3.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.3.1",
