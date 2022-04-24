@@ -9,6 +9,7 @@
     },
     "types": [
       "element-plus/global",
+      "element-pro-components/types/components",
       "type-fest",
       "unplugin-icons/types/vue",
       "unplugin-vue-define-options",
