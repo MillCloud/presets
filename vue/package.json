@@ -82,7 +82,7 @@
     "postcss": "^8.4.12",
     "postcss-preset-env": "^7.4.3",
     "prettier": "^2.6.2",
-    "release-it": "^14.14.2",
+    "release-it": "^15.0.0",
     "rimraf": "^3.0.2",
     "sass": "^1.50.1",
     "shelljs": "^0.8.5",
