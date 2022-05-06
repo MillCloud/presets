@@ -100,48 +100,6 @@ cp presets/taro-vue your-project-name
 rm -rf presets
 ```
 
-## [Vue 2](https://v2.vuejs.org/)
-
-**WIP**
-
-```sh
-# github
-degit MillCloud/presets/vue2 your-project-name
-
-# gitee
-git clone --depth 1 git@gitee.com:MillCloud/presets
-cp presets/vue2 your-project-name
-rm -rf presets
-```
-
-## [UniApp with Vue 2](https://uniapp.dcloud.io/)
-
-**WIP**
-
-```sh
-# github
-degit MillCloud/presets/uni-app-vue2 your-project-name
-
-# gitee
-git clone --depth 1 git@gitee.com:MillCloud/presets
-cp presets/uni-app-vue2 your-project-name
-rm -rf presets
-```
-
-## [Taro with Vue 2](https://docs.taro.zone/)
-
-**WIP**
-
-```sh
-# github
-degit MillCloud/presets/taro-vue2 your-project-name
-
-# gitee
-git clone --depth 1 git@gitee.com:MillCloud/presets
-cp presets/taro-vue2 your-project-name
-rm -rf presets
-```
-
 ## [Nuxt 3](https://v3.nuxtjs.org/)
 
 **WIP**
@@ -153,20 +111,6 @@ degit MillCloud/presets/nuxt your-project-name
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
 cp presets/nuxt your-project-name
-rm -rf presets
-```
-
-## [Nuxt2](https://nuxtjs.org/)
-
-**WIP**
-
-```sh
-# github
-degit MillCloud/presets/nuxt2 your-project-name
-
-# gitee
-git clone --depth 1 git@gitee.com:MillCloud/presets
-cp presets/nuxt2 your-project-name
 rm -rf presets
 ```
 
