@@ -22,8 +22,8 @@
     "jock.svg",
     "bradlc.vscode-tailwindcss",
     "gruntfuggly.todo-tree",
-    "johnsoncodehk.vscode-typescript-vue-plugin",
-    "johnsoncodehk.volar",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "Vue.vscode-typescript-vue-plugin",
+    "Vue.volar"
   ]
 }
