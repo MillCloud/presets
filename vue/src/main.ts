@@ -12,11 +12,11 @@ import App from './App.vue';
 import Components from './components';
 import router from './router';
 import { vueQueryPluginOptions } from './helpers';
-import '@/styles/preflight.scss';
+import 'modern-normalize';
+import '@/styles/preflight.css';
 import '@/styles/element.scss';
-import 'nprogress/nprogress.css';
 import '@/styles/tailwind.css';
-import '@/styles/global.scss';
+import 'nprogress/nprogress.css';
 import '@/guard';
 
 dayjs.locale('zh-cn');

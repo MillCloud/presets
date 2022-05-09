@@ -10,6 +10,7 @@ export const Headers = {
 };
 
 // use it with https://vueuse.org/core/usestorage/
+export const ThemeKey = 'theme';
 export const TokenKey = 'token';
 export const DefaultToken = '';
 export const PageLimitKey = 'pageLimit';

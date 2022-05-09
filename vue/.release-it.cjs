@@ -6,11 +6,12 @@ module.exports = {
   npm: {
     publish: false,
   },
-  github: {
-    release: false,
-  },
-  gitlab: {
-    release: false,
+  plugins: {
+    "@release-it/conventional-changelog": {
+      preset: 'conventionalcommits',
+      infile: "CHANGELOG.md",
+      header: "# Changelog"
+    }
   },
   hooks: {
     'before:init': 'pnpm install && pnpm run lint',
