@@ -17,6 +17,7 @@ import '@/styles/preflight.css';
 import '@/styles/element.scss';
 import '@/styles/tailwind.css';
 import 'nprogress/nprogress.css';
+import '@/styles/global.scss';
 import '@/guard';
 
 dayjs.locale('zh-cn');

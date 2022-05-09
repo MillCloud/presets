@@ -2,6 +2,7 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "dist",
     "allowJs": true,
     "jsx": "preserve",
     "paths": {
