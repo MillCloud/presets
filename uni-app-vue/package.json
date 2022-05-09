@@ -103,7 +103,7 @@
     "commitizen": "^4.2.4",
     "cross-env": "^7.0.3",
     "eslint": "^8.14.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.0",
     "is-ci": "^3.0.1",
     "lint-staged": "^12.4.0",
     "markdownlint-cli": "^0.31.1",
