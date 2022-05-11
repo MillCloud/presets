@@ -6,11 +6,10 @@
     <el-footer class="flex items-center justify-center">
       <layout-network />
       <layout-version />
-      <layout-theme />
     </el-footer>
   </el-container>
 </template>
 
 <script setup lang="ts">
-import { LayoutNetwork, LayoutVersion, LayoutTheme } from './components';
+import { LayoutNetwork, LayoutVersion } from './components';
 </script>
