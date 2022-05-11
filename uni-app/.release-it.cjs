@@ -13,7 +13,7 @@ module.exports = {
     release: false,
   },
   hooks: {
-    'before:init': 'npm install --legacy-peer-deps && npm run lint',
+    'before:init': 'npm install && npm run lint',
     'after:bump': 'esmo ./scripts/update-manifest.mjs',
   },
 };

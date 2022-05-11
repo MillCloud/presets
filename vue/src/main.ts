@@ -31,7 +31,6 @@ createApp(App)
   .use(createPinia())
   .use(router)
   .use(ElementPlus)
-  .use(ElementProComponents)
   .use(VueQueryPlugin, vueQueryPluginOptions)
   .use(Components)
   .mount('#app');

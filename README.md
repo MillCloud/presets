@@ -29,7 +29,7 @@ npm i -g npm yarn pnpm
 所有 `uni-app` 相关项目使用以下命令安装依赖：
 
 ```sh
-npm install --legacy-peer-deps
+npm install
 ```
 
 其它项目使用以下命令安装依赖：
@@ -78,11 +78,11 @@ rm -rf presets
 
 ```sh
 # github
-degit MillCloud/presets/uni-app-vue your-project-name
+degit MillCloud/presets/uni-app your-project-name
 
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
-cp presets/uni-app-vue your-project-name
+cp presets/uni-app your-project-name
 rm -rf presets
 ```
 

@@ -1,5 +1,5 @@
 {
-  "name": "uni-app-vue",
+  "name": "uni-app",
   "version": "0.0.0",
   "scripts": {
     "build:app": "uni build -p app",
