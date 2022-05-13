@@ -132,12 +132,6 @@ export const queryClient = new QueryClient({
         return data;
       },
       refetchOnWindowFocus: false,
-      retry: (failureCount, error) => {
-        if ([403, 404, 500].includes((error as IResponseError).response?.status ?? 200)) {
-          return false;
-        }
-        return failureCount < 3;
-      },
     },
     mutations: {
       mutationFn: async (variables) => {
@@ -166,12 +160,6 @@ export const queryClient = new QueryClient({
           }
         }
         return data;
-      },
-      retry: (failureCount, error) => {
-        if ([403, 404, 500].includes((error as IResponseError).response?.status ?? 200)) {
-          return false;
-        }
-        return failureCount < 3;
       },
     },
   },
