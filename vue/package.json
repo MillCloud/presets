@@ -49,9 +49,9 @@
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/eslint-parser": "^7.17.0",
-    "@commitlint/cli": "^16.2.4",
-    "@commitlint/config-conventional": "^16.2.4",
-    "@commitlint/prompt": "^16.2.4",
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@commitlint/prompt": "^17.0.0",
     "@iconify/json": "^2.1.39",
     "@modyqyw/fabric": "^5.0.9",
     "@modyqyw/tailwind-presets": "^0.8.6",

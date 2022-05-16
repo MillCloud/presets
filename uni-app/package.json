@@ -78,9 +78,9 @@
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/eslint-parser": "^7.17.0",
-    "@commitlint/cli": "^16.2.4",
-    "@commitlint/config-conventional": "^16.2.4",
-    "@commitlint/prompt": "^16.2.4",
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@commitlint/prompt": "^17.0.0",
     "@dcloudio/types": "^2.6.6",
     "@dcloudio/uni-automator": "^3.0.0-alpha-3040920220508001",
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3040920220508001",
