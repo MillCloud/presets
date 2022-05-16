@@ -109,7 +109,7 @@
     "is-ci": "^3.0.1",
     "lint-staged": "^12.4.1",
     "markdownlint-cli": "^0.31.1",
-    "npm-check-updates": "^12.5.11",
+    "npm-check-updates": "^13.0.0",
     "picocolors": "^1.0.0",
     "postcss": "^8.4.13",
     "postcss-preset-env": "^7.5.0",
