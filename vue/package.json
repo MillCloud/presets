@@ -24,7 +24,7 @@
     }
   },
   "dependencies": {
-    "@element-plus/icons-vue": "^1.1.4",
+    "@element-plus/icons-vue": "^2.0.0",
     "@iconify/vue": "^3.2.1",
     "@vueuse/core": "^8.4.2",
     "@vueuse/integrations": "^8.4.2",
