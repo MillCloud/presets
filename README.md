@@ -19,11 +19,14 @@ git config --global init.defaultBranch main
 
 使用最新的 Node.js LTS。
 
+- 2022-10-25: v18
+- 2021-10-26: v16
+
 ### 依赖管理
 
 ```sh
-npm uninstall -g corepack
-npm i -g npm yarn pnpm
+npm uninstall --location=global corepack
+npm install --location=global npm yarn pnpm
 ```
 
 所有 `uni-app` 相关项目使用以下命令安装依赖：
@@ -45,10 +48,10 @@ pnpm install
 也可以使用 [nrm](https://github.com/Pana/nrm) 或 [cgr](https://github.com/daysai/cgr)。
 
 ```sh
-npm install -g nrm --registry=https://registry.npmmirror.com
+npm install --location=global nrm --registry=https://registry.npmmirror.com
 nrm use taobao
 
-npm install -g cgr --registry=https://registry.npmmirror.com
+npm install --location=global cgr --registry=https://registry.npmmirror.com
 cgr use taobao
 ```
 
