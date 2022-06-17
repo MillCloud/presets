@@ -1,3 +1,4 @@
+import { reactive } from 'vue';
 import axios from 'axios';
 import { ElMessageBox, ElNotification, ElMessage } from 'element-plus';
 import qs from 'query-string';
@@ -10,7 +11,7 @@ import type { VueQueryPluginOptions } from 'vue-query';
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
 const instance = axios.create({
-  baseURL: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/todos/',
+  baseURL: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/',
   timeout: 30_000,
   headers: {
     ...Headers,
@@ -138,7 +139,7 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('variables', variables);
         // console.log('');
-        const config = { ...(variables as IRequestConfig) };
+        const config = reactive({ ...(variables as IRequestConfig) });
         const { data } = await instance.request<IResponseData>({
           method: 'POST',
           ...config,

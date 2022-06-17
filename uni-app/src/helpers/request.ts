@@ -1,3 +1,4 @@
+import { reactive } from 'vue';
 import qs from 'query-string';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { Headers } from '@/constants';
@@ -12,8 +13,7 @@ const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_S
 export async function request<T = BaseData, R = BaseResponse<T>, D = BaseData>(
   config: BaseRequestConfig<D>,
 ) {
-  const baseURL =
-    import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/todos/';
+  const baseURL = import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/';
   const stringifiedParams = qs.stringify(
     Object.fromEntries(
       Object.entries(config.params ?? {}).filter(
@@ -171,7 +171,7 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('variables', variables);
         // console.log('');
-        const config = { ...(variables as IRequestConfig) };
+        const config = reactive({ ...(variables as IRequestConfig) });
         const { data } = await request<IResponseData>({
           method: 'POST',
           ...config,
