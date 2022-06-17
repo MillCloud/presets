@@ -1,11 +1,11 @@
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { createPinia } from 'pinia';
 import { createSSRApp } from 'vue';
 import { VueQueryPlugin } from 'vue-query';
 import App from './App.vue';
 import Components from './components';
+import { pinia } from './stores';
 import { vueQueryPluginOptions } from './helpers';
 import '@modyqyw/tailwind-presets/miniprogram-base.css';
 import '@/styles/tailwind.css';
@@ -16,7 +16,7 @@ dayjs.extend(customParseFormat);
 
 export function createApp() {
   const app = createSSRApp(App)
-    .use(createPinia())
+    .use(pinia)
     .use(VueQueryPlugin, vueQueryPluginOptions)
     .use(Components);
   return { app };

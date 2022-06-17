@@ -3,12 +3,12 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import ElementPlus from 'element-plus';
-import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 import { VueQueryPlugin } from 'vue-query';
 import App from './App.vue';
 import Components from './components';
 import router from './router';
+import { pinia } from './stores';
 import { vueQueryPluginOptions } from './helpers';
 import 'nprogress/nprogress.css';
 import 'modern-normalize';
@@ -28,7 +28,7 @@ browserUpdate({
 });
 
 createApp(App)
-  .use(createPinia())
+  .use(pinia)
   .use(router)
   .use(ElementPlus)
   .use(VueQueryPlugin, vueQueryPluginOptions)
