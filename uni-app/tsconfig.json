@@ -8,7 +8,13 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["@dcloudio/types", "type-fest", "vite/client", "vue/macros-global"]
+    "types": [
+      "@dcloudio/types",
+      "type-fest",
+      "unplugin-vue-define-options",
+      "vite/client",
+      "vue/macros-global"
+    ]
   },
   "include": [
     "**/.*.js",
