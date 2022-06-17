@@ -10,11 +10,11 @@ import App from './App.vue';
 import Components from './components';
 import router from './router';
 import { vueQueryPluginOptions } from './helpers';
+import 'nprogress/nprogress.css';
 import 'modern-normalize';
 import '@/styles/preflight.css';
 import '@/styles/element.scss';
 import '@/styles/tailwind.css';
-import 'nprogress/nprogress.css';
 import '@/styles/global.scss';
 import '@/guard';
 
