@@ -6,14 +6,14 @@ module.exports = {
   npm: {
     publish: false,
   },
-  github: {
-    release: false,
-  },
-  gitlab: {
-    release: false,
+  plugins: {
+    '@release-it/conventional-changelog': {
+      header: '# CHANGELOG',
+      preset: 'conventionalcommits',
+    },
   },
   hooks: {
     'before:init': 'npm install && npm run lint',
-    'after:bump': 'esmo ./scripts/update-manifest.mjs',
+    'after:bump': 'tsx ./scripts/update-manifest.mjs',
   },
 };
