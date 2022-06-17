@@ -1,15 +1,8 @@
+@tailwind base;
+
 html {
   font-size: var(--font-size, 16px);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  border-color: rgb(var(--border-color));
-  border-style: solid;
-  border-width: 0;
 }
