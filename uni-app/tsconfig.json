@@ -16,6 +16,9 @@
       "vue/macros-global"
     ]
   },
+  "vueCompilerOptions": {
+    "experimentalRuntimeMode": "runtime-uni-app"
+  },
   "include": [
     "**/.*.js",
     "**/.*.cjs",
