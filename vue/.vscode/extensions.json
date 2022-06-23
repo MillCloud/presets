@@ -23,7 +23,10 @@
     "bradlc.vscode-tailwindcss",
     "gruntfuggly.todo-tree",
     "redhat.vscode-yaml",
-    "Vue.vscode-typescript-vue-plugin",
     "Vue.volar"
-  ]
+  ],
+  // 这实际上不会起作用
+  // 参考 https://github.com/johnsoncodehk/volar/discussions/471
+  // 参考 https://github.com/microsoft/vscode/issues/40239
+  "disabled": ["vscode.typescript-language-features"]
 }

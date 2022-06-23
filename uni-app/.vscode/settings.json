@@ -42,52 +42,32 @@
     "*.ttss": "css",
     "*.jxml": "html",
     "*.jxss": "css",
-    "*.json": "jsonc",
-    "*.json5": "jsonc",
+    "*.wpy": "vue",
     "*.nvue": "vue",
-    "*.ux": "vue"
+    "*.ux": "vue",
+    "manifest.json": "jsonc",
+    "pages.json": "jsonc",
+    "tsconfig.json": "jsonc",
+    "settings.json": "jsonc"
   },
   "git.autofetch": true,
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "less.validate": false,
   "scss.validate": false,
+  "search.exclude": {
+    "**/cache/**": true,
+    "**/.cache/**": true,
+    "**/temp/**": true,
+    "**/.temp/**": true,
+    "**/tmp/**": true,
+    "**/.tmp/**": true,
+    "**/dist/**": true,
+    "**/out/**": true,
+    "**/*lock*": true
+  },
   "stylelint.snippet": ["css", "less", "sass", "scss", "vue"],
   "stylelint.validate": ["css", "less", "sass", "scss", "vue"],
-  "todo-tree.highlights.customHighlight": {
-    "FIX": {
-      "background": "#d32029",
-      "foreground": "#fff",
-      "icon": "bug",
-      "iconColour": "#d32029"
-    },
-    "PERF": {
-      "background": "#2b4acb",
-      "foreground": "#fff",
-      "icon": "flame",
-      "iconColour": "#2b4acb"
-    },
-    "TODO": {
-      "background": "#d89614",
-      "foreground": "#fff",
-      "icon": "alert",
-      "iconColour": "#d89614"
-    },
-    "[ ]": {
-      "icon": "circle"
-    },
-    "[x]": {
-      "icon": "check"
-    }
-  },
-  "todo-tree.highlights.defaultHighlight": {
-    "gutterIcon": true
-  },
-  "todo-tree.general.tagGroups": {
-    "FIX": ["FIXME", "FIXIT", "FIX", "BUG"]
-  },
-  "todo-tree.general.tags": ["FIX", "FIXME", "FITIT", "BUG", "PERF", "TODO", "[ ]", "[x]"],
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
     "editor.codeActionsOnSave": {
