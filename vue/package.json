@@ -100,7 +100,7 @@
     "vite-plugin-env-compatible": "^1.1.1",
     "vite-plugin-inspect": "^0.5.0",
     "vite-plugin-mkcert": "^1.7.2",
-    "vite-plugin-pages": "^0.24.2",
+    "vite-plugin-pages": "^0.25.0",
     "vite-plugin-stylelint": "^2.2.3",
     "vite-plugin-vue-layouts": "^0.6.0",
     "vue-tsc": "^0.37.9"
