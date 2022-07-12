@@ -12,9 +12,6 @@
 </template>
 
 <script setup lang="ts">
-import { useNetwork } from '@vueuse/core';
-import { reactive, computed } from 'vue';
-
 const network = reactive(useNetwork());
 const networkText = computed(() => {
   if (!network.isSupported) {

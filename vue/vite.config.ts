@@ -5,8 +5,9 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import vueDefineOptions from 'unplugin-vue-define-options/vite';
 import pages from 'vite-plugin-pages';
 import layouts from 'vite-plugin-vue-layouts';
+import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
-import iconsResolver from 'unplugin-icons/resolver';
+import IconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
 import env from 'vite-plugin-env-compatible';
 import eslint from '@modyqyw/vite-plugin-eslint';
@@ -14,6 +15,7 @@ import stylelint from 'vite-plugin-stylelint';
 import compression from 'vite-plugin-compression';
 // import mkcert from 'vite-plugin-mkcert';
 import inspect from 'vite-plugin-inspect';
+import { dependencies } from './package.json';
 
 export default defineConfig({
   css: {
@@ -23,6 +25,9 @@ export default defineConfig({
         additionalData: `@use "@/styles/variables.scss" as *;`,
       },
     },
+  },
+  optimizeDeps: {
+    include: Object.keys(dependencies),
   },
   plugins: [
     vue({
@@ -40,8 +45,13 @@ export default defineConfig({
       ],
     }),
     layouts(),
+    autoImport({
+      dirs: ['src/composables', 'src/stores'],
+      imports: ['vue', 'vue/macros', 'vue-router', 'pinia', '@vueuse/core'],
+    }),
     vueComponents({
-      resolvers: [iconsResolver()],
+      dirs: ['src/components'],
+      resolvers: [IconsResolver()],
     }),
     icons({
       compiler: 'vue3',
@@ -51,9 +61,11 @@ export default defineConfig({
       prefix: 'VITE',
     }),
     eslint({
+      lintOnStart: true,
       fix: true,
     }),
     stylelint({
+      lintOnStart: true,
       fix: true,
     }),
     compression(),
@@ -68,11 +80,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('src', import.meta.url)),
     },
   },
-  // server: {
-  //   https: {
-  //     // https://github.com/vitejs/vite/issues/4403
-  //     // @ts-ignore
-  //     maxSessionMemory: 128,
-  //   },
-  // },
 });
