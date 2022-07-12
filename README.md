@@ -67,6 +67,8 @@ Windows 下可使用 Windows Terminal + Git Bash（安装 Git 时附带），其
 
 ## [Vue 3](https://vuejs.org/)
 
+请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
+
 ```sh
 # github
 npx degit MillCloud/presets/vue your-project-name
@@ -79,6 +81,8 @@ rm -rf presets
 
 ## [UniApp with Vue 3](https://uniapp.dcloud.io/)
 
+请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
+
 ```sh
 # github
 degit MillCloud/presets/uni-app your-project-name
@@ -90,6 +94,8 @@ rm -rf presets
 ```
 
 ## [Taro with Vue 3](https://docs.taro.zone/)
+
+请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
 
 **WIP**
 
@@ -104,6 +110,8 @@ rm -rf presets
 ```
 
 ## [Nuxt 3](https://v3.nuxtjs.org/)
+
+请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
 
 **WIP**
 
