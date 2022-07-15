@@ -28,6 +28,7 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: Object.keys(dependencies),
+    exclude: ['vue-demi'],
   },
   plugins: [
     vue({
@@ -51,7 +52,17 @@ export default defineConfig({
     }),
     vueComponents({
       dirs: ['src/components'],
-      resolvers: [IconsResolver()],
+      resolvers: [
+        {
+          type: 'component',
+          resolve: (componentName) => {
+            if (componentName === 'VIcon') {
+              return { name: 'Icon', from: '@iconify/vue' };
+            }
+          },
+        },
+        IconsResolver(),
+      ],
     }),
     icons({
       compiler: 'vue3',
@@ -61,12 +72,12 @@ export default defineConfig({
       prefix: 'VITE',
     }),
     eslint({
-      lintOnStart: true,
       fix: true,
+      lintOnStart: true,
     }),
     stylelint({
-      lintOnStart: true,
       fix: true,
+      lintOnStart: true,
     }),
     compression(),
     // mkcert({
