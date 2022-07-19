@@ -11,6 +11,10 @@
     "types": [
       "@dcloudio/types",
       "type-fest",
+      "uni-app-types",
+      "uni-cloud-types",
+      "uni-ui-types",
+      "unplugin-icons/types/vue",
       "unplugin-vue-define-options",
       "vite/client",
       "vue/macros-global"
