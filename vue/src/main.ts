@@ -8,7 +8,6 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { VueQueryPlugin } from 'vue-query';
 
 import App from './App.vue';
-import Components from './components';
 import router from './router';
 import { vueQueryPluginOptions } from './helpers';
 
@@ -34,5 +33,4 @@ createApp(App)
   .use(router)
   .use(ElementPlus)
   .use(VueQueryPlugin, vueQueryPluginOptions)
-  .use(Components)
   .mount('#app');
