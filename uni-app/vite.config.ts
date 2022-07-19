@@ -13,7 +13,6 @@ import env from 'vite-plugin-env-compatible';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
-import { paramCase } from 'change-case';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -65,10 +64,11 @@ export default defineConfig({
             if (componentName === 'VIcon') {
               return { name: 'Icon', from: '@iconify/vue' };
             }
+            // FIX: breaks building
             // if (componentName.startsWith('Uni')) {
             //   return {
             //     name: 'default',
-            //     from: `@dcloudio/uni-ui/uni-ui/lib/${paramCase(componentName)}/${paramCase(
+            //     from: `@dcloudio/uni-ui/lib/${paramCase(componentName)}/${paramCase(
             //       componentName,
             //     )}.vue`,
             //   };
