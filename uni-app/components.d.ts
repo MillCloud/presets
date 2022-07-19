@@ -7,7 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    TuiButton: typeof import('thorui-uni/lib/thorui/tui-button/tui-button.vue')['default']
     VSpacer: typeof import('./src/components/VSpacer.vue')['default']
   }
 }
