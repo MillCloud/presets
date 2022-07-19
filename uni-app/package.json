@@ -107,7 +107,7 @@
     "husky": "^8.0.1",
     "is-ci": "^3.0.1",
     "lint-staged": "^13.0.2",
-    "markdownlint-cli": "^0.31.1",
+    "markdownlint-cli": "^0.32.0",
     "npm-check-updates": "^14.0.1",
     "picocolors": "^1.0.0",
     "postcss": "^8.4.14",
