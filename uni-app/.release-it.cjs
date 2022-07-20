@@ -8,8 +8,9 @@ module.exports = {
   },
   plugins: {
     '@release-it/conventional-changelog': {
-      header: '# CHANGELOG',
       preset: 'conventionalcommits',
+      infile: 'CHANGELOG.md',
+      header: '# Changelog',
     },
   },
   hooks: {
