@@ -38,8 +38,7 @@
     "**/*.cts",
     "**/*.mts",
     "**/*.tsx",
-    "**/*.vue",
-    "**/*.svelte"
+    "**/*.vue"
   ],
   "exclude": [".cache", ".temp", ".tmp", "cache", "temp", "tmp", "dist*", "node_modules"]
 }

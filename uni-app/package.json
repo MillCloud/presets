@@ -34,9 +34,9 @@
     "dev:quickapp-webview-huawei": "cross-env UNI_OUTPUT_DIR=dist/quickapp-webview-huawei uni -p quickapp-webview-huawei",
     "dev:quickapp-webview-union": "cross-env UNI_OUTPUT_DIR=dist/quickapp-webview-union uni -p quickapp-webview-union",
     "lint": "npm run lint:eslint && npm run lint:markdownlint && npm run lint:stylelint && vue-tsc --noEmit",
-    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue,.svelte,.yaml,.yml,.json,.jsonc,.json5 --ignore-path=.gitignore --cache --cache-location=node_modules/.vite/vite-plugin-eslint",
+    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue --ignore-path=.gitignore --cache --cache-location=node_modules/.vite/vite-plugin-eslint",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
-    "lint:stylelint": "stylelint \"./**/*.{css,less,scss,sass,vue,svelte}\" --fix --allow-empty-input --ignore-path=.gitignore --cache --cache-location=node_modules/.vite/vite-plugin-stylelint",
+    "lint:stylelint": "stylelint \"./**/*.{css,less,scss,sass,vue}\" --fix --allow-empty-input --ignore-path=.gitignore --cache --cache-location=node_modules/.vite/vite-plugin-stylelint",
     "prepare": "is-ci || husky install",
     "release": "release-it",
     "watch:mp-alipay": "nodemon --watch dist/mp-alipay/pages --ext axml --exec \"tsx\" ./scripts/patch-mp-alipay.ts"
