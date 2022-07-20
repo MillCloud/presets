@@ -72,6 +72,7 @@
     "statuses": "^2.0.1",
     "thorui-uni": "^1.9.0",
     "vue": "^3.2.37",
+    "vue-i18n": "^9.1.10",
     "vue-query": "^1.25.2"
   },
   "devDependencies": {
