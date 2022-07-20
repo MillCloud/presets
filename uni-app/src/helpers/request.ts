@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import qs from 'query-string';
+import qs from 'qs';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { Headers } from '@/constants';
 import { showModal } from './modal';
