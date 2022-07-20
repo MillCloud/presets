@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { ElMessageBox, ElNotification, ElMessage } from 'element-plus';
 import qs from 'qs';
-import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { Headers } from '@/constants';
 import router from '@/router';
 import { getToken, setToken } from './storage';

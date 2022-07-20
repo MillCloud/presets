@@ -5,8 +5,6 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
-import { VueQueryPlugin } from 'vue-query';
-
 import App from './App.vue';
 import router from './router';
 import { vueQueryPluginOptions } from './helpers';
