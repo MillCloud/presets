@@ -14,6 +14,6 @@ module.exports = {
   },
   hooks: {
     'before:init': 'npm install && npm run lint',
-    'after:bump': 'tsx ./scripts/update-manifest.mjs',
+    'after:bump': 'tsx ./scripts/update-manifest.ts',
   },
 };

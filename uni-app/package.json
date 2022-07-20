@@ -39,7 +39,7 @@
     "lint:stylelint": "stylelint \"./**/*.{css,less,scss,sass,vue,svelte}\" --fix --allow-empty-input --ignore-path=.gitignore --cache --cache-location=node_modules/.vite/vite-plugin-stylelint",
     "prepare": "is-ci || husky install",
     "release": "release-it",
-    "watch:mp-alipay": "nodemon --watch dist/mp-alipay/pages --ext axml --exec \"tsx\" ./scripts/patch-mp-alipay.mts"
+    "watch:mp-alipay": "nodemon --watch dist/mp-alipay/pages --ext axml --exec \"tsx\" ./scripts/patch-mp-alipay.ts"
   },
   "config": {
     "commitizen": {
