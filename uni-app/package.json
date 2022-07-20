@@ -64,7 +64,7 @@
     "@vueuse/core": "^8.9.4",
     "change-case": "^4.1.2",
     "color": "^4.2.3",
-    "dayjs": "^1.11.3",
+    "dayjs": "^1.11.4",
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.16",
     "qs": "^6.11.0",
@@ -134,6 +134,6 @@
     "vite-plugin-env-compatible": "^1.1.1",
     "vite-plugin-inspect": "^0.6.0",
     "vite-plugin-stylelint": "^3.0.2",
-    "vue-tsc": "^0.38.8"
+    "vue-tsc": "^0.38.9"
   }
 }
