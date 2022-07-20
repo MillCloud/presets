@@ -29,12 +29,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useQuery } from 'vue-query';
 
 const title = ref('Hello UniApp');
 
 const id = ref(1);
 
-const { data, isLoading } = useQuery<IResponseData, IResponseError>([id]);
+const { data, isLoading } = useQuery<IResponseData, IResponseError>([
+  computed(() => `/posts/${id.value}`),
+]);
 </script>
