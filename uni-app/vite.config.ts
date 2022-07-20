@@ -7,7 +7,7 @@ import tailwindcss from 'tailwindcss';
 import postcssPresetEnv from 'postcss-preset-env';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
-import IconsResolver from 'unplugin-icons/resolver';
+import iconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
 import env from 'vite-plugin-env-compatible';
 import eslint from '@modyqyw/vite-plugin-eslint';
@@ -40,9 +40,6 @@ export default defineConfig({
   },
   plugins: [
     uni({
-      // FIX: nothing happened, must use UNI_OUTPUT_DIR
-      // outputDir: path.resolve(process.cwd(), 'dist', process.env.UNI_PLATFORM ?? 'h5'),
-      // https://github.com/dcloudio/uni-app/issues/3248
       vueOptions: {
         reactivityTransform: true,
       },
@@ -83,7 +80,7 @@ export default defineConfig({
             // }
           },
         },
-        IconsResolver(),
+        iconsResolver(),
       ],
       types: [],
     }),
