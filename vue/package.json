@@ -32,7 +32,7 @@
     "browser-update": "^3.3.40",
     "change-case": "^4.1.2",
     "color": "^4.2.3",
-    "dayjs": "^1.11.3",
+    "dayjs": "^1.11.4",
     "element-plus": "^2.2.9",
     "lodash-es": "^4.17.21",
     "modern-normalize": "^1.1.0",
@@ -103,6 +103,6 @@
     "vite-plugin-pages": "^0.25.0",
     "vite-plugin-stylelint": "^3.0.2",
     "vite-plugin-vue-layouts": "^0.6.0",
-    "vue-tsc": "^0.38.8"
+    "vue-tsc": "^0.38.9"
   }
 }
