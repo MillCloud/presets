@@ -13,7 +13,7 @@ const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_S
 export async function request<T = BaseData, R = BaseResponse<T>, D = BaseData>(
   config: BaseRequestConfig<D>,
 ) {
-  const baseURL = import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/';
+  const baseURL = import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com';
   const stringifiedParams = qs.stringify(
     Object.fromEntries(
       Object.entries(config.params ?? {}).filter(
