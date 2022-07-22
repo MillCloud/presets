@@ -35,6 +35,7 @@ instance.interceptors.request.use((config) => ({
 
 export { instance as axiosInstance };
 
+let hasMessageBox = false;
 export const showError = (
   error: IResponseError,
   type: 'alert' | 'notification' | 'message' = 'alert',
@@ -61,12 +62,14 @@ export const showError = (
     contents.push(`错误信息：${message}`);
   }
   const content = contents.length <= 1 ? contents[0].split('：')[1] : `${contents.join('，')}。`;
-  if (type === 'alert') {
+  if (type === 'alert' && !hasMessageBox) {
+    hasMessageBox = true;
     ElMessageBox.alert(content, {
       title: '错误',
       type: 'error',
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-    }).catch(() => {});
+    }).catch(() => {
+      hasMessageBox = false;
+    });
     return;
   }
   if (type === 'notification') {
