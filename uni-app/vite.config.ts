@@ -49,7 +49,7 @@ export default defineConfig({
     }),
     vueDefineOptions(),
     autoImport({
-      dirs: ['src/composables', 'src/stores'],
+      dirs: ['src/composables', 'src/composables/**', 'src/stores', 'src/stores/**'],
       imports: [
         'vue',
         'vue/macros',
