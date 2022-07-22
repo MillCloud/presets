@@ -65,7 +65,8 @@ export const showError = (
     ElMessageBox.alert(content, {
       title: '错误',
       type: 'error',
-    });
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
+    }).catch(() => {});
     return;
   }
   if (type === 'notification') {
