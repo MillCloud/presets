@@ -135,6 +135,6 @@
     "vite-plugin-env-compatible": "^1.1.1",
     "vite-plugin-inspect": "^0.6.0",
     "vite-plugin-stylelint": "^3.0.4",
-    "vue-tsc": "^0.38.9"
+    "vue-tsc": "^0.39.0"
   }
 }
