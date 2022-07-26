@@ -26,7 +26,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.6",
     "@iconify/vue": "^3.2.1",
-    "@vueuse/core": "^8.9.4",
+    "@vueuse/core": "^9.0.0",
     "@vueuse/router": "^8.9.4",
     "axios": "^0.27.2",
     "browser-update": "^3.3.40",

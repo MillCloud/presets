@@ -61,7 +61,7 @@
     "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3050220220719001",
     "@dcloudio/uni-ui": "^1.4.20",
     "@modyqyw/uni-request": "^0.3.2",
-    "@vueuse/core": "^8.9.4",
+    "@vueuse/core": "^9.0.0",
     "change-case": "^4.1.2",
     "color": "^4.2.3",
     "dayjs": "^1.11.4",
