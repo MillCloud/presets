@@ -60,7 +60,7 @@
     "@dcloudio/uni-mp-weixin": "^3.0.0-alpha-3050220220719001",
     "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3050220220719001",
     "@dcloudio/uni-ui": "^1.4.20",
-    "@modyqyw/uni-request": "^0.3.2",
+    "@modyqyw/uni-request": "^0.4.0",
     "@vueuse/core": "^8.9.4",
     "change-case": "^4.1.2",
     "color": "^4.2.3",
