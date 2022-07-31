@@ -153,34 +153,6 @@ cp presets/taro your-project-name
 rm -rf presets
 ```
 
-## [Umi](https://umijs.org/zh-CN)
-
-**WIP**
-
-```sh
-# github
-degit MillCloud/presets/umi your-project-name
-
-# gitee
-git clone --depth 1 git@gitee.com:MillCloud/presets
-cp presets/umi your-project-name
-rm -rf presets
-```
-
-## [Alita](https://alitajs.com/)
-
-**WIP**
-
-```sh
-# github
-degit MillCloud/presets/alita your-project-name
-
-# gitee
-git clone --depth 1 git@gitee.com:MillCloud/presets
-cp presets/alita your-project-name
-rm -rf presets
-```
-
 ## [Expo](https://expo.io/)
 
 **WIP**
