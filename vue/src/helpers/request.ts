@@ -15,11 +15,12 @@ const instance = axios.create({
   headers: {
     ...Headers,
   },
-  paramsSerializer: (params: Record<string, any>) =>
+  paramsSerializer: (params: any) =>
     qs.stringify(
       Object.fromEntries(
         Object.entries(params).filter(
-          ([, v]) => !['', 'undefined', 'null', undefined, null].includes(v?.toString() ?? v),
+          ([, v]) =>
+            !['', 'undefined', 'null', undefined, null].includes((v as any)?.toString() ?? v),
         ),
       ),
     ),
@@ -37,33 +38,86 @@ instance.interceptors.request.use((config) => ({
 export { instance as axiosInstance };
 
 let hasMessageBox = false;
-export const showError = (
-  error: IResponseError,
-  type: 'alert' | 'notification' | 'message' = 'alert',
-) => {
-  const contents = [];
-  const code =
-    error?.code ??
-    error?.response?.data?.code ??
+export const showError = ({
+  response,
+  error,
+  showErrorType = 'alert',
+}: {
+  response?: IResponse;
+  error?: IResponseError;
+  showErrorType?: TShowErrorType;
+} = {}) => {
+  // url
+  const url =
+    error?.config?.url ??
+    error?.request?.url ??
     // @ts-ignore
-    error?.response?.code ??
-    error?.response?.status ??
+    error?.url ??
+    response?.config?.url ??
+    response?.request?.url ??
+    // @ts-ignore
+    response?.url ??
     '';
-  if (code) {
-    contents.push(`错误代码：${code}`);
-  }
-  // @ts-ignore
-  const url = error?.url ?? error?.config?.url ?? error?.request?.url ?? '';
-  if (url) {
-    contents.push(`请求地址：${url}`);
-  }
-  const message =
-    error?.message ?? error?.response?.data?.message ?? error?.response?.data?.msg ?? '';
-  if (message) {
-    contents.push(`错误信息：${message}`);
-  }
-  const content = contents.length <= 1 ? contents[0].split('：')[1] : `${contents.join('，')}。`;
-  if (type === 'alert' && !hasMessageBox) {
+  const urlText = url ? `请求地址：${url}` : '';
+
+  // statusCode
+  const statusCode =
+    error?.status ??
+    // @ts-ignore
+    error?.statusCode ??
+    // @ts-ignore
+    error?.data?.status ??
+    // @ts-ignore
+    error?.data?.statusCode ??
+    response?.status ??
+    // @ts-ignore
+    response?.statusCode ??
+    response?.data?.status ??
+    response?.data?.statusCode ??
+    0;
+  const statusCodeText = statusCode ? `状态代码：${statusCode}` : '';
+
+  // errorCode
+  const errorCode =
+    error?.code ??
+    // @ts-ignore
+    error?.errno ??
+    // @ts-ignore
+    error?.data?.code ??
+    // @ts-ignore
+    error?.data?.errno ??
+    // @ts-ignore
+    response?.code ??
+    // @ts-ignore
+    response?.errno ??
+    response?.data?.code ??
+    response?.data?.errno ??
+    '';
+  const errorCodeText = errorCode ? `错误代码：${errorCode}` : '';
+
+  // errorMessage
+  const errorMessage =
+    // @ts-ignore
+    error?.data?.errMsg ??
+    // @ts-ignore
+    error?.data?.message ??
+    error?.message ??
+    // @ts-ignore
+    error?.errMsg ??
+    response?.data?.errMsg ??
+    response?.data?.message ??
+    // @ts-ignore
+    response?.message ??
+    // @ts-ignore
+    response?.errMsg ??
+    '';
+  const errorMessageText = errorMessage ? `错误信息：${errorMessage}` : '';
+
+  const content = `${['发生了错误。', errorMessageText, errorCodeText, urlText, statusCodeText]
+    .filter((item) => !!item)
+    .join('\r\n')}`;
+
+  if (showErrorType === 'alert' && !hasMessageBox) {
     hasMessageBox = true;
     ElMessageBox.alert(content, {
       title: '错误',
@@ -77,14 +131,14 @@ export const showError = (
       });
     return;
   }
-  if (type === 'notification') {
+  if (showErrorType === 'notification') {
     ElNotification.error({
       title: '错误',
       message: content,
     });
     return;
   }
-  if (type === 'message') {
+  if (showErrorType === 'message') {
     ElMessage.error({
       message: content,
     });
@@ -116,14 +170,14 @@ export const queryClient = new QueryClient({
         }
         const params = key[2] as Record<string, any>;
         const config = key[3] as IRequestConfig;
-        const { data } = await instance.request<IResponseData>({
+        const response = await instance.request<IResponseData>({
           method: 'GET',
           url,
           params,
           ...config,
         });
-        if (!(data?.success ?? true)) {
-          if (reSignInCodes.has(data.code)) {
+        if (!(response?.data?.success ?? true)) {
+          if (reSignInCodes.has(response?.data.code ?? '')) {
             setToken();
             showError({
               message: '请重新登录。',
@@ -135,10 +189,14 @@ export const queryClient = new QueryClient({
               },
             });
           } else if (config?.showError ?? true) {
-            showError(data as unknown as IResponseError, config?.showErrorType);
+            showError({
+              response,
+              error: response?.data as unknown as IResponseError,
+              showErrorType: config?.showErrorType,
+            });
           }
         }
-        return data;
+        return response?.data;
       },
       refetchOnWindowFocus: false,
     },
@@ -148,12 +206,12 @@ export const queryClient = new QueryClient({
         // console.log('variables', variables);
         // console.log('');
         const config = reactive({ ...(variables as IRequestConfig) });
-        const { data } = await instance.request<IResponseData>({
+        const response = await instance.request<IResponseData>({
           method: 'POST',
           ...config,
         });
-        if (!(data?.success ?? true)) {
-          if (reSignInCodes.has(data.code)) {
+        if (!(response?.data?.success ?? true)) {
+          if (reSignInCodes.has(response?.data?.code ?? '')) {
             setToken();
             showError({
               message: '请重新登录。',
@@ -165,10 +223,14 @@ export const queryClient = new QueryClient({
               },
             });
           } else if (config?.showError ?? true) {
-            showError(data as unknown as IResponseError, config?.showErrorType);
+            showError({
+              response,
+              error: response?.data as unknown as IResponseError,
+              showErrorType: config?.showErrorType,
+            });
           }
         }
-        return data;
+        return response?.data;
       },
     },
   },
