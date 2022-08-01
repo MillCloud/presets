@@ -1,4 +1,5 @@
 import { reactive } from 'vue';
+import ur from '@modyqyw/uni-request';
 import qs from 'qs';
 import { Headers } from '@/constants';
 import { showModal } from './modal';
@@ -8,106 +9,152 @@ import type { VueQueryPluginOptions } from 'vue-query';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
-// https://github.com/dcloudio/uni-app/issues/1710#issuecomment-633219364
-export async function request<T = BaseData, R = BaseResponse<T>, D = BaseData>(
-  config: BaseRequestConfig<D>,
-) {
-  const baseURL = import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com';
-  const stringifiedParams = qs.stringify(
-    Object.fromEntries(
-      Object.entries(config.params ?? {}).filter(
-        ([, v]) => !['', 'undefined', 'null', undefined, null].includes(v?.toString() ?? v),
+const instance = ur.create({
+  baseUrl: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/',
+  timeout: 30000,
+  headers: {
+    ...Headers,
+  },
+  paramsSerializer: (params: any) =>
+    qs.stringify(
+      Object.fromEntries(
+        Object.entries(params).filter(
+          ([, v]) =>
+            !['', 'undefined', 'null', undefined, null].includes((v as any)?.toString() ?? v),
+        ),
       ),
     ),
-  );
-  const params = stringifiedParams ? `?${stringifiedParams}` : '';
-  const url =
-    config.url?.startsWith('https://') || config.url?.startsWith('http://')
-      ? `${config.url}${params}`
-      : `${baseURL}${config.url}${params}`;
-  return new Promise<R>((resolve, reject) => {
-    uni.request({
-      ...config,
-      url,
-      header: {
-        ...Headers,
-        ...config.header,
-        ...config.headers,
-        token: getToken(),
-        'X-Token': getToken(),
-        'X-Access-Token': getToken(),
-      },
-      success: (response) => resolve(response as unknown as R),
-      fail: (error) => reject(error),
-    });
-  });
-}
+});
+instance.interceptors.request.use((config) => ({
+  ...config,
+  headers: {
+    ...config.headers,
+    token: getToken(),
+    'X-Token': getToken(),
+    'X-Access-Token': getToken(),
+  },
+}));
 
+export { instance as urInstance };
+
+let hasModal = false;
 export const showError = ({
+  response,
   error,
-  type = 'modal',
-  confirm,
-}: {
-  error?: IResponseError;
-  type?: 'toast' | 'modal';
-  confirm?: () => void;
-} = {}) => {
-  const contents = [];
-  const code =
-    error?.code ??
+  showErrorType = 'modal' as TShowErrorType,
+  success,
+  fail,
+  complete,
+}:
+  | {
+      response?: IBaseResponse;
+      error?: IError;
+      showErrorType?: 'modal';
+      success?: UniApp.ShowModalOptions['success'];
+      fail?: UniApp.ShowModalOptions['fail'];
+      complete?: UniApp.ShowModalOptions['complete'];
+    }
+  | {
+      response?: IBaseResponse;
+      error?: IError;
+      showErrorType: 'toast';
+      success?: UniApp.ShowToastOptions['success'];
+      fail?: UniApp.ShowToastOptions['fail'];
+      complete?: UniApp.ShowToastOptions['complete'];
+    } = {}) => {
+  // url
+  const url =
+    error?.config?.url ??
+    error?.request?.url ??
+    // @ts-ignore
+    error?.url ??
+    response?.config?.url ??
+    response?.request?.url ??
+    // @ts-ignore
+    response?.url ??
+    '';
+  const urlText = url ? `请求地址：${url}` : '';
+
+  // statusCode
+  const statusCode =
+    error?.status ??
     // @ts-ignore
     error?.statusCode ??
     // @ts-ignore
-    error?.status ??
-    error?.response?.data?.code ??
-    error?.response?.data?.statusCode ??
-    error?.response?.data?.status ??
+    error?.data?.status ??
     // @ts-ignore
-    error?.response?.code ??
-    error?.response?.statusCode ??
-    error?.response?.status ??
+    error?.data?.statusCode ??
+    response?.status ??
+    // @ts-ignore
+    response?.statusCode ??
+    response?.data?.status ??
+    response?.data?.statusCode ??
+    0;
+  const statusCodeText = statusCode ? `状态代码：${statusCode}` : '';
+
+  // errorCode
+  const errorCode =
+    error?.code ??
+    // @ts-ignore
+    error?.errno ??
+    // @ts-ignore
+    error?.data?.code ??
+    // @ts-ignore
+    error?.data?.errno ??
+    // @ts-ignore
+    response?.code ??
+    // @ts-ignore
+    response?.errno ??
+    response?.data?.code ??
+    response?.data?.errno ??
     '';
-  if (code) {
-    contents.push(`错误代码：${code}`);
-  }
-  // @ts-ignore
-  const url = error?.url ?? error?.config?.url ?? error?.request?.url ?? '';
-  if (url) {
-    contents.push(`请求地址：${url}`);
-  }
-  const message =
+  const errorCodeText = errorCode ? `错误代码：${errorCode}` : '';
+
+  // errorMessage
+  const errorMessage =
     // @ts-ignore
+    error?.data?.errMsg ??
+    // @ts-ignore
+    error?.data?.message ??
     error?.message ??
+    // @ts-ignore
     error?.errMsg ??
-    error?.response?.data?.message ??
-    error?.response?.data?.errMsg ??
-    error?.response?.data?.msg ??
+    response?.data?.errMsg ??
+    response?.data?.message ??
+    // @ts-ignore
+    response?.message ??
+    // @ts-ignore
+    response?.errMsg ??
     '';
-  if (message) {
-    contents.push(`错误信息：${message}`);
-  }
-  const content = contents.length <= 1 ? contents[0].split('：')[1] : `${contents.join('，')}。`;
-  if (type === 'toast') {
+  const errorMessageText = errorMessage ? `错误信息：${errorMessage}` : '';
+
+  const content = `${['发生了错误。', errorMessageText, errorCodeText, urlText, statusCodeText]
+    .filter((item) => !!item)
+    .join('\r\n')}`;
+
+  if (showErrorType === 'toast') {
     showToast({
       title: content,
-      duration: 3000,
+      success,
+      fail,
+      complete,
     });
-    if (confirm) {
-      setTimeout(() => {
-        confirm();
-      }, 3000);
-    }
     return;
   }
-  if (type === 'modal') {
+  if (showErrorType === 'modal' && !hasModal) {
+    hasModal = true;
     showModal({
       title: '错误',
       content,
       success: (result) => {
-        if (result && confirm) {
-          confirm();
-        }
+        success?.(result);
+        hasModal = false;
       },
+      fail: (result) => {
+        fail?.(result);
+        hasModal = false;
+      },
+      complete,
     });
   }
 };
@@ -116,14 +163,14 @@ export const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
       showError({
-        error: error as IResponseError,
+        error: error as IError,
       });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
       showError({
-        error: error as IResponseError,
+        error: error as IError,
       });
     },
   }),
@@ -133,35 +180,42 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('queryKey', queryKey);
         // console.log('');
-        const urlParams = Array.isArray(queryKey[1]) ? queryKey[1] : [];
-        let url = (queryKey[0] as any).toString() as string;
+        const key = reactive(queryKey);
+        const urlParams = Array.isArray(key[1]) ? key[1] : [];
+        let url = (key[0] as any).toString() as string;
         for (const [idx, param] of urlParams.entries()) {
           url = url.replace(`:${idx}`, param.toString() as string);
         }
-        const params = queryKey[2] as Record<string, any>;
-        const config = queryKey[3] as IRequestConfig;
-        const { data } = await request<IResponseData>({
+        const params = key[2] as Record<string, any>;
+        const config = key[3] as IRequestConfig;
+        const response = await instance.request<
+          TResponseData,
+          TRequestData,
+          IRequestResponse<TResponseData, TRequestData>
+        >({
           method: 'GET',
           url,
           params,
           ...config,
         });
-        if (!(data?.success ?? true)) {
-          if (reSignInCodes.has(data.code)) {
-            setToken('');
+        if (!(response?.data?.success ?? true)) {
+          if (reSignInCodes.has(response?.data?.code ?? '')) {
+            setToken();
             showError({
-              error: {
-                errMsg: '请重新登录。',
-              },
+              message: '请重新登录',
+            } as IError);
+            uni.reLaunch({
+              url: '/pages/index',
             });
           } else if (config?.showError ?? true) {
             showError({
-              error: data as unknown as IResponseError,
-              type: config?.showErrorType,
+              response,
+              error: response?.data as unknown as IError,
+              showErrorType: config?.showErrorType,
             });
           }
         }
-        return data;
+        return response?.data;
       },
       refetchOnWindowFocus: false,
     },
@@ -171,26 +225,32 @@ export const queryClient = new QueryClient({
         // console.log('variables', variables);
         // console.log('');
         const config = reactive({ ...(variables as IRequestConfig) });
-        const { data } = await request<IResponseData>({
+        const response = await instance.request<
+          TResponseData,
+          TRequestData,
+          IRequestResponse<TResponseData, TRequestData>
+        >({
           method: 'POST',
           ...config,
         });
-        if (!(data?.success ?? true)) {
-          if (reSignInCodes.has(data.code)) {
-            setToken('');
+        if (!(response?.data?.success ?? true)) {
+          if (reSignInCodes.has(response?.data?.code ?? '')) {
+            setToken();
             showError({
-              error: {
-                errMsg: '请重新登录。',
-              },
+              message: '请重新登录',
+            } as IError);
+            uni.reLaunch({
+              url: '/pages/index',
             });
           } else if (config?.showError ?? true) {
             showError({
-              error: data as unknown as IResponseError,
-              type: config?.showErrorType,
+              response,
+              error: response?.data as unknown as IError,
+              showErrorType: config?.showErrorType,
             });
           }
         }
-        return data;
+        return response?.data;
       },
     },
   },
