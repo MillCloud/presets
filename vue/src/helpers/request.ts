@@ -1,5 +1,6 @@
-import axios from 'axios';
+import { reactive } from 'vue';
 import { ElMessageBox, ElNotification, ElMessage } from 'element-plus';
+import axios from 'axios';
 import qs from 'qs';
 import { Headers } from '@/constants';
 import router from '@/router';
@@ -67,9 +68,13 @@ export const showError = (
     ElMessageBox.alert(content, {
       title: '错误',
       type: 'error',
-    }).catch(() => {
-      hasMessageBox = false;
-    });
+    })
+      .catch(() => {
+        hasMessageBox = false;
+      })
+      .finally(() => {
+        hasMessageBox = false;
+      });
     return;
   }
   if (type === 'notification') {
@@ -103,13 +108,14 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('queryKey', queryKey);
         // console.log('');
-        const urlParams = Array.isArray(queryKey[1]) ? queryKey[1] : [];
-        let url = (queryKey[0] as any).toString() as string;
+        const key = reactive(queryKey);
+        const urlParams = Array.isArray(key[1]) ? key[1] : [];
+        let url = (key[0] as any).toString() as string;
         for (const [idx, param] of urlParams.entries()) {
           url = url.replace(`:${idx}`, param.toString() as string);
         }
-        const params = queryKey[2] as Record<string, any>;
-        const config = queryKey[3] as IRequestConfig;
+        const params = key[2] as Record<string, any>;
+        const config = key[3] as IRequestConfig;
         const { data } = await instance.request<IResponseData>({
           method: 'GET',
           url,
