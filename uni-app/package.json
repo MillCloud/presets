@@ -72,7 +72,7 @@
     "statuses": "^2.0.1",
     "thorui-uni": "^1.9.0",
     "vue": "^3.2.37",
-    "vue-i18n": "^9.1.10",
+    "vue-i18n": "^9.2.0",
     "vue-query": "^1.25.2"
   },
   "devDependencies": {
@@ -87,7 +87,7 @@
     "@dcloudio/vite-plugin-uni": "^3.0.0-alpha-3050320220729001",
     "@modyqyw/fabric": "^5.5.4",
     "@modyqyw/tailwind-presets": "^0.11.2",
-    "@modyqyw/vite-plugin-eslint": "^2.0.7",
+    "@modyqyw/vite-plugin-eslint": "^2.0.8",
     "@release-it/conventional-changelog": "^5.0.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.4.0",
@@ -110,7 +110,7 @@
     "is-ci": "^3.0.1",
     "lint-staged": "^13.0.3",
     "markdownlint-cli": "^0.32.1",
-    "npm-check-updates": "^16.0.3",
+    "npm-check-updates": "^16.0.4",
     "picocolors": "^1.0.0",
     "postcss": "^8.4.14",
     "postcss-preset-env": "^7.7.2",
@@ -134,7 +134,7 @@
     "vite": "^2.9.14",
     "vite-plugin-env-compatible": "^1.1.1",
     "vite-plugin-inspect": "^0.6.0",
-    "vite-plugin-stylelint": "^3.0.5",
-    "vue-tsc": "^0.39.3"
+    "vite-plugin-stylelint": "^3.0.6",
+    "vue-tsc": "^0.39.4"
   }
 }
