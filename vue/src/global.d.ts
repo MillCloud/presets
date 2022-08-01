@@ -1,11 +1,13 @@
 import type { AxiosError, AxiosResponse, AxiosRequestConfig } from 'axios';
 
 declare global {
+  type TShowErrorType = 'alert' | 'message' | 'notification';
+
   interface IResponseData {
     success: boolean;
     code: string;
     message: string;
-    [propName: string]: any;
+    [key: string]: any;
   }
 
   interface IResponse extends AxiosResponse<IResponseData> {}
@@ -16,7 +18,7 @@ declare global {
 
   interface IRequestConfig extends AxiosRequestConfig {
     showError?: boolean;
-    showErrorType?: 'alert' | 'message' | 'notification';
+    showErrorType?: TShowErrorType;
   }
 }
 
