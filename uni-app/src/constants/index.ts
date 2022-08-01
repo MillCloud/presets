@@ -8,6 +8,7 @@ export const Headers = {
   'X-Version': `${pkg.name}/${pkg.version}`,
 };
 
+export const ThemeKey = 'theme';
 export const TokenKey = 'token';
 export const DefaultToken = '';
 export const PageLimitKey = 'pageLimit';
