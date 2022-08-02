@@ -1,4 +1,5 @@
 {
+  "$schema": "https://gitee.com/ModyQyW/uni-helper/raw/main/packages/vscode-uni-app-schemas/schemas/androidPrivacy.json",
   "version": "1",
   "prompt": "template",
   "title": "服务协议和隐私政策",

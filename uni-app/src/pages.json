@@ -1,4 +1,5 @@
 {
+  "$schema": "https://gitee.com/ModyQyW/uni-helper/raw/main/packages/vscode-uni-app-schemas/schemas/pages.json",
   "easycom": {
     "autoscan": true,
     "custom": {
