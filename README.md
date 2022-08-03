@@ -67,7 +67,30 @@ Windows 下可使用 Windows Terminal + Git Bash（安装 Git 时附带），其
 
 ## [Vue 3](https://vuejs.org/)
 
+适用于桌面端网页和移动端网页开发。自行增加 [vite-plugin-electron](https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron) 和 [vite-plugin-electron-renderer](https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron-renderer) 可以开发桌面端应用。
+
 请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
+
+<details>
+  <summary>选型推荐</summary>
+  <p>组件库</p>
+  <ul>
+    <li><a href="https://next.vuetifyjs.com/" target="_blank" rel="noopener noreferrer">vuetify</a></li>
+    <li><a href="https://element-plus.org/" target="_blank" rel="noopener noreferrer">elemet-plus</a>（已内置）</li>
+    <li><a href="https://antdv.com/" target="_blank" rel="noopener noreferrer">ant-design-vue</a></li>
+    <li><a href="https://vant-ui.github.io/vant/" target="_blank" rel="noopener noreferrer">vant</a></li>
+    <li><a href="https://nutui.jd.com/" target="_blank" rel="noopener noreferrer">nutui</a></li>
+  </ul>
+  <p>样式</p>
+  <ul>
+    <li><a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">tailwindcss</a>（已内置）</li>
+    <li><a href="https://github.com/unocss/unocss" target="_blank" rel="noopener noreferrer">unocss</a></li>
+  </ul>
+  <p>组合式</p>
+  <ul>
+    <li><a href="https://vueuse.org/" target="_blank" rel="noopener noreferrer">vue-use</a>（已内置）</li>
+  </ul>
+</details>
 
 ```sh
 # github
@@ -81,7 +104,28 @@ rm -rf presets
 
 ## [UniApp with Vue 3](https://uniapp.dcloud.io/)
 
+适用于小程序和移动端应用开发。
+
 请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
+
+<details>
+  <summary>选型推荐</summary>
+  <p>组件库</p>
+  <ul>
+    <li><a href="https://github.com/dcloudio/uni-ui" target="_blank" rel="noopener noreferrer">uni-ui</a>（已内置）</li>
+    <li><a href="https://thorui.cn/doc/docs/introduce.html" target="_blank" rel="noopener noreferrer">thor-ui</a>（已内置）</li>
+  </ul>
+  <p>样式</p>
+  <ul>
+    <li><a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">tailwindcss</a>（已内置）</li>
+    <li><a href="https://github.com/unocss/unocss" target="_blank" rel="noopener noreferrer">unocss</a></li>
+  </ul>
+  <p>组合式</p>
+  <ul>
+    <li><a href="https://vueuse.org/" target="_blank" rel="noopener noreferrer">vue-use</a>（已内置）</li>
+    <li><a href="https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-app-use" target="_blank" rel="noopener noreferrer">uni-app-use</a>（已内置）</li>
+  </ul>
+</details>
 
 ```sh
 # github
@@ -93,23 +137,9 @@ cp presets/uni-app your-project-name
 rm -rf presets
 ```
 
-## [Taro with Vue 3](https://docs.taro.zone/)
-
-请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
-
-**WIP**
-
-```sh
-# github
-degit MillCloud/presets/taro-vue your-project-name
-
-# gitee
-git clone --depth 1 git@gitee.com:MillCloud/presets
-cp presets/taro-vue your-project-name
-rm -rf presets
-```
-
 ## [Nuxt 3](https://v3.nuxtjs.org/)
+
+适用于桌面端网页和移动端网页开发。
 
 请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
 
@@ -139,7 +169,7 @@ cp presets/react your-project-name
 rm -rf presets
 ```
 
-## [Taro with React](https://docs.taro.zone/)
+## [Taro](https://docs.taro.zone/)
 
 **WIP**
 
