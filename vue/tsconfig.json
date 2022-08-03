@@ -12,7 +12,7 @@
       "element-plus/global",
       "type-fest",
       "unplugin-icons/types/vue",
-      "unplugin-vue-macros",
+      "unplugin-vue-macros/macros-global",
       "vite/client",
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client",
