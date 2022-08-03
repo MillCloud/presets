@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import uni from '@dcloudio/vite-plugin-uni';
-import vueDefineOptions from 'unplugin-vue-define-options/vite';
+import vueMarcos from 'unplugin-vue-macros/vite';
 import tailwindcss from 'tailwindcss';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
@@ -47,7 +47,7 @@ export default defineConfig({
         targets: ['ios >= 10', 'chrome >= 53'],
       },
     }),
-    vueDefineOptions(),
+    vueMarcos(),
     autoImport({
       dirs: ['src/composables', 'src/composables/**', 'src/stores', 'src/stores/**'],
       imports: [
