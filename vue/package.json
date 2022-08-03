@@ -4,8 +4,7 @@
   "private": true,
   "description": "A boilerplate for vue3.",
   "scripts": {
-    "build": "run-p check:types build-only",
-    "build-only": "vite build",
+    "build": "vite build",
     "check:deps": "ncu",
     "check:types": "vue-tsc --noEmit",
     "commit": "git-cz",
@@ -18,11 +17,6 @@
     "release": "run-s release-it build",
     "release-it": "release-it",
     "serve": "vite preview"
-  },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/prompt"
-    }
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.6",
