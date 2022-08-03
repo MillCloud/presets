@@ -18,9 +18,6 @@
         primary
       </button>
     </view>
-    <view class="flex w-full justify-center">
-      <tui-button class="m-4 w-full">thor-ui</tui-button>
-    </view>
     <view class="flex w-full justify-center p-4">
       <template v-if="isLoading">Loading...</template>
       <template v-else>{{ data }}</template>

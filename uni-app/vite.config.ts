@@ -138,14 +138,6 @@ export default defineConfig({
             //     )}.vue`,
             //   };
             // }
-            // if (componentName.startsWith('Tui')) {
-            //   return {
-            //     name: 'default',
-            //     from: `thorui-uni/lib/thorui/${paramCase(componentName)}/${paramCase(
-            //       componentName,
-            //     )}.vue`,
-            //   };
-            // }
           },
         },
         iconsResolver(),
