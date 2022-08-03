@@ -7,11 +7,11 @@ module.exports = {
     publish: false,
   },
   plugins: {
-    "@release-it/conventional-changelog": {
+    '@release-it/conventional-changelog': {
       preset: 'conventionalcommits',
-      infile: "CHANGELOG.md",
-      header: "# Changelog"
-    }
+      infile: 'CHANGELOG.md',
+      header: '# Changelog',
+    },
   },
   hooks: {
     'before:init': 'pnpm install && pnpm run lint',
