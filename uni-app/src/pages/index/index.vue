@@ -30,7 +30,5 @@ const title = ref('Hello UniApp');
 
 const id = ref(1);
 
-const { data, isLoading } = useQuery<IResponseData, IResponseError>([
-  computed(() => `/posts/${id.value}`),
-]);
+const { data, isLoading } = useQuery<TResponseData, IError>([computed(() => `/posts/${id.value}`)]);
 </script>
