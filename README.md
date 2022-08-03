@@ -113,7 +113,6 @@ rm -rf presets
   <p>组件库</p>
   <ul>
     <li><a href="https://github.com/dcloudio/uni-ui" target="_blank" rel="noopener noreferrer">uni-ui</a>（已内置）</li>
-    <li><a href="https://thorui.cn/doc/docs/introduce.html" target="_blank" rel="noopener noreferrer">thor-ui</a>（已内置）</li>
   </ul>
   <p>样式</p>
   <ul>
