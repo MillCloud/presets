@@ -15,7 +15,7 @@
       "uni-cloud-types",
       "uni-ui-types",
       "unplugin-icons/types/vue",
-      "unplugin-vue-macros",
+      "unplugin-vue-macros/macros-global",
       "vite/client",
       "vue/macros-global"
     ]
