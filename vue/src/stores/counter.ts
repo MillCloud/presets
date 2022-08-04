@@ -4,10 +4,10 @@ export const useCounterStore = defineStore({
     counter: 0,
   }),
   getters: {
-    doubleCount: (state) => state.counter * 2,
+    doubleCounter: (state) => state.counter * 2,
   },
   actions: {
-    increment() {
+    increase() {
       this.counter += 1;
     },
   },
