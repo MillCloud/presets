@@ -16,7 +16,7 @@
     "prepare": "is-ci || husky install",
     "release": "run-s release-it build",
     "release-it": "release-it",
-    "serve": "vite preview"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.6",
