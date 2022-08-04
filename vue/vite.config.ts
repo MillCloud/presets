@@ -101,7 +101,7 @@ export default defineConfig({
     }),
     icons({
       compiler: 'vue3',
-      defaultClass: 'el-icon',
+      defaultClass: 'el-icon el-icon-',
     }),
     env({
       prefix: 'VITE',
