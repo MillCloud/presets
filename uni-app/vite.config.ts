@@ -90,6 +90,19 @@ export default defineConfig({
             'shallowSsrRef',
             'ssrRef',
           ],
+          'uni-app-use': [
+            ['useColorMode', 'useUniColorMode'],
+            ['useDark', 'useUniDark'],
+            ['useDownloadFile', 'useUniDownloadFile'],
+            ['useInterceptor', 'useUniInterceptor'],
+            ['useNetwork', 'useUniNetwork'],
+            ['useOnline', 'useUniOnline'],
+            ['usePreferredDark', 'useUniPreferredDark'],
+            ['usePreferredLanguage', 'useUniPreferredLanguage'],
+            ['useRequest', 'useUniRequest'],
+            ['useStorageAsync', 'useUniStorageAsync'],
+            ['useUploadFile', 'useUniUploadFile'],
+          ],
           'vue-query': [
             'QueryObserver',
             'QueriesObserver',
@@ -129,17 +142,22 @@ export default defineConfig({
             if (componentName === 'VIcon') {
               return { name: 'Icon', from: '@iconify/vue' };
             }
-            // FIX: breaks building
-            // if (componentName.startsWith('Uni')) {
-            //   return {
-            //     name: 'default',
-            //     from: `@dcloudio/uni-ui/lib/${paramCase(componentName)}/${paramCase(
-            //       componentName,
-            //     )}.vue`,
-            //   };
-            // }
           },
         },
+        // {
+        //   // FIX: breaks building
+        //   type: 'component',
+        //   resolve: (componentName) => {
+        //     if (componentName.startsWith('Uni')) {
+        //       return {
+        //         name: 'default',
+        //         from: `@dcloudio/uni-ui/lib/${paramCase(componentName)}/${paramCase(
+        //           componentName,
+        //         )}.vue`,
+        //       };
+        //     }
+        //   },
+        // },
         iconsResolver(),
       ],
       types: [],
