@@ -1,6 +1,7 @@
 import { reactive } from 'vue';
 import ur from '@modyqyw/uni-request';
 import qs from 'qs';
+import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { Headers } from '@/constants';
 import { showModal } from './modal';
 import { getToken, setToken } from './storage';
