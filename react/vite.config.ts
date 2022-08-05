@@ -4,7 +4,6 @@ import react from '@vitejs/plugin-react';
 import pages from 'vite-plugin-pages';
 import autoImport from 'unplugin-auto-import/vite';
 import icons from 'unplugin-icons/vite';
-import env from 'vite-plugin-env-compatible';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import compression from 'vite-plugin-compression';
@@ -52,9 +51,6 @@ export default defineConfig({
       compiler: 'jsx',
       jsx: 'react',
       defaultClass: 'anticon anticon-',
-    }),
-    env({
-      prefix: 'VITE',
     }),
     eslint({
       fix: true,
