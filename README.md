@@ -156,7 +156,27 @@ rm -rf presets
 
 ## [React](https://reactjs.org/)
 
-**WIP**
+<details>
+  <summary>选型推荐</summary>
+  <p>组件库</p>
+  <ul>
+    <li><a href="https://mui.com/" target="_blank" rel="noopener noreferrer">mui</a></li>
+    <li><a href="https://ant.design/" target="_blank" rel="noopener noreferrer">antd</a>（已内置）</li>
+    <li><a href="https://mantine.dev/ target="_blank" rel="noopener noreferrer">mantine</a></li>
+    <li><a href="https://mobile.ant.design/" target="_blank" rel="noopener noreferrer">antd-mobile</a></li>
+  </ul>
+  <p>样式</p>
+  <ul>
+    <li><a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">tailwindcss</a>（已内置）</li>
+    <li><a href="https://github.com/unocss/unocss" target="_blank" rel="noopener noreferrer">unocss</a></li>
+  </ul>
+  <p>钩子</p>
+  <ul>
+    <li><a href="https://github.com/streamich/react-use" target="_blank" rel="noopener noreferrer">react-use</a>（已内置）</li>
+    <li><a href="https://ahooks.js.org/" target="_blank" rel="noopener noreferrer">ahooks</a>（已内置）</li>
+    <li><a href="https://github.com/juliencrn/usehooks-ts" target="_blank" rel="noopener noreferrer">usehooks-ts</a>（已内置）</li>
+  </ul>
+</details>
 
 ```sh
 # github
