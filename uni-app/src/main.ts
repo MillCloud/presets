@@ -9,7 +9,8 @@ import { VueQueryPlugin } from 'vue-query';
 import App from './App.vue';
 import { vueQueryPluginOptions } from './helpers';
 
-import '@modyqyw/tailwind-presets/miniprogram-base.css';
+import 'modern-normalize';
+import '@/styles/preflight.css';
 import '@/styles/tailwind.css';
 import '@/styles/global.scss';
 

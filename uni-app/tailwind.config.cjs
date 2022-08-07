@@ -7,6 +7,12 @@ const tailwindcssAspectRatio = require('@tailwindcss/aspect-ratio');
 
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  presets: [basePreset, getElementPlusPreset(), miniprogramPreset],
+  presets: [
+    basePreset,
+    getElementPlusPreset({
+      baseSelectors: [':root', 'page'],
+    }),
+    miniprogramPreset,
+  ],
   plugins: [tailwindcssTypography, tailwindcssLineClamp, tailwindcssAspectRatio],
 };

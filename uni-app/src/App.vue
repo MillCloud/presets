@@ -9,9 +9,3 @@ onHide(() => {
   console.log('App Hide');
 });
 </script>
-
-<style lang="scss">
-@import './styles/variables';
-@import './styles/tailwind';
-@import './styles/global';
-</style>
