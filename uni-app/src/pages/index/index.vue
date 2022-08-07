@@ -26,6 +26,8 @@
 </template>
 
 <script setup lang="ts">
+import { useQuery } from 'vue-query';
+
 const title = ref('Hello UniApp');
 
 const id = ref(1);
