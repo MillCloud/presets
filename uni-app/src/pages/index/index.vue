@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import { useQuery } from 'vue-query';
+
+const title = ref('Hello UniApp');
+
+const id = ref(1);
+
+const { data, isLoading } = useQuery<TResponseData, IError>([computed(() => `/posts/${id.value}`)]);
+</script>
+
 <template>
   <view class="container items-center justify-center">
     <image class="m-4 mx-auto block h-20 w-20" src="/static/logo.png" />
@@ -24,13 +34,3 @@
     </view>
   </view>
 </template>
-
-<script setup lang="ts">
-import { useQuery } from 'vue-query';
-
-const title = ref('Hello UniApp');
-
-const id = ref(1);
-
-const { data, isLoading } = useQuery<TResponseData, IError>([computed(() => `/posts/${id.value}`)]);
-</script>

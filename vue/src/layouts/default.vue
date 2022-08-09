@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { LayoutNetwork, LayoutVersion } from './components';
+</script>
+
 <template>
   <el-container class="relative h-screen">
     <el-main class="p-20">
@@ -9,7 +13,3 @@
     </el-footer>
   </el-container>
 </template>
-
-<script setup lang="ts">
-import { LayoutNetwork, LayoutVersion } from './components';
-</script>
