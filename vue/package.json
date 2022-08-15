@@ -106,7 +106,7 @@
     "vite-plugin-pages": "^0.25.0",
     "vite-plugin-stylelint": "^3.0.6",
     "vite-plugin-vue-layouts": "^0.7.0",
-    "vitest": "^0.21.1",
+    "vitest": "^0.22.0",
     "vue-tsc": "^0.39.5"
   }
 }
