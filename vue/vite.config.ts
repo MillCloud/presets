@@ -17,6 +17,11 @@ import inspect from 'vite-plugin-inspect';
 import { dependencies } from './package.json';
 
 export default defineConfig({
+  build: {
+    commonjsOptions: {
+      include: [],
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {
@@ -26,6 +31,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
+    disabled: false,
     include: Object.keys(dependencies),
     exclude: ['vue-demi'],
   },
