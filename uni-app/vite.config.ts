@@ -18,6 +18,10 @@ import inspect from 'vite-plugin-inspect';
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
+    // TODO: wait for vite 3 support
+    // commonjsOptions: {
+    //   include: [],
+    // },
     target: 'es2015',
   },
   css: {
@@ -50,6 +54,11 @@ export default defineConfig({
       },
     },
   },
+  // TODO: wait for vite 3 support
+  // optimizeDeps: {
+  //   disabled: false,
+  //   exclude: ['vue-demi'],
+  // },
   plugins: [
     uni({
       vueOptions: {
