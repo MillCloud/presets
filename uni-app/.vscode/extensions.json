@@ -3,7 +3,7 @@
     "russell.any-rule",
     "streetsidesoftware.code-spell-checker",
     "adam-bender.commit-message-editor",
-    "mikestead.dotenv",
+    "dotenv.dotenv-vscode",
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
     "mhutchie.git-graph",
