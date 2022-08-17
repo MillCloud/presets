@@ -22,7 +22,7 @@ export default defineConfig({
     // commonjsOptions: {
     //   include: [],
     // },
-    target: 'es2015',
+    target: 'es6',
   },
   css: {
     // FIX: not support postcss config file yet
