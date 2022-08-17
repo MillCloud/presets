@@ -18,6 +18,7 @@ import { dependencies } from './package.json';
 
 export default defineConfig({
   build: {
+    target: 'es6',
     commonjsOptions: {
       include: [],
     },
