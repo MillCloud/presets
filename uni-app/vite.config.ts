@@ -71,28 +71,7 @@ export default defineConfig({
     vueMarcos(),
     autoImport({
       dirs: ['src/composables', 'src/composables/**', 'src/stores', 'src/stores/**'],
-      imports: [
-        'vue',
-        'vue/macros',
-        'pinia',
-        '@vueuse/core',
-        'uni-app',
-        {
-          'uni-app-use': [
-            ['useColorMode', 'useUniColorMode'],
-            ['useDark', 'useUniDark'],
-            ['useDownloadFile', 'useUniDownloadFile'],
-            ['useInterceptor', 'useUniInterceptor'],
-            ['useNetwork', 'useUniNetwork'],
-            ['useOnline', 'useUniOnline'],
-            ['usePreferredDark', 'useUniPreferredDark'],
-            ['usePreferredLanguage', 'useUniPreferredLanguage'],
-            ['useRequest', 'useUniRequest'],
-            ['useStorageAsync', 'useUniStorageAsync'],
-            ['useUploadFile', 'useUniUploadFile'],
-          ],
-        },
-      ],
+      imports: ['vue', 'vue/macros', 'pinia', '@vueuse/core', 'uni-app'],
     }),
     vueComponents({
       dirs: ['src/components'],
