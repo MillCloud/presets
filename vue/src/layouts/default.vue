@@ -3,7 +3,8 @@ import { LayoutNetwork, LayoutVersion } from './components';
 </script>
 
 <template>
-  <el-container class="relative h-screen">
+  <!-- 滚动条美化需要在布局设置背景色 -->
+  <el-container class="relative h-screen bg-white">
     <el-main class="p-20">
       <v-router-view />
     </el-main>
