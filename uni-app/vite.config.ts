@@ -5,8 +5,7 @@ import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
-// @ts-ignore
-import postcssSelectorReplace from 'postcss-selector-replace';
+import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import iconsResolver from 'unplugin-icons/resolver';
@@ -31,17 +30,6 @@ export default defineConfig({
         tailwindcss(),
         postcssPresetEnv({
           stage: 3,
-        }),
-        postcssSelectorReplace({
-          before: ['html', 'body', 'img', 'span', /^a$/, '*'],
-          after: [
-            'html,page',
-            'body,page',
-            'img,image',
-            'span,text',
-            'a,functional-page-navigator,navigator',
-            'html,body,page,cover-image,cover-view,match-media,movable-area,movable-view,scroll-view,swiper,swiper-item,view,icon,progress,rich-text,text,button,checkbox,checkbox-group,editor,form,input,label,picker,picker-view,picker-view-column,radio,radio-group,slider,switch,textarea,functional-page-navigator,navigator,audio,camera,image,live-player,live-pusher,video,voip-room,map,canvas,ad,ad-custom,official-account,open-data,web-view,navigation-bar,page-meta',
-          ],
         }),
       ],
     },
@@ -69,6 +57,7 @@ export default defineConfig({
         targets: ['ios >= 10', 'chrome >= 53'],
       },
     }),
+    uniAppTailwind(),
     autoImport({
       dirs: ['src/composables', 'src/composables/**', 'src/stores', 'src/stores/**'],
       imports: ['vue', 'vue/macros', 'pinia', '@vueuse/core', 'uni-app'],
