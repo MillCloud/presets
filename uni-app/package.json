@@ -119,7 +119,6 @@
     "picocolors": "^1.0.0",
     "postcss": "^8.4.16",
     "postcss-preset-env": "^7.8.0",
-    "postcss-selector-replace": "^1.0.2",
     "prettier": "^2.7.1",
     "release-it": "^15.3.0",
     "rimraf": "^3.0.2",
