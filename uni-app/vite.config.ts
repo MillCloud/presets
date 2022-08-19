@@ -60,6 +60,7 @@ export default defineConfig({
   //   exclude: ['vue-demi'],
   // },
   plugins: [
+    vueMarcos(),
     uni({
       vueOptions: {
         reactivityTransform: true,
@@ -68,7 +69,6 @@ export default defineConfig({
         targets: ['ios >= 10', 'chrome >= 53'],
       },
     }),
-    vueMarcos(),
     autoImport({
       dirs: ['src/composables', 'src/composables/**', 'src/stores', 'src/stores/**'],
       imports: ['vue', 'vue/macros', 'pinia', '@vueuse/core', 'uni-app'],

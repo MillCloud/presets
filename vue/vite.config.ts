@@ -37,11 +37,11 @@ export default defineConfig({
     exclude: ['vue-demi'],
   },
   plugins: [
+    vueMarcos(),
     vue({
       reactivityTransform: true,
     }),
     vueJsx(),
-    vueMarcos(),
     pages({
       exclude: [
         '**/components/*.js',
