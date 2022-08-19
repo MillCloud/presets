@@ -86,7 +86,7 @@
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3050420220804007",
     "@dcloudio/vite-plugin-uni": "^3.0.0-alpha-3050420220804007",
     "@modyqyw/fabric": "^5.7.0",
-    "@modyqyw/tailwind-presets": "^0.13.0",
+    "@modyqyw/tailwind-presets": "^0.14.0",
     "@modyqyw/vite-plugin-eslint": "^2.0.9",
     "@release-it/conventional-changelog": "^5.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
@@ -140,7 +140,7 @@
     "vite": "^2.9.14",
     "vite-plugin-inspect": "^0.6.0",
     "vite-plugin-stylelint": "^3.0.7",
-    "vite-plugin-uni-app-tailwind": "^0.0.1",
+    "vite-plugin-uni-app-tailwind": "^0.1.0",
     "vitest": "^0.22.1",
     "vue-tsc": "^0.39.5"
   }
