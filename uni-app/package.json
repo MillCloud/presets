@@ -141,6 +141,6 @@
     "vite-plugin-stylelint": "^3.0.7",
     "vite-plugin-uni-app-tailwind": "^0.1.0",
     "vitest": "^0.22.1",
-    "vue-tsc": "^0.39.5"
+    "vue-tsc": "^0.40.0"
   }
 }
