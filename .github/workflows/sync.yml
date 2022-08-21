@@ -2,15 +2,13 @@ name: sync
 
 on:
   push:
-  workflow_dispatch:
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Sync to Gitee
-        uses: wearerequired/git-mirror-action@v1
+      - uses: wearerequired/git-mirror-action@v1
         with:
           source-repo: git@github.com:MillCloud/presets.git
           destination-repo: git@gitee.com:MillCloud/presets.git
