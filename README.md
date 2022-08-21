@@ -48,9 +48,11 @@ pnpm install
 也可以使用 [nrm](https://github.com/Pana/nrm) 或 [cgr](https://github.com/daysai/cgr)。
 
 ```sh
+# nrm
 npm install --location=global nrm --registry=https://registry.npmmirror.com
 nrm use taobao
 
+# cgr
 npm install --location=global cgr --registry=https://registry.npmmirror.com
 cgr use taobao
 ```
