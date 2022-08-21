@@ -96,6 +96,7 @@
     "@types/lodash-es": "^4.17.6",
     "@types/qs": "^6.9.7",
     "@types/ramda": "^0.28.15",
+    "@types/shelljs": "^0.8.11",
     "@types/statuses": "^2.0.0",
     "@types/tailwindcss": "^3.0.11",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
