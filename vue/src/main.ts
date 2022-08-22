@@ -1,4 +1,6 @@
 import ElementPlus from 'element-plus';
+import ElementProComponents from 'element-pro-components';
+import 'element-pro-components/lib/styles/index';
 
 import browserUpdate from 'browser-update';
 import dayjs from 'dayjs';
@@ -32,5 +34,6 @@ createApp(App)
   .use(pinia)
   .use(router)
   .use(ElementPlus)
+  .use(ElementProComponents)
   .use(VueQueryPlugin, vueQueryPluginOptions)
   .mount('#app');

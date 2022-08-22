@@ -10,6 +10,7 @@
     },
     "types": [
       "element-plus/global",
+      "element-pro-components/types/components",
       "jsdom",
       "node",
       "type-fest",
