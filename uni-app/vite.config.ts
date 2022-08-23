@@ -5,7 +5,7 @@ import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
-import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
+import uniAppTailwind from 'unplugin-uni-app-tailwind';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import iconsResolver from 'unplugin-icons/resolver';
@@ -57,7 +57,7 @@ export default defineConfig({
         targets: ['ios >= 10', 'chrome >= 53'],
       },
     }),
-    uniAppTailwind(),
+    uniAppTailwind.vite(),
     autoImport({
       dirs: ['src/composables', 'src/composables/**', 'src/stores', 'src/stores/**'],
       imports: ['vue', 'vue/macros', 'pinia', '@vueuse/core', 'uni-app'],
