@@ -5,7 +5,9 @@ const title = ref('Hello UniApp');
 
 const id = ref(1);
 
-const { data, isLoading } = useQuery<TResponseData, IError>([computed(() => `/posts/${id.value}`)]);
+const { data, isLoading } = useQuery<TResponseData, IRequestError>([
+  computed(() => `/posts/${id.value}`),
+]);
 </script>
 
 <template>

@@ -53,7 +53,7 @@ export const showError = ({
       hasPrefix?: boolean;
       message?: string;
       response?: IBaseResponse;
-      error?: IError;
+      error?: IBaseError;
       showErrorType?: 'modal';
       success?: UniApp.ShowModalOptions['success'];
       fail?: UniApp.ShowModalOptions['fail'];
@@ -63,7 +63,7 @@ export const showError = ({
       hasPrefix?: boolean;
       message?: string;
       response?: IBaseResponse;
-      error?: IError;
+      error?: IBaseError;
       showErrorType: 'toast';
       success?: UniApp.ShowToastOptions['success'];
       fail?: UniApp.ShowToastOptions['fail'];
@@ -177,14 +177,14 @@ export const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
       showError({
-        error: error as IError,
+        error: error as IBaseError,
       });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
       showError({
-        error: error as IError,
+        error: error as IBaseError,
       });
     },
   }),
@@ -225,7 +225,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showError({
               response,
-              error: response?.data as unknown as IError,
+              error: response?.data as unknown as IBaseError,
               showErrorType: config?.showErrorType,
             });
           }
@@ -261,7 +261,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showError({
               response,
-              error: response?.data as unknown as IError,
+              error: response?.data as unknown as IBaseError,
               showErrorType: config?.showErrorType,
             });
           }

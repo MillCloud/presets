@@ -84,9 +84,21 @@ declare global {
     | TUploadPromise<T, D>;
 
   /* error */
-  interface IError<T = TResponseData, D = TRequestData> extends UrError<T, D> {
+  interface IBaseError<T = TResponseData, D = TRequestData> extends UrError<T, D> {
     response?: IBaseResponse<T, D>;
   }
+
+  interface IRequestError<T = TResponseData, D = TRequestData> extends IBaseError<T, D> {}
+
+  interface IDownloadError<T = TResponseData, D = TRequestData> extends IBaseError<T, D> {}
+
+  interface IUploadError<T = TResponseData, D = TRequestData> extends IBaseError<T, D> {}
+
+  type TError<T = TResponseData, D = TRequestData> =
+    | IBaseError<T, D>
+    | IRequestConfig<T, D>
+    | IDownloadConfig<T, D>
+    | IUploadConfig<T, D>;
 }
 
 export {};
