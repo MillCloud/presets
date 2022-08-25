@@ -4,6 +4,8 @@ import vueMarcos from 'unplugin-vue-macros/vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
 // @ts-ignore
+import nested from 'tailwindcss/nesting';
+// @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
 import uniAppTailwind from 'unplugin-uni-app-tailwind';
 import autoImport from 'unplugin-auto-import/vite';
@@ -27,6 +29,7 @@ export default defineConfig({
     // FIX: not support postcss config file yet
     postcss: {
       plugins: [
+        nested(),
         tailwindcss(),
         postcssPresetEnv({
           stage: 3,
