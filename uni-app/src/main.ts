@@ -13,8 +13,7 @@ import 'modern-normalize';
 import '@/styles/preflight.css';
 import '@/styles/tailwind.css';
 import '@/styles/global.scss';
-import 'remixicon/fonts/remixicon.css';
-// import '@fortawesome/fontawesome-free/css/all.min.css';
+import '@/styles/remixicon.css';
 
 dayjs.locale('zh-cn');
 dayjs.extend(customParseFormat);
