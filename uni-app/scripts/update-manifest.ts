@@ -7,7 +7,7 @@ manifest.versionCode = (Number.parseInt(manifest.versionCode, 10) + 1).toString(
 
 if (manifest['quickapp-webview']) {
   manifest['quickapp-webview'].versionName = manifest.versionName;
-  manifest['quickapp-webview'].versionCode = manifest.versionCode;
+  manifest['quickapp-webview'].versionCode = Number.parseInt(manifest.versionCode);
 }
 
 fs.writeFileSync('./src/manifest.json', `${JSON.stringify(manifest, null, 2)}\n`);
