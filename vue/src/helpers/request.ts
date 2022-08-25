@@ -106,15 +106,22 @@ export const showError = ({
     error?.data?.errMsg ??
     // @ts-ignore
     error?.data?.message ??
-    error?.message ??
+    // @ts-ignore
+    error?.data?.msg ??
     // @ts-ignore
     error?.errMsg ??
+    error?.message ??
+    // @ts-ignore
+    error?.msg ??
     response?.data?.errMsg ??
     response?.data?.message ??
+    response?.data?.msg ??
+    // @ts-ignore
+    response?.errMsg ??
     // @ts-ignore
     response?.message ??
     // @ts-ignore
-    response?.errMsg ??
+    response?.msg ??
     message ??
     '';
   const errorMessageText = errorMessage ? `错误信息：${errorMessage}` : '';
