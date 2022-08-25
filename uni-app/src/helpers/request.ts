@@ -217,7 +217,7 @@ export const queryClient = new QueryClient({
             setToken();
             showError({
               hasPrefix: false,
-              message: '请重新登录',
+              message: '请重新登录。',
             });
             uni.reLaunch({
               url: '/pages/index',
@@ -253,7 +253,7 @@ export const queryClient = new QueryClient({
             setToken();
             showError({
               hasPrefix: false,
-              message: '请重新登录',
+              message: '请重新登录。',
             });
             uni.reLaunch({
               url: '/pages/index',
