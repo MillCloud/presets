@@ -40,6 +40,8 @@ export { instance as urInstance };
 
 let hasModal = false;
 export const showError = ({
+  hasPrefix = true,
+  message,
   response,
   error,
   showErrorType = 'modal' as TShowErrorType,
@@ -48,6 +50,8 @@ export const showError = ({
   complete,
 }:
   | {
+      hasPrefix?: boolean;
+      message?: string;
       response?: IBaseResponse;
       error?: IError;
       showErrorType?: 'modal';
@@ -56,6 +60,8 @@ export const showError = ({
       complete?: UniApp.ShowModalOptions['complete'];
     }
   | {
+      hasPrefix?: boolean;
+      message?: string;
       response?: IBaseResponse;
       error?: IError;
       showErrorType: 'toast';
@@ -126,10 +132,17 @@ export const showError = ({
     response?.message ??
     // @ts-ignore
     response?.errMsg ??
+    message ??
     '';
   const errorMessageText = errorMessage ? `错误信息：${errorMessage}` : '';
 
-  const content = `${['发生了错误。', errorMessageText, errorCodeText, urlText, statusCodeText]
+  const content = `${[
+    hasPrefix ? '发生了错误。' : '',
+    errorMessageText,
+    errorCodeText,
+    urlText,
+    statusCodeText,
+  ]
     .filter((item) => !!item)
     .join('\r\n')}`;
 
@@ -203,8 +216,9 @@ export const queryClient = new QueryClient({
           if (reSignInCodes.has(response?.data?.code ?? '')) {
             setToken();
             showError({
+              hasPrefix: false,
               message: '请重新登录',
-            } as IError);
+            });
             uni.reLaunch({
               url: '/pages/index',
             });
@@ -238,8 +252,9 @@ export const queryClient = new QueryClient({
           if (reSignInCodes.has(response?.data?.code ?? '')) {
             setToken();
             showError({
+              hasPrefix: false,
               message: '请重新登录',
-            } as IError);
+            });
             uni.reLaunch({
               url: '/pages/index',
             });

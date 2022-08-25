@@ -40,10 +40,14 @@ export { instance as axiosInstance };
 
 let hasMessageBox = false;
 export const showError = ({
+  hasPrefix = true,
+  message,
   response,
   error,
   showErrorType = 'alert',
 }: {
+  hasPrefix?: boolean;
+  message?: string;
   response?: IResponse;
   error?: IResponseError;
   showErrorType?: TShowErrorType;
@@ -111,10 +115,17 @@ export const showError = ({
     response?.message ??
     // @ts-ignore
     response?.errMsg ??
+    message ??
     '';
   const errorMessageText = errorMessage ? `错误信息：${errorMessage}` : '';
 
-  const content = `${['发生了错误。', errorMessageText, errorCodeText, urlText, statusCodeText]
+  const content = `${[
+    hasPrefix ? '发生了错误。' : '',
+    errorMessageText,
+    errorCodeText,
+    urlText,
+    statusCodeText,
+  ]
     .filter((item) => !!item)
     .join('\r\n')}`;
 
@@ -181,8 +192,9 @@ export const queryClient = new QueryClient({
           if (reSignInCodes.has(response?.data.code ?? '')) {
             setToken();
             showError({
+              hasPrefix: false,
               message: '请重新登录。',
-            } as IResponseError);
+            });
             router.push({
               path: '/sign-in',
               query: {
@@ -215,8 +227,9 @@ export const queryClient = new QueryClient({
           if (reSignInCodes.has(response?.data?.code ?? '')) {
             setToken();
             showError({
+              hasPrefix: false,
               message: '请重新登录。',
-            } as IResponseError);
+            });
             router.push({
               path: '/sign-in',
               query: {
