@@ -131,7 +131,7 @@
     "tsx": "^3.8.2",
     "type-fest": "^2.19.0",
     "typescript": "^4.7.4",
-    "uni-app-types": "^0.1.4",
+    "uni-app-types": "^0.1.5",
     "uni-cloud-types": "^0.1.5",
     "uni-ui-types": "^0.1.3",
     "unplugin-auto-import": "^0.11.2",
