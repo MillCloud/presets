@@ -12,3 +12,19 @@
     @apply h-full;
   }
 }
+
+@layer utilities {
+  .expand {
+    @apply relative;
+
+    /* https://tailwindcss.com/docs/using-with-preprocessors#nesting */
+    &::after {
+      @apply absolute;
+      @apply -inset-2;
+      @apply text-transparent;
+      @apply bg-transparent;
+      @apply border-transparent;
+      content: '';
+    }
+  }
+}
