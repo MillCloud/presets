@@ -1,20 +1,8 @@
-@tailwind base;
+button,
+button::after {
+  all: unset;
+}
 
-@layer base {
-  html,
-  page {
-    font-size: var(--font-size, 16px);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  button,
-  button::after {
-    all: unset;
-  }
-
-  button {
-    -webkit-tap-highlight-color: transparent;
-  }
+button {
+  -webkit-tap-highlight-color: transparent;
 }

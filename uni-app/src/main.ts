@@ -9,10 +9,10 @@ import { VueQueryPlugin } from 'vue-query';
 import App from './App.vue';
 import { vueQueryPluginOptions } from './helpers';
 
-import 'modern-normalize';
 import '@/styles/preflight.css';
+import 'modern-normalize';
 import '@/styles/tailwind.css';
-import '@/styles/global.scss';
+import '@/styles/global.css';
 import '@/styles/remixicon.css';
 
 dayjs.locale('zh-cn');
