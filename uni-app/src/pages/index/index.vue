@@ -24,10 +24,11 @@ const { data, isLoading } = useQuery<TResponseData, IRequestError>([
         default
       </button>
       <button
-        class="m-4 flex h-8 flex-auto items-center justify-center rounded border border-solid border-primary bg-primary px-4 text-white transition"
+        class="m-4 flex h-8 flex-auto items-center justify-center rounded border border-solid border-primary !bg-primary-disabled px-4 !text-white transition"
         hover-class="bg-primary-darken-1 border-primary-darken-1"
+        disabled
       >
-        primary
+        primary disabled
       </button>
     </view>
     <view class="flex w-full justify-center p-4">
