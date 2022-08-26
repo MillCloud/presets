@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import ur from '@modyqyw/uni-request';
+import uan from 'uni-app-network';
 import qs from 'qs';
 import { QueryClient, QueryCache, MutationCache } from 'vue-query';
 import { Headers } from '@/constants';
@@ -10,7 +10,7 @@ import type { VueQueryPluginOptions } from 'vue-query';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
-const instance = ur.create({
+const instance = uan.create({
   baseUrl: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/',
   timeout: 30000,
   headers: {
@@ -36,7 +36,7 @@ instance.interceptors.request.use((config) => ({
   },
 }));
 
-export { instance as urInstance };
+export { instance };
 
 let hasModal = false;
 export const showError = ({

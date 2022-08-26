@@ -1,14 +1,14 @@
 import type {
-  UrError,
-  UrBaseResponse,
-  UrRequestResponse,
-  UrDownloadResponse,
-  UrUploadResponse,
-  UrBaseConfig,
-  UrRequestConfig,
-  UrDownloadConfig,
-  UrUploadConfig,
-} from '@modyqyw/uni-request';
+  UanError,
+  UanBaseResponse,
+  UanRequestResponse,
+  UanDownloadResponse,
+  UanUploadResponse,
+  UanBaseConfig,
+  UanRequestConfig,
+  UanDownloadConfig,
+  UanUploadConfig,
+} from 'uni-app-network';
 
 declare global {
   /* common */
@@ -24,21 +24,21 @@ declare global {
   };
 
   /* config */
-  interface IBaseConfig<T = TResponseData, D = TRequestData> extends UrBaseConfig<T, D> {
+  interface IBaseConfig<T = TResponseData, D = TRequestData> extends UanBaseConfig<T, D> {
     showError?: boolean;
     showErrorType?: TShowErrorType;
   }
 
   interface IRequestConfig<T = TResponseData, D = TRequestData>
-    extends UrRequestConfig<T, D>,
+    extends UanRequestConfig<T, D>,
       IBaseConfig<T, D> {}
 
   interface IDownloadConfig<T = TResponseData, D = TRequestData>
-    extends UrDownloadConfig<T, D>,
+    extends UanDownloadConfig<T, D>,
       IBaseConfig<T, D> {}
 
   interface IUploadConfig<T = TResponseData, D = TRequestData>
-    extends UrUploadConfig<T, D>,
+    extends UanUploadConfig<T, D>,
       IBaseConfig<T, D> {}
 
   type TConfig =
@@ -48,18 +48,18 @@ declare global {
     | IUploadConfig<T, D>;
 
   /* response */
-  interface IBaseResponse<T = TResponseData, D = TRequestData> extends UrBaseResponse<T, D> {}
+  interface IBaseResponse<T = TResponseData, D = TRequestData> extends UanBaseResponse<T, D> {}
 
   interface IRequestResponse<T = TResponseData, D = TRequestData>
-    extends UrRequestResponse<T, D>,
+    extends UanRequestResponse<T, D>,
       IBaseResponse<T, D> {}
 
   interface IDownloadResponse<T = TResponseData, D = TRequestData>
-    extends UrDownloadResponse<T, D>,
+    extends UanDownloadResponse<T, D>,
       IBaseResponse<T, D> {}
 
   interface IUploadResponse<T = TResponseData, D = TRequestData>
-    extends UrUploadResponse<T, D>,
+    extends UanUploadResponse<T, D>,
       IBaseResponse<T, D> {}
 
   type TResponse =
@@ -84,7 +84,7 @@ declare global {
     | TUploadPromise<T, D>;
 
   /* error */
-  interface IBaseError<T = TResponseData, D = TRequestData> extends UrError<T, D> {
+  interface IBaseError<T = TResponseData, D = TRequestData> extends UanError<T, D> {
     response?: IBaseResponse<T, D>;
   }
 
