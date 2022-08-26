@@ -4,3 +4,4 @@ export * from './modal';
 export * from './network';
 export * from './storage';
 export * from './toast';
+export * from './updater';
