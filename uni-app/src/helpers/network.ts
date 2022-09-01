@@ -36,7 +36,7 @@ instance.interceptors.request.use((config) => ({
   },
 }));
 
-export { instance };
+export { instance as uanInstance };
 
 let hasModal = false;
 export const showError = ({
@@ -69,6 +69,19 @@ export const showError = ({
       fail?: UniApp.ShowToastOptions['fail'];
       complete?: UniApp.ShowToastOptions['complete'];
     } = {}) => {
+  // method
+  const method =
+    error?.config?.method ??
+    error?.request?.method ??
+    // @ts-ignore
+    error?.method ??
+    response?.config?.method ??
+    response?.request?.method ??
+    // @ts-ignore
+    response?.method ??
+    '';
+  const methodText = method ? `请求方法：${method}` : '';
+
   // url
   const url =
     error?.config?.url ??
@@ -147,6 +160,7 @@ export const showError = ({
     hasPrefix ? '发生了错误。' : '',
     errorMessageText,
     errorCodeText,
+    methodText,
     urlText,
     statusCodeText,
   ]

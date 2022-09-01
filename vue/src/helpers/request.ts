@@ -52,6 +52,19 @@ export const showError = ({
   error?: IResponseError;
   showErrorType?: TShowErrorType;
 } = {}) => {
+  // method
+  const method =
+    error?.config?.method ??
+    error?.request?.method ??
+    // @ts-ignore
+    error?.method ??
+    response?.config?.method ??
+    response?.request?.method ??
+    // @ts-ignore
+    response?.method ??
+    '';
+  const methodText = method ? `请求方法：${method}` : '';
+
   // url
   const url =
     error?.config?.url ??
@@ -130,17 +143,19 @@ export const showError = ({
     hasPrefix ? '发生了错误。' : '',
     errorMessageText,
     errorCodeText,
+    methodText,
     urlText,
     statusCodeText,
   ]
     .filter((item) => !!item)
-    .join('\r\n')}`;
+    .join('<br />')}`;
 
   if (showErrorType === 'alert' && !hasMessageBox) {
     hasMessageBox = true;
     ElMessageBox.alert(content, {
       title: '错误',
       type: 'error',
+      dangerouslyUseHTMLString: true,
     })
       .catch(() => {
         hasMessageBox = false;
@@ -154,12 +169,14 @@ export const showError = ({
     ElNotification.error({
       title: '错误',
       message: content,
+      dangerouslyUseHTMLString: true,
     });
     return;
   }
   if (showErrorType === 'message') {
     ElMessage.error({
       message: content,
+      dangerouslyUseHTMLString: true,
     });
   }
 };
