@@ -184,12 +184,12 @@ export const showError = ({
 export const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
-      showError(error as IResponseError);
+      showError({ error: error as IResponseError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
-      showError(error as IResponseError);
+      showError({ error: error as IResponseError });
     },
   }),
   defaultOptions: {
