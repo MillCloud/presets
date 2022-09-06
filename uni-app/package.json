@@ -87,7 +87,7 @@
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3060020220831001",
     "@dcloudio/vite-plugin-uni": "^3.0.0-alpha-3060020220831001",
     "@modyqyw/fabric": "^5.9.0",
-    "@modyqyw/tailwind-presets": "^0.16.0",
+    "@modyqyw/tailwind-presets": "^0.17.0",
     "@modyqyw/vite-plugin-eslint": "^2.0.9",
     "@release-it/conventional-changelog": "^5.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
