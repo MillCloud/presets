@@ -1,3 +1,4 @@
+import 'core-js/actual';
 import { createSSRApp } from 'vue';
 
 import dayjs from 'dayjs';
