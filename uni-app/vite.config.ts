@@ -19,9 +19,6 @@ import inspect from 'vite-plugin-inspect';
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    // commonjsOptions: {
-    //   include: [],
-    // },
     target: 'es6',
   },
   css: {
@@ -47,7 +44,6 @@ export default defineConfig({
   },
   envPrefix: ['VITE_', 'UNI_'],
   optimizeDeps: {
-    // disabled: false,
     exclude: ['vue-demi'],
   },
   plugins: [
