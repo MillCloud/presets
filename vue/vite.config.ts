@@ -3,6 +3,7 @@ import { defineConfig } from 'vitest/config';
 import vueMarcos from 'unplugin-vue-macros/vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import legacy from '@vitejs/plugin-legacy';
 import pages from 'vite-plugin-pages';
 import layouts from 'vite-plugin-vue-layouts';
 import autoImport from 'unplugin-auto-import/vite';
@@ -42,6 +43,9 @@ export default defineConfig({
       reactivityTransform: true,
     }),
     vueJsx(),
+    legacy({
+      targets: ['defaults', 'edge >= 79', 'firefox >= 67', 'safari >= 12', 'chrome >= 63'],
+    }),
     pages({
       exclude: [
         '**/components/*.js',
