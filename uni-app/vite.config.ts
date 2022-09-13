@@ -19,10 +19,9 @@ import inspect from 'vite-plugin-inspect';
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    // TODO: wait for vite 3 support
-    // commonjsOptions: {
-    //   include: [],
-    // },
+    commonjsOptions: {
+      include: [],
+    },
     target: 'es6',
   },
   css: {
@@ -46,11 +45,11 @@ export default defineConfig({
       },
     },
   },
-  // TODO: wait for vite 3 support
-  // optimizeDeps: {
-  //   disabled: false,
-  //   exclude: ['vue-demi'],
-  // },
+  envPrefix: ['VITE_', 'UNI_'],
+  optimizeDeps: {
+    disabled: false,
+    exclude: ['vue-demi'],
+  },
   plugins: [
     vueMarcos(),
     uni({
