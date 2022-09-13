@@ -1,3 +1,4 @@
+import 'core-js/actual';
 import ElementPlus from 'element-plus';
 import ElementProComponents from 'element-pro-components';
 import 'element-pro-components/lib/styles/index';
