@@ -47,16 +47,6 @@ export default defineConfig({
     exclude: ['vue-demi'],
   },
   plugins: [
-    vueMarcos(),
-    uni({
-      vueOptions: {
-        reactivityTransform: true,
-      },
-      viteLegacyOptions: {
-        targets: ['ios >= 10', 'chrome >= 53'],
-      },
-    }),
-    uniAppTailwind.vite(),
     autoImport({
       dirs: ['src/composables', 'src/composables/**', 'src/stores', 'src/stores/**'],
       imports: ['vue', 'vue/macros', 'pinia', '@vueuse/core', 'uni-app'],
@@ -94,6 +84,16 @@ export default defineConfig({
       compiler: 'vue3',
       defaultClass: 'el-icon',
     }),
+    vueMarcos(),
+    uni({
+      vueOptions: {
+        reactivityTransform: true,
+      },
+      viteLegacyOptions: {
+        targets: ['ios >= 10', 'chrome >= 53'],
+      },
+    }),
+    uniAppTailwind.vite(),
     eslint({
       fix: true,
       lintOnStart: true,
