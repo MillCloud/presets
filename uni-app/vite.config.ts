@@ -1,5 +1,9 @@
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
+import autoImport from 'unplugin-auto-import/vite';
+import vueComponents from 'unplugin-vue-components/vite';
+import iconsResolver from 'unplugin-icons/resolver';
+import icons from 'unplugin-icons/vite';
 import vueMarcos from 'unplugin-vue-macros/vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
@@ -7,11 +11,7 @@ import tailwindcss from 'tailwindcss';
 import nested from 'tailwindcss/nesting';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
-import uniAppTailwind from 'unplugin-uni-app-tailwind';
-import autoImport from 'unplugin-auto-import/vite';
-import vueComponents from 'unplugin-vue-components/vite';
-import iconsResolver from 'unplugin-icons/resolver';
-import icons from 'unplugin-icons/vite';
+import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
@@ -93,7 +93,7 @@ export default defineConfig({
         targets: ['ios >= 10', 'chrome >= 53'],
       },
     }),
-    uniAppTailwind.vite(),
+    uniAppTailwind(),
     eslint({
       fix: true,
       lintOnStart: true,
