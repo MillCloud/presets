@@ -43,7 +43,8 @@
     "lint:stylelint": "stylelint \"./**/*.{css,less,scss,sass,vue}\" --fix --allow-empty-input --ignore-path=.gitignore --cache --cache-location=node_modules/.vite/vite-plugin-stylelint",
     "prepare": "is-ci || husky install",
     "release": "release-it",
-    "patch:mp-alipay": "nodemon --watch dist/mp-alipay/pages --ext axml --exec \"tsx\" ./scripts/patch-mp-alipay.ts"
+    "patch:mp-alipay": "nodemon --watch dist/mp-alipay/pages --ext axml --exec \"tsx\" ./scripts/patch-mp-alipay.ts",
+    "test:unit": "vitest run --coverage"
   },
   "dependencies": {
     "@dcloudio/uni-app": "^3.0.0-alpha-3060420220922006",
@@ -112,8 +113,10 @@
     "commitizen": "^4.2.5",
     "cross-env": "^7.0.3",
     "eslint": "^8.24.0",
+    "happy-dom": "^6.0.4",
     "husky": "^8.0.1",
     "is-ci": "^3.0.1",
+    "jsdom": "^20.0.0",
     "lint-staged": "^13.0.3",
     "markdownlint-cli": "^0.32.2",
     "npm-check-updates": "^16.3.4",
@@ -142,7 +145,7 @@
     "vite": "^3.1.4",
     "vite-plugin-inspect": "^0.7.4",
     "vite-plugin-stylelint": "^3.0.7",
-    "vite-plugin-uni-app-tailwind": "^0.5.0",
+    "vite-plugin-uni-app-tailwind": "^0.6.0",
     "vitest": "^0.23.4",
     "vue-tsc": "^0.40.13"
   }
