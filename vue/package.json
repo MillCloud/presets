@@ -79,7 +79,7 @@
     "commitizen": "^4.2.5",
     "cross-env": "^7.0.3",
     "eslint": "^8.24.0",
-    "happy-dom": "^6.0.4",
+    "happy-dom": "^7.0.0",
     "husky": "^8.0.1",
     "is-ci": "^3.0.1",
     "jsdom": "^20.0.0",
