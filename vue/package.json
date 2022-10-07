@@ -113,6 +113,6 @@
     "vite-plugin-stylelint": "^3.0.7",
     "vite-plugin-vue-layouts": "^0.7.0",
     "vitest": "^0.23.4",
-    "vue-tsc": "^0.40.13"
+    "vue-tsc": "^1.0.0"
   }
 }
