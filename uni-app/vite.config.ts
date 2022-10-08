@@ -4,7 +4,7 @@ import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import iconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
-import vueMarcos from 'unplugin-vue-macros/vite';
+import vueMacros from 'unplugin-vue-macros/vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
 // @ts-ignore
@@ -84,11 +84,12 @@ export default defineConfig({
       compiler: 'vue3',
       defaultClass: 'el-icon',
     }),
-    vueMarcos(),
+    vueMacros(),
     uni({
       vueOptions: {
         reactivityTransform: true,
       },
+      vueJsxOptions: {},
       viteLegacyOptions: {
         targets: ['ios >= 10', 'chrome >= 53'],
       },
