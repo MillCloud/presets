@@ -2,11 +2,11 @@ import { reactive } from 'vue';
 import { ElMessageBox, ElNotification, ElMessage } from 'element-plus';
 import axios from 'axios';
 import qs from 'qs';
-import { QueryClient, QueryCache, MutationCache } from 'vue-query';
+import { QueryClient, QueryCache, MutationCache } from '@tanstack/vue-query';
 import { Headers } from '@/constants';
 import router from '@/router';
 import { getToken, setToken } from './storage';
-import type { VueQueryPluginOptions } from 'vue-query';
+import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
