@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
-import vueMarcos from 'unplugin-vue-macros/vite';
+import vueMacros from 'unplugin-vue-macros/vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
@@ -38,11 +38,12 @@ export default defineConfig({
     exclude: ['vue-demi'],
   },
   plugins: [
-    vueMarcos(),
-    vue({
-      reactivityTransform: true,
+    vueMacros({
+      plugins: {
+        vue: vue({ reactivityTransform: true }),
+        vueJsx: vueJsx(),
+      },
     }),
-    vueJsx(),
     legacy({
       targets: ['defaults', 'edge >= 79', 'firefox >= 67', 'safari >= 12', 'chrome >= 63'],
     }),
@@ -97,8 +98,5 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('src', import.meta.url)),
     },
-  },
-  test: {
-    environment: 'jsdom',
   },
 });
