@@ -81,7 +81,7 @@ Windows 下可使用 Windows Terminal + Git Bash（安装 Git 时附带），其
     <li><a href="https://element-plus.org/" target="_blank" rel="noopener noreferrer">elemet-plus</a>（已内置）</li>
     <li><a href="https://antdv.com/" target="_blank" rel="noopener noreferrer">ant-design-vue</a></li>
     <li><a href="https://vant-ui.github.io/vant/" target="_blank" rel="noopener noreferrer">vant</a></li>
-    <li><a href="https://nutui.jd.com/" target="_blank" rel="noopener noreferrer">nutui</a></li>
+    <li><a href="https://nutui.jd.com/" target="_blank" rel="noopener noreferrer">nut-ui</a></li>
   </ul>
   <p>样式</p>
   <ul>
@@ -118,7 +118,7 @@ rm -rf presets
   </ul>
   <p>样式</p>
   <ul>
-    <li><a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">tailwindcss</a>（已内置）</li>
+    <li><a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">tailwindcss</a>（已内置，可按原本习惯使用）</li>
     <li><a href="https://github.com/unocss/unocss" target="_blank" rel="noopener noreferrer">unocss</a></li>
   </ul>
   <p>组合式</p>
@@ -140,11 +140,11 @@ rm -rf presets
 
 ## [Nuxt 3](https://v3.nuxtjs.org/)
 
+**计划内**
+
 适用于桌面端网页和移动端网页开发。
 
 请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
-
-**WIP**
 
 ```sh
 # github
@@ -153,5 +153,21 @@ degit MillCloud/presets/nuxt your-project-name
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
 cp presets/nuxt your-project-name
+rm -rf presets
+```
+
+## [Nest](https://nestjs.com/)
+
+**计划内**
+
+适用于非原型后端服务开发。
+
+```sh
+# github
+degit MillCloud/presets/nest your-project-name
+
+# gitee
+git clone --depth 1 git@gitee.com:MillCloud/presets
+cp presets/nest your-project-name
 rm -rf presets
 ```
