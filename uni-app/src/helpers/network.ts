@@ -1,12 +1,12 @@
 import { reactive } from 'vue';
 import uan from 'uni-app-network';
 import qs from 'qs';
-import { QueryClient, QueryCache, MutationCache } from 'vue-query';
+import { QueryClient, QueryCache, MutationCache } from '@tanstack/vue-query';
 import { Headers } from '@/constants';
 import { showModal } from './modal';
 import { getToken, setToken } from './storage';
 import { showToast } from './toast';
-import type { VueQueryPluginOptions } from 'vue-query';
+import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 

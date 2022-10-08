@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useQuery } from 'vue-query';
+import { useQuery } from '@tanstack/vue-query';
 
 const title = ref('Hello UniApp');
 
