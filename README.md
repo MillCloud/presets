@@ -2,7 +2,7 @@
 
 JavaScript / TypeScript 项目模板合集。
 
-**[degit](https://github.com/Rich-Harris/degit) 不支持 gitee，如果你想要寻找更便捷的方法，不妨看看 [这里](https://www.google.com/search?q=git+clone+subdirectory&oq=git+clone+subdirectory&ie=UTF-8)。**
+**[tiged](https://github.com/tiged/tiged) 不支持 gitee，如果你想要寻找更便捷的方法，不妨看看 [giget](https://github.com/unjs/giget) 和 [这里](https://www.google.com/search?q=git+clone+subdirectory&oq=git+clone+subdirectory&ie=UTF-8)。**
 
 ## 注意事项
 
@@ -79,7 +79,7 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 
 ```sh
 # github
-npx degit MillCloud/presets/vue your-project-name
+npx tiged MillCloud/presets/vue your-project-name
 
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
@@ -95,7 +95,7 @@ uni-app 模板，适用于小程序和移动端应用开发。
 
 ```sh
 # github
-degit MillCloud/presets/uni-app your-project-name
+tiged MillCloud/presets/uni-app your-project-name
 
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
@@ -113,7 +113,7 @@ nuxt 模板，适用于桌面端网页和移动端网页开发。
 
 ```sh
 # github
-degit MillCloud/presets/nuxt your-project-name
+tiged MillCloud/presets/nuxt your-project-name
 
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
@@ -127,7 +127,7 @@ koa 模板，只适用于后端服务原型开发。
 
 ```sh
 # github
-degit MillCloud/presets/koa your-project-name
+tiged MillCloud/presets/koa your-project-name
 
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
@@ -143,7 +143,7 @@ nest 模板，适用于后端服务开发。
 
 ```sh
 # github
-degit MillCloud/presets/nest your-project-name
+tiged MillCloud/presets/nest your-project-name
 
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
