@@ -41,6 +41,8 @@ npm install
 pnpm install
 ```
 
+运行项目需查看 `package.json` 下 `scripts`。
+
 ### 镜像
 
 下载 Node.js 和安装依赖过慢时，可以设置 [npmmirror 镜像](https://npmmirror.com/)。
@@ -69,30 +71,11 @@ Windows 下可使用 Windows Terminal + Git Bash（安装 Git 时附带），其
 
 ## [Vue 3](https://vuejs.org/)
 
-适用于桌面端网页和移动端网页开发。自行增加 [vite-plugin-electron](https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron) 和 [vite-plugin-electron-renderer](https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron-renderer) 可以开发桌面端应用。
+vue 模板，适用于桌面端网页和移动端网页开发。
+
+自行增加 [vite-plugin-electron](https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron) 和 [vite-plugin-electron-renderer](https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron-renderer) 可以开发桌面端应用。
 
 请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
-
-<details>
-  <summary>选型推荐</summary>
-  <p>组件库</p>
-  <ul>
-    <li><a href="https://next.vuetifyjs.com/" target="_blank" rel="noopener noreferrer">vuetify</a></li>
-    <li><a href="https://element-plus.org/" target="_blank" rel="noopener noreferrer">elemet-plus</a>（已内置）</li>
-    <li><a href="https://antdv.com/" target="_blank" rel="noopener noreferrer">ant-design-vue</a></li>
-    <li><a href="https://vant-ui.github.io/vant/" target="_blank" rel="noopener noreferrer">vant</a></li>
-    <li><a href="https://nutui.jd.com/" target="_blank" rel="noopener noreferrer">nut-ui</a></li>
-  </ul>
-  <p>样式</p>
-  <ul>
-    <li><a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">tailwindcss</a>（已内置）</li>
-    <li><a href="https://github.com/unocss/unocss" target="_blank" rel="noopener noreferrer">unocss</a></li>
-  </ul>
-  <p>组合式</p>
-  <ul>
-    <li><a href="https://vueuse.org/" target="_blank" rel="noopener noreferrer">vue-use</a>（已内置）</li>
-  </ul>
-</details>
 
 ```sh
 # github
@@ -106,27 +89,9 @@ rm -rf presets
 
 ## [UniApp with Vue 3](https://uniapp.dcloud.io/)
 
-适用于小程序和移动端应用开发。
+uni-app 模板，适用于小程序和移动端应用开发。
 
 请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
-
-<details>
-  <summary>选型推荐</summary>
-  <p>组件库</p>
-  <ul>
-    <li><a href="https://github.com/dcloudio/uni-ui" target="_blank" rel="noopener noreferrer">uni-ui</a>（已内置）</li>
-  </ul>
-  <p>样式</p>
-  <ul>
-    <li><a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">tailwindcss</a>（已内置，可按原本习惯使用）</li>
-    <li><a href="https://github.com/unocss/unocss" target="_blank" rel="noopener noreferrer">unocss</a></li>
-  </ul>
-  <p>组合式</p>
-  <ul>
-    <li><a href="https://vueuse.org/" target="_blank" rel="noopener noreferrer">vue-use</a>（已内置）</li>
-    <li><a href="https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-app-use" target="_blank" rel="noopener noreferrer">uni-app-use</a>（已内置）</li>
-  </ul>
-</details>
 
 ```sh
 # github
@@ -142,7 +107,7 @@ rm -rf presets
 
 **计划内**
 
-适用于桌面端网页和移动端网页开发。
+nuxt 模板，适用于桌面端网页和移动端网页开发。
 
 请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
 
@@ -158,7 +123,7 @@ rm -rf presets
 
 ## [Koa](https://koajs.com)
 
-适用于原型后端服务开发。
+koa 模板，只适用于后端服务原型开发。
 
 ```sh
 # github
@@ -174,7 +139,7 @@ rm -rf presets
 
 **计划内**
 
-适用于非原型后端服务开发。
+nest 模板，适用于后端服务开发。
 
 ```sh
 # github
