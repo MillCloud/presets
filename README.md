@@ -156,6 +156,20 @@ cp presets/nuxt your-project-name
 rm -rf presets
 ```
 
+## [Koa](https://koajs.com)
+
+适用于原型后端服务开发。
+
+```sh
+# github
+degit MillCloud/presets/koa your-project-name
+
+# gitee
+git clone --depth 1 git@gitee.com:MillCloud/presets
+cp presets/koa your-project-name
+rm -rf presets
+```
+
 ## [Nest](https://nestjs.com/)
 
 **计划内**
