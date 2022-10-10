@@ -11,14 +11,13 @@
     "check:deps": "ncu",
     "check:types": "tsc --noEmit",
     "lint": "run-p lint:eslint lint:markdownlint check:types",
-    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue --ignore-path=.gitignore --cache --cache-location=node_modules/.vite/vite-plugin-eslint",
+    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue --ignore-path=.gitignore --cache",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
-    "lint:stylelint": "stylelint \"./**/*.{css,less,scss,sass,vue}\" --fix --allow-empty-input --ignore-path=.gitignore --cache --cache-location=node_modules/.vite/vite-plugin-stylelint",
     "prepare": "is-ci || husky install"
   },
   "dependencies": {
     "@faker-js/faker": "^7.5.0",
-    "@koa/cors": "^3.4.2",
+    "@koa/cors": "^4.0.0",
     "@koa/router": "^12.0.0",
     "koa": "^2.13.4",
     "koa-body": "^5.0.0",
@@ -33,7 +32,7 @@
     "ramda": "^0.28.0"
   },
   "devDependencies": {
-    "@modyqyw/fabric": "^5.9.1",
+    "@modyqyw/fabric": "^5.10.0",
     "@tsconfig/node16": "^1.0.3",
     "@types/koa": "^2.13.5",
     "@types/koa-joi-router": "^8.0.4",
@@ -54,14 +53,14 @@
     "lint-staged": "^13.0.3",
     "markdownlint-cli": "^0.32.2",
     "nodemon": "^2.0.20",
-    "npm-check-updates": "^16.3.8",
+    "npm-check-updates": "^16.3.11",
     "npm-run-all": "^4.1.5",
     "picocolors": "^1.0.0",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.5",
     "tsx": "^3.10.1",
-    "type-fest": "^3.0.0",
+    "type-fest": "^3.1.0",
     "typescript": "^4.8.4"
   }
 }
