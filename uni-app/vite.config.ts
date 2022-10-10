@@ -15,6 +15,8 @@ import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
+import progress from 'vite-plugin-progress';
+import timeReporter from 'vite-plugin-time-reporter';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -104,6 +106,8 @@ export default defineConfig({
       lintOnStart: true,
     }),
     inspect(),
+    progress(),
+    timeReporter(),
   ],
   resolve: {
     alias: {

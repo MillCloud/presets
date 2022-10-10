@@ -15,6 +15,8 @@ import stylelint from 'vite-plugin-stylelint';
 import compression from 'vite-plugin-compression';
 // import mkcert from 'vite-plugin-mkcert';
 import inspect from 'vite-plugin-inspect';
+import progress from 'vite-plugin-progress';
+import timeReporter from 'vite-plugin-time-reporter';
 import { dependencies } from './package.json';
 
 export default defineConfig({
@@ -93,6 +95,8 @@ export default defineConfig({
     //   source: 'coding',
     // }),
     inspect(),
+    progress(),
+    timeReporter(),
   ],
   resolve: {
     alias: {
