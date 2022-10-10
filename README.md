@@ -22,6 +22,8 @@ git config --global init.defaultBranch main
 - 2022-10-25: v18
 - 2021-10-26: v16
 
+请自行修改 `HBuilderX` 使用的 Node.js 路径。
+
 ### 依赖管理
 
 ```sh
