@@ -14,7 +14,7 @@ app
   .use(pinoLogger(pinoPrettyStream))
   // .use(sslify())
   .use(cors())
-  .use(body())
+  .use(body({ multipart: true }))
   .use(mount('/static', serve('./src/static')))
   .use(routes('/api'));
 
