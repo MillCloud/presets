@@ -44,7 +44,7 @@ export const showError = ({
   message,
   response,
   error,
-  showErrorType = 'modal' as TShowErrorType,
+  showErrorType = 'modal' as IUanShowErrorType,
   success,
   fail,
   complete,
@@ -52,8 +52,8 @@ export const showError = ({
   | {
       hasPrefix?: boolean;
       message?: string;
-      response?: IBaseResponse;
-      error?: IBaseError;
+      response?: IUanResponse;
+      error?: IUanError;
       showErrorType?: 'modal';
       success?: UniApp.ShowModalOptions['success'];
       fail?: UniApp.ShowModalOptions['fail'];
@@ -62,8 +62,8 @@ export const showError = ({
   | {
       hasPrefix?: boolean;
       message?: string;
-      response?: IBaseResponse;
-      error?: IBaseError;
+      response?: IUanResponse;
+      error?: IUanError;
       showErrorType: 'toast';
       success?: UniApp.ShowToastOptions['success'];
       fail?: UniApp.ShowToastOptions['fail'];
@@ -72,11 +72,11 @@ export const showError = ({
   // method
   const method =
     error?.config?.method ??
-    error?.request?.method ??
+    error?.task?.method ??
     // @ts-ignore
     error?.method ??
     response?.config?.method ??
-    response?.request?.method ??
+    response?.task?.method ??
     // @ts-ignore
     response?.method ??
     '';
@@ -85,11 +85,11 @@ export const showError = ({
   // url
   const url =
     error?.config?.url ??
-    error?.request?.url ??
+    error?.task?.url ??
     // @ts-ignore
     error?.url ??
     response?.config?.url ??
-    response?.request?.url ??
+    response?.task?.url ??
     // @ts-ignore
     response?.url ??
     '';
@@ -197,12 +197,12 @@ export const showError = ({
 export const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
-      showError({ error: error as IBaseError });
+      showError({ error: error as IUanError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
-      showError({ error: error as IBaseError });
+      showError({ error: error as IUanError });
     },
   }),
   defaultOptions: {
@@ -218,12 +218,8 @@ export const queryClient = new QueryClient({
           url = url.replace(`:${idx}`, param.toString() as string);
         }
         const params = key[2] as Record<string, any>;
-        const config = key[3] as IRequestConfig;
-        const response = await instance.request<
-          TResponseData,
-          TRequestData,
-          IRequestResponse<TResponseData, TRequestData>
-        >({
+        const config = key[3] as IUanConfig;
+        const response = await instance.request<IUanResponseData, IUanRequestData, IUanResponse>({
           method: 'GET',
           url,
           params,
@@ -242,7 +238,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showError({
               response,
-              error: response?.data as unknown as IBaseError,
+              error: response?.data as unknown as IUanError,
               showErrorType: config?.showErrorType,
             });
           }
@@ -256,12 +252,8 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('variables', variables);
         // console.log('');
-        const config = reactive({ ...(variables as IRequestConfig) });
-        const response = await instance.request<
-          TResponseData,
-          TRequestData,
-          IRequestResponse<TResponseData, TRequestData>
-        >({
+        const config = reactive({ ...(variables as IUanConfig) });
+        const response = await instance.request<IUanResponseData, IUanRequestData, IUanResponse>({
           method: 'POST',
           ...config,
         });
@@ -278,7 +270,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showError({
               response,
-              error: response?.data as unknown as IBaseError,
+              error: response?.data as unknown as IUanError,
               showErrorType: config?.showErrorType,
             });
           }

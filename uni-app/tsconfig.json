@@ -5,6 +5,7 @@
     "outDir": "dist",
     "allowJs": true,
     "jsx": "preserve",
+    "lib": ["ESNext"],
     "paths": {
       "@/*": ["./src/*"]
     },

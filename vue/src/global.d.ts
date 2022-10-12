@@ -1,24 +1,20 @@
 import type { AxiosError, AxiosResponse, AxiosRequestConfig } from 'axios';
 
 declare global {
-  type TShowErrorType = 'alert' | 'message' | 'notification';
-
-  interface IResponseData {
+  type IAxiosShowErrorType = 'alert' | 'message' | 'notification';
+  interface IAxiosResponseData {
     success: boolean;
     code: string;
     message: string;
     [key: string]: any;
   }
-
-  interface IResponse extends AxiosResponse<IResponseData> {}
-
-  interface IResponseError extends AxiosError<IResponseData> {
-    response?: IResponse;
+  interface IAxiosResponse extends AxiosResponse<IAxiosResponseData> {}
+  interface IAxiosResponseError extends AxiosError<IAxiosResponseData> {
+    response?: IAxiosResponse;
   }
-
-  interface IRequestConfig extends AxiosRequestConfig {
+  interface IAxiosRequestConfig extends AxiosRequestConfig {
     showError?: boolean;
-    showErrorType?: TShowErrorType;
+    showErrorType?: IAxiosShowErrorType;
   }
 }
 

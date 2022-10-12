@@ -5,7 +5,7 @@ const title = ref('Hello UniApp');
 
 const id = ref(1);
 
-const { data, isLoading } = useQuery<TResponseData, IRequestError>([
+const { data, isLoading } = useQuery<IUanResponseData, IUanRequestData>([
   computed(() => `/posts/${id.value}`),
 ]);
 </script>

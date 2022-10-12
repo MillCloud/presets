@@ -61,7 +61,7 @@ export const getUpdate = ({ hasLoading = false } = {}) => {
   }
   const { platform } = uni.getSystemInfoSync();
   plus.runtime.getProperty(plus.runtime.appid || '', (widgetInfo) => {
-    uanInstance<TResponseData, TRequestData>({
+    uanInstance<IUanResponseData, IUanRequestData>({
       // TODO 补充链接
       url: '',
       data: {

@@ -48,9 +48,9 @@ export const showError = ({
 }: {
   hasPrefix?: boolean;
   message?: string;
-  response?: IResponse;
-  error?: IResponseError;
-  showErrorType?: TShowErrorType;
+  response?: IAxiosResponse;
+  error?: IAxiosResponseError;
+  showErrorType?: IAxiosShowErrorType;
 } = {}) => {
   // method
   const method =
@@ -184,12 +184,12 @@ export const showError = ({
 export const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
-      showError({ error: error as IResponseError });
+      showError({ error: error as IAxiosResponseError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
-      showError({ error: error as IResponseError });
+      showError({ error: error as IAxiosResponseError });
     },
   }),
   defaultOptions: {
@@ -205,8 +205,8 @@ export const queryClient = new QueryClient({
           url = url.replace(`:${idx}`, param.toString() as string);
         }
         const params = key[2] as Record<string, any>;
-        const config = key[3] as IRequestConfig;
-        const response = await instance.request<IResponseData>({
+        const config = key[3] as IAxiosRequestConfig;
+        const response = await instance.request<IAxiosResponseData>({
           method: 'GET',
           url,
           params,
@@ -228,7 +228,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showError({
               response,
-              error: response?.data as unknown as IResponseError,
+              error: response?.data as unknown as IAxiosResponseError,
               showErrorType: config?.showErrorType,
             });
           }
@@ -242,8 +242,8 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('variables', variables);
         // console.log('');
-        const config = reactive({ ...(variables as IRequestConfig) });
-        const response = await instance.request<IResponseData>({
+        const config = reactive({ ...(variables as IAxiosRequestConfig) });
+        const response = await instance.request<IAxiosResponseData>({
           method: 'POST',
           ...config,
         });
@@ -263,7 +263,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showError({
               response,
-              error: response?.data as unknown as IResponseError,
+              error: response?.data as unknown as IAxiosResponseError,
               showErrorType: config?.showErrorType,
             });
           }
