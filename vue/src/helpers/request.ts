@@ -16,15 +16,17 @@ const instance = axios.create({
   headers: {
     ...Headers,
   },
-  paramsSerializer: (params: any) =>
-    qs.stringify(
-      Object.fromEntries(
-        Object.entries(params).filter(
-          ([, v]) =>
-            !['', 'undefined', 'null', undefined, null].includes((v as any)?.toString() ?? v),
+  paramsSerializer: {
+    serialize: (params) =>
+      qs.stringify(
+        Object.fromEntries(
+          Object.entries(params).filter(
+            ([, v]) =>
+              !['', 'undefined', 'null', undefined, null].includes((v as any)?.toString() ?? v),
+          ),
         ),
       ),
-    ),
+  },
 });
 instance.interceptors.request.use((config) => ({
   ...config,
