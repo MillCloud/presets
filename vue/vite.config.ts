@@ -103,4 +103,11 @@ export default defineConfig({
       '@': fileURLToPath(new URL('src', import.meta.url)),
     },
   },
+  test: {
+    coverage: {
+      provider: 'c8',
+      reporter: ['text', 'json', 'html'],
+    },
+    environment: 'jsdom',
+  },
 });
