@@ -12,13 +12,13 @@ declare global {
     message: string;
     [key: string]: any;
   }
-  interface IUanConfig<T = ResponseData, D = RequestData> extends UanConfig<T, D> {
+  interface IUanConfig<T = IUanResponseData, D = IUanRequestData> extends UanConfig<T, D> {
     showError?: boolean;
     showErrorType?: ShowErrorType;
   }
-  interface IUanResponse<T = ResponseData, D = RequestData> extends UanResponse<T, D> {}
-  type IUanPromise<T = TResponseData, D = TRequestData> = Promise<IUanResponse<T, D>>;
-  interface IUanError<T = ResponseData, D = RequestData> extends UanError<T, D> {
+  interface IUanResponse<T = IUanResponseData, D = IUanRequestData> extends UanResponse<T, D> {}
+  type IUanPromise<T = IUanResponseData, D = IUanRequestData> = Promise<IUanResponse<T, D>>;
+  interface IUanError<T = IUanResponseData, D = IUanRequestData> extends UanError<T, D> {
     response?: IUanResponse<T, D>;
   }
 }
