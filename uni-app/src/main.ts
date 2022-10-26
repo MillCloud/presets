@@ -1,4 +1,9 @@
-import 'core-js/actual';
+// import 'core-js/actual';
+import 'core-js/actual/array/iterator';
+import 'core-js/actual/promise';
+import 'core-js/actual/object/assign';
+import 'core-js/actual/promise/finally';
+import 'core-js/actual/string/replace-all';
 import { createSSRApp } from 'vue';
 
 import dayjs from 'dayjs';
