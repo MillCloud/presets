@@ -1,38 +1,31 @@
-/* eslint-disable no-console */
-import fs from 'node:fs';
-import path from 'node:path';
+import { existsSync, readdirSync, readFileSync, writeFileSync, lstatSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { logger, root } from './helpers';
 
-console.log('Patching dist/mp-alipay/pages/**/*.axml ...');
+const pagesDirPath = resolve(root, 'dist', 'mp-alipay', 'pages');
 
-const handleAddPageMeta = (pagesDirPath: string) => {
-  // make sure exist
-  if (!fs.existsSync(pagesDirPath)) {
-    console.log('Done with not exist.');
+logger.info('开始更新 dist/mp-alipay/pages/**/*.axml。');
+
+const handleAddPageMeta = (dirPath = pagesDirPath) => {
+  if (!existsSync(dirPath)) {
+    logger.info(`文件夹 ${dirPath} 不存在，跳过更新。`);
     return;
   }
-
-  // get pages dir
-  const pagesDir = fs.readdirSync(pagesDirPath);
-
-  // deal with .axml
-  const axmls = pagesDir.filter((item) => item.endsWith('.axml'));
+  const paths = readdirSync(dirPath).map((p) => resolve(dirPath, p));
+  const axmls = paths.filter((p) => p.endsWith('.axml') && lstatSync(p).isFile());
   for (const axml of axmls) {
-    const axmlPath = path.resolve(pagesDirPath, axml);
-    const axmlContent = fs.readFileSync(axmlPath, {
+    const content = readFileSync(axml, {
       encoding: 'utf8',
     });
-    if (!axmlContent.startsWith('<page-meta root-font-size="16px"></page-meta>')) {
-      fs.writeFileSync(axmlPath, `<page-meta root-font-size="16px"></page-meta>${axmlContent}`);
+    if (!content.startsWith('<page-meta root-font-size="16px"></page-meta>')) {
+      writeFileSync(axml, `<page-meta root-font-size="16px"></page-meta>${content}`);
     }
   }
-
-  // deal with folder
-  const dirs = pagesDir.filter((item) => !item.includes('.'));
+  logger.info(`已更新 ${dirPath} 文件夹下 ${axmls.length} 个 .axml 文件。`);
+  const dirs = paths.filter((p) => lstatSync(p).isDirectory());
   for (const dir of dirs) {
-    handleAddPageMeta(path.resolve(pagesDirPath, dir));
+    handleAddPageMeta(resolve(dirPath, dir));
   }
-  console.log('Done with exists.');
 };
 
-handleAddPageMeta(path.resolve('dist', 'mp-alipay', 'pages'));
-/* eslint-enable no-console */
+handleAddPageMeta(resolve(root, 'dist', 'mp-alipay', 'pages'));
