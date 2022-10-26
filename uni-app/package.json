@@ -44,7 +44,7 @@
     "prepare": "is-ci || husky install",
     "release": "release-it",
     "patch:mp-alipay": "tsx ./scripts/patch-mp-alipay.ts",
-    "patch:mp-alipay:watch": "nodemon --watch dist/mp-alipay/pages --ext axml --exec \"tsx\" ./scripts/patch-mp-alipay.ts",
+    "patch:mp-alipay:watch": "nodemon --watch dist/mp-alipay/pages --ext axml --delay 0.5 --exec \"tsx\" ./scripts/patch-mp-alipay.ts",
     "test:unit": "vitest run --coverage"
   },
   "dependencies": {
