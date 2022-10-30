@@ -147,7 +147,7 @@
     "unplugin-vue-macros": "^0.13.3",
     "vite": "^3.1.8",
     "vite-plugin-inspect": "^0.7.5",
-    "vite-plugin-progress": "^0.0.5",
+    "vite-plugin-progress": "^0.0.6",
     "vite-plugin-stylelint": "^3.0.8",
     "vite-plugin-time-reporter": "^2.0.0",
     "vite-plugin-uni-app-tailwind": "^0.7.0",
