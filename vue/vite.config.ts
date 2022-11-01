@@ -17,7 +17,6 @@ import compression from 'vite-plugin-compression';
 import inspect from 'vite-plugin-inspect';
 import progress from 'vite-plugin-progress';
 import timeReporter from 'vite-plugin-time-reporter';
-import { dependencies } from './package.json';
 
 export default defineConfig({
   build: {
@@ -37,7 +36,6 @@ export default defineConfig({
   },
   optimizeDeps: {
     disabled: false,
-    include: Object.keys(dependencies),
     exclude: ['vue-demi'],
   },
   plugins: [
