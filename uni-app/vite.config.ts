@@ -22,6 +22,7 @@ import timeReporter from 'vite-plugin-time-reporter';
 export default defineConfig({
   build: {
     target: 'es6',
+    cssTarget: 'chrome61',
   },
   css: {
     // FIX: not support postcss config file yet

@@ -25,6 +25,7 @@ export default defineConfig({
       include: [],
     },
     target: 'es6',
+    cssTarget: 'chrome61',
   },
   css: {
     preprocessorOptions: {
