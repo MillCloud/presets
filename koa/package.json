@@ -32,7 +32,7 @@
     "ramda": "^0.28.0"
   },
   "devDependencies": {
-    "@modyqyw/fabric": "^5.10.1",
+    "@modyqyw/fabric": "^5.11.0",
     "@tsconfig/node16": "^1.0.3",
     "@types/koa": "^2.13.5",
     "@types/koa-joi-router": "^8.0.4",
