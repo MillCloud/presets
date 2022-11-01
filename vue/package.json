@@ -23,6 +23,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "@iconify/vue": "^4.0.0",
+    "@lukemorales/query-key-factory": "^1.0.0",
     "@tanstack/vue-query": "^4.13.5",
     "@vueuse/core": "^9.4.0",
     "@vueuse/router": "^9.3.0",

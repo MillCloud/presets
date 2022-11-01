@@ -61,6 +61,7 @@
     "@dcloudio/uni-mp-weixin": "^3.0.0-alpha-3060820221027002",
     "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3060820221027002",
     "@dcloudio/uni-ui": "^1.4.23",
+    "@lukemorales/query-key-factory": "^1.0.0",
     "@tanstack/vue-query": "^4.13.5",
     "@vueuse/core": "^9.4.0",
     "change-case": "^4.1.2",
