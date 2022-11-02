@@ -2,8 +2,6 @@ import { fileURLToPath } from 'url';
 import { defineConfig } from 'vitest/config';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
-import iconsResolver from 'unplugin-icons/resolver';
-import icons from 'unplugin-icons/vite';
 import vueMacros from 'unplugin-vue-macros/vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
@@ -12,11 +10,10 @@ import nested from 'tailwindcss/nesting';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
 import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
+// import unocss from 'unocss/vite';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
-import progress from 'vite-plugin-progress';
-import timeReporter from 'vite-plugin-time-reporter';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -79,14 +76,10 @@ export default defineConfig({
         //     }
         //   },
         // },
-        iconsResolver(),
       ],
       types: [],
     }),
-    icons({
-      compiler: 'vue3',
-      defaultClass: 'el-icon',
-    }),
+    // unocss(),
     vueMacros(),
     uni({
       vueOptions: {
@@ -107,8 +100,6 @@ export default defineConfig({
       lintOnStart: true,
     }),
     inspect(),
-    progress(),
-    timeReporter(),
   ],
   resolve: {
     alias: {
