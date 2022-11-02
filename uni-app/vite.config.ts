@@ -5,12 +5,16 @@ import vueComponents from 'unplugin-vue-components/vite';
 import vueMacros from 'unplugin-vue-macros/vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
+import { basePreset, elementPlusPreset, miniprogramBasePreset } from 'tailwind-extensions';
+import typography from '@tailwindcss/typography';
+import lineClamp from '@tailwindcss/line-clamp';
 // @ts-ignore
 import nested from 'tailwindcss/nesting';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
 import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
-// import unocss from 'unocss/vite';
+import unocss from 'unocss/vite';
+import { presetIcons } from 'unocss';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
@@ -26,7 +30,23 @@ export default defineConfig({
     postcss: {
       plugins: [
         nested(),
-        tailwindcss(),
+        // FIX: [plugin:unocss:global:build:scan] this.addWatchFile is not a function
+        tailwindcss({
+          config: {
+            presets: [
+              basePreset,
+              elementPlusPreset({
+                baseSelectors: [':root', 'page'],
+              }),
+              miniprogramBasePreset,
+            ],
+            plugins: [typography, lineClamp],
+            content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+            theme: {
+              screens: {},
+            },
+          },
+        }),
         postcssPresetEnv({
           stage: 3,
           features: { 'nesting-rules': false },
@@ -72,7 +92,10 @@ export default defineConfig({
       types: [],
     }),
     vueMacros(),
-    // unocss(),
+    unocss({
+      presets: [presetIcons()],
+      safelist: ['dark'],
+    }),
     uni({
       vueOptions: {
         reactivityTransform: true,
