@@ -96,7 +96,7 @@
     "sass": "^1.55.0",
     "shelljs": "^0.8.5",
     "stylelint": "^14.14.0",
-    "tailwind-extensions": "^0.18.0",
+    "tailwind-extensions": "^0.19.0",
     "tailwindcss": "^3.2.1",
     "terser": "^5.15.1",
     "tsx": "^3.11.0",
