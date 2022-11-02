@@ -7,9 +7,6 @@ import unocss from 'unocss/vite';
 import { presetIcons } from 'unocss';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
-import { basePreset, elementPlusPreset, miniprogramBasePreset } from 'tailwind-extensions';
-import typography from '@tailwindcss/typography';
-import lineClamp from '@tailwindcss/line-clamp';
 // @ts-ignore
 import nested from 'tailwindcss/nesting';
 // @ts-ignore
@@ -18,6 +15,7 @@ import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
+import tailwindcssConfig from './tailwind.config.cjs';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -32,20 +30,7 @@ export default defineConfig({
         nested(),
         // FIX: [plugin:unocss:global:build:scan] this.addWatchFile is not a function
         tailwindcss({
-          config: {
-            presets: [
-              basePreset,
-              elementPlusPreset({
-                baseSelectors: [':root', 'page'],
-              }),
-              miniprogramBasePreset,
-            ],
-            plugins: [typography, lineClamp],
-            content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-            theme: {
-              screens: {},
-            },
-          },
+          config: tailwindcssConfig,
         }),
         postcssPresetEnv({
           stage: 3,
