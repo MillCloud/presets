@@ -19,7 +19,7 @@ import '@/styles/preflight.css';
 import 'modern-normalize';
 import '@/styles/tailwind.css';
 import '@/styles/global.css';
-import '@/styles/remixicon.css';
+// import 'uno.css';
 
 dayjs.locale('zh-cn');
 dayjs.extend(customParseFormat);
