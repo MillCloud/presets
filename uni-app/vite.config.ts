@@ -3,6 +3,8 @@ import { defineConfig } from 'vitest/config';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import vueMacros from 'unplugin-vue-macros/vite';
+import unocss from 'unocss/vite';
+import { presetIcons } from 'unocss';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
 import { basePreset, elementPlusPreset, miniprogramBasePreset } from 'tailwind-extensions';
@@ -13,8 +15,6 @@ import nested from 'tailwindcss/nesting';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
 import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
-import unocss from 'unocss/vite';
-import { presetIcons } from 'unocss';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
