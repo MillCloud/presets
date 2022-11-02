@@ -10,7 +10,7 @@ import nested from 'tailwindcss/nesting';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
 import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
-// import unocss from 'unocss/vite';
+import unocss from 'unocss/vite';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
@@ -71,7 +71,7 @@ export default defineConfig({
       ],
       types: [],
     }),
-    // unocss(),
+    unocss(),
     vueMacros(),
     uni({
       vueOptions: {
