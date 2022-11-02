@@ -8,6 +8,11 @@ const id = ref(1);
 const { data, isLoading } = useQuery<IUanResponseData, IUanRequestData>([
   computed(() => `/posts/${id.value}`),
 ]);
+
+const isPrimaryButtonDisabled = ref(false);
+const handleClickPrimaryButton = () => {
+  isPrimaryButtonDisabled.value = !isPrimaryButtonDisabled.value;
+};
 </script>
 
 <template>
@@ -21,14 +26,18 @@ const { data, isLoading } = useQuery<IUanResponseData, IUanRequestData>([
         class="m-4 flex h-8 flex-auto items-center justify-center rounded border border-solid border-gray-300 bg-gray-100 px-4 transition"
         hover-class="bg-primary border-primary text-white"
       >
-        default
+        Click me
       </button>
       <button
-        class="m-4 flex h-8 flex-auto items-center justify-center rounded border border-solid border-primary !bg-primary-disabled px-4 !text-white transition"
+        class="m-4 flex h-8 flex-auto items-center justify-center rounded border border-solid px-4 !text-white transition"
+        :class="{
+          'border-primary bg-primary': !isPrimaryButtonDisabled,
+          '!border-primary-disabled !bg-primary-disabled': isPrimaryButtonDisabled,
+        }"
         hover-class="bg-primary-darken-1 border-primary-darken-1"
-        disabled
+        @click="handleClickPrimaryButton"
       >
-        primary disabled
+        Click me
       </button>
     </view>
     <view class="flex w-full justify-center p-4">
