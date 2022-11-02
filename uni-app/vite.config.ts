@@ -54,14 +54,6 @@ export default defineConfig({
     vueComponents({
       dirs: ['src/components'],
       resolvers: [
-        {
-          type: 'component',
-          resolve: (componentName) => {
-            if (componentName === 'VIcon') {
-              return { name: 'Icon', from: '@iconify/vue' };
-            }
-          },
-        },
         // {
         //   // FIX: breaks building
         //   type: 'component',
