@@ -18,6 +18,7 @@ import 'modern-normalize';
 import '@/styles/preflight.css';
 import '@/styles/element.scss';
 import '@/styles/tailwind.css';
+import 'uno.css';
 import '@/styles/global.scss';
 import '@/guard';
 

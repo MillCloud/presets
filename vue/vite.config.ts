@@ -10,13 +10,12 @@ import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import iconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
+import unocss from 'unocss/vite';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import compression from 'vite-plugin-compression';
 // import mkcert from 'vite-plugin-mkcert';
 import inspect from 'vite-plugin-inspect';
-import progress from 'vite-plugin-progress';
-import timeReporter from 'vite-plugin-time-reporter';
 
 export default defineConfig({
   build: {
@@ -80,6 +79,7 @@ export default defineConfig({
       compiler: 'vue3',
       defaultClass: 'el-icon el-icon-',
     }),
+    unocss(),
     eslint({
       fix: true,
       lintOnStart: true,
@@ -94,8 +94,6 @@ export default defineConfig({
     //   source: 'coding',
     // }),
     inspect(),
-    progress(),
-    timeReporter(),
   ],
   resolve: {
     alias: {
