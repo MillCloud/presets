@@ -89,7 +89,7 @@
     "@dcloudio/uni-automator": "^3.0.0-alpha-3060820221027002",
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3060820221027002",
     "@dcloudio/vite-plugin-uni": "^3.0.0-alpha-3060820221027002",
-    "@iconify/json": "^2.1.131",
+    "@iconify/json": "^2.1.132",
     "@modyqyw/fabric": "^5.11.0",
     "@modyqyw/vite-plugin-eslint": "^2.0.10",
     "@release-it/conventional-changelog": "^5.1.1",
