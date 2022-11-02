@@ -10,6 +10,7 @@ uni-app 模板，适用于小程序和移动端应用开发。
 
 - [uni-ui](https://github.com/dcloudio/uni-ui) - 官方 UI 框架
 - [tailwindcss](https://tailwindcss.com) - 原子化 CSS，[vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) 提供语法支持
+- [unocss](hhttps://github.com/unocss/unocss) - 原子化 CSS，考虑到稳定性问题，这里用 UnoCSS 提供图标支持
 
 <details>
   <summary> uni-ui 外的选择 </summary>
@@ -17,13 +18,6 @@ uni-app 模板，适用于小程序和移动端应用开发。
 - [tm-ui](https://tmui.design/)
 - [uview-plus](https://github.com/ijry/uview-plus)
 - [thor-ui](https://thorui.cn/doc/)
-
-</details>
-
-<details>
-  <summary> tailwindcss 外的选择 </summary>
-
-- [unocss](hhttps://github.com/unocss/unocss)
 
 </details>
 
