@@ -1,3 +1,5 @@
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import Koa from 'koa';
 import pinoLogger from 'koa-pino-logger';
 // import sslify from 'koa-sslify';
@@ -8,6 +10,8 @@ import { koaBody as body } from 'koa-body';
 import { routes } from '@/routes';
 import { pinoPrettyStream, logger } from '@/helpers';
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 export const app = new Koa();
 
 app
@@ -15,7 +19,7 @@ app
   // .use(sslify())
   .use(cors())
   .use(body({ multipart: true }))
-  .use(mount('/static', serve('./src/static')))
+  .use(mount('/static', serve(resolve(__dirname, 'static'))))
   .use(routes('/api'));
 
 export const startApp = () =>
