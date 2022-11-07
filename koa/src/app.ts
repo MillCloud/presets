@@ -4,7 +4,7 @@ import pinoLogger from 'koa-pino-logger';
 import cors from '@koa/cors';
 import mount from 'koa-mount';
 import serve from 'koa-static';
-import body from 'koa-body';
+import { koaBody as body } from 'koa-body';
 import { routes } from '@/routes';
 import { pinoPrettyStream, logger } from '@/helpers';
 
