@@ -2,6 +2,7 @@
   "extends": "@tsconfig/node18",
   "compilerOptions": {
     "baseUrl": ".",
+    "module": "es2022",
     "resolveJsonModule": true,
     "paths": {
       "@/*": ["./src/*"]
