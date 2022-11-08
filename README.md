@@ -137,11 +137,25 @@ cp presets/koa your-project-name
 rm -rf presets
 ```
 
+## [Fastify](https://www.fastify.io/)
+
+fastify 模板，只适用于后端服务原型开发。
+
+```sh
+# github
+tiged MillCloud/presets/fastify your-project-name
+
+# gitee
+git clone --depth 1 git@gitee.com:MillCloud/presets
+cp presets/fastify your-project-name
+rm -rf presets
+```
+
 ## [Nest](https://nestjs.com/)
 
 **计划内**
 
-nest 模板，适用于后端服务开发。
+nest 模板，适用于后端服务开发，基于 fastify。
 
 ```sh
 # github
