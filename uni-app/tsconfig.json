@@ -11,6 +11,8 @@
     },
     "types": [
       "@dcloudio/types",
+      "@mini-types/alipay",
+      "miniprogram-api-typings",
       "type-fest",
       "uni-app-types",
       "uni-cloud-types",
