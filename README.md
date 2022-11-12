@@ -107,7 +107,7 @@ rm -rf presets
 
 ## [Nuxt 3](https://v3.nuxtjs.org/)
 
-**计划内**
+**计划内，Nuxt 3 Stable 后**
 
 nuxt 模板，适用于桌面端网页和移动端网页开发。
 
@@ -153,7 +153,7 @@ rm -rf presets
 
 ## [Nest](https://nestjs.com/)
 
-**计划内**
+**计划内，TypeScript Decorator 落地并被 Nest 支持后**
 
 nest 模板，适用于后端服务开发，基于 fastify。
 
