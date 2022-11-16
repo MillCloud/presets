@@ -9,7 +9,7 @@ uni-app 模板，适用于小程序和移动端应用开发。
 ### UI
 
 - [uni-ui](https://github.com/dcloudio/uni-ui) - 官方 UI 框架
-- [tailwindcss](https://tailwindcss.com) - 原子化 CSS，[vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) 提供语法支持
+- [tailwindcss](https://tailwindcss.com) - 原子化 CSS，[@uni-helper/vite-plugin-uni-tailwind](https://github.com/uni-helper/vite-plugin-uni-tailwind) 提供语法支持
 - [unocss](hhttps://github.com/unocss/unocss) - 原子化 CSS，考虑到稳定性问题，这里 UnoCSS 仅提供图标支持
 
 <details>
@@ -24,7 +24,7 @@ uni-app 模板，适用于小程序和移动端应用开发。
 ### 组合式
 
 - [vue-use](https://vueuse.org/)
-- [uni-app-use](https://github.com/ModyQyW/uni-helper/tree/main/packages/uni-app-use)
+- [@uni-helper/uni-use](https://github.com/uni-helper/uni-use)
 
 ### 状态管理
 

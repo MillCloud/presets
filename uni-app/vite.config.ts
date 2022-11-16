@@ -11,7 +11,7 @@ import tailwindcss from 'tailwindcss';
 import nested from 'tailwindcss/nesting';
 // @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
-import uniAppTailwind from 'vite-plugin-uni-app-tailwind';
+import uniTailwind from '@uni-helper/vite-plugin-uni-tailwind';
 import eslint from '@modyqyw/vite-plugin-eslint';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
@@ -90,7 +90,7 @@ export default defineConfig({
         targets: ['ios >= 10', 'chrome >= 53'],
       },
     }),
-    uniAppTailwind(),
+    uniTailwind(),
     eslint({
       fix: true,
       lintOnStart: true,

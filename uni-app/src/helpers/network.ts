@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import uan from 'uni-app-network';
+import un from '@uni-helper/uni-network';
 import qs from 'qs';
 import { QueryClient, QueryCache, MutationCache } from '@tanstack/vue-query';
 import { Headers } from '@/constants';
@@ -10,7 +10,7 @@ import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
-const instance = uan.create({
+const instance = un.create({
   baseUrl: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/',
   timeout: 30000,
   headers: {
@@ -36,7 +36,7 @@ instance.interceptors.request.use((config) => ({
   },
 }));
 
-export { instance as uanInstance };
+export { instance as unInstance };
 
 let hasModal = false;
 export const showError = ({
@@ -44,7 +44,7 @@ export const showError = ({
   message,
   response,
   error,
-  showErrorType = 'modal' as IUanShowErrorType,
+  showErrorType = 'modal' as IUnShowErrorType,
   success,
   fail,
   complete,
@@ -52,8 +52,8 @@ export const showError = ({
   | {
       hasPrefix?: boolean;
       message?: string;
-      response?: IUanResponse;
-      error?: IUanError;
+      response?: IUnResponse;
+      error?: IUnError;
       showErrorType?: 'modal';
       success?: UniApp.ShowModalOptions['success'];
       fail?: UniApp.ShowModalOptions['fail'];
@@ -62,8 +62,8 @@ export const showError = ({
   | {
       hasPrefix?: boolean;
       message?: string;
-      response?: IUanResponse;
-      error?: IUanError;
+      response?: IUnResponse;
+      error?: IUnError;
       showErrorType: 'toast';
       success?: UniApp.ShowToastOptions['success'];
       fail?: UniApp.ShowToastOptions['fail'];
@@ -197,12 +197,12 @@ export const showError = ({
 export const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
-      showError({ error: error as IUanError });
+      showError({ error: error as IUnError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
-      showError({ error: error as IUanError });
+      showError({ error: error as IUnError });
     },
   }),
   defaultOptions: {
@@ -218,8 +218,8 @@ export const queryClient = new QueryClient({
           url = url.replace(`:${idx}`, param.toString() as string);
         }
         const params = key[2] as Record<string, any>;
-        const config = key[3] as IUanConfig;
-        const response = await instance.request<IUanResponseData, IUanRequestData, IUanResponse>({
+        const config = key[3] as IUnConfig;
+        const response = await instance.request<IUnResponseData, IUnRequestData, IUnResponse>({
           method: 'GET',
           url,
           params,
@@ -238,7 +238,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showError({
               response,
-              error: response?.data as unknown as IUanError,
+              error: response?.data as unknown as IUnError,
               showErrorType: config?.showErrorType,
             });
           }
@@ -252,8 +252,8 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('variables', variables);
         // console.log('');
-        const config = reactive({ ...(variables as IUanConfig) });
-        const response = await instance.request<IUanResponseData, IUanRequestData, IUanResponse>({
+        const config = reactive({ ...(variables as IUnConfig) });
+        const response = await instance.request<IUnResponseData, IUnRequestData, IUnResponse>({
           method: 'POST',
           ...config,
         });
@@ -270,7 +270,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showError({
               response,
-              error: response?.data as unknown as IUanError,
+              error: response?.data as unknown as IUnError,
               showErrorType: config?.showErrorType,
             });
           }

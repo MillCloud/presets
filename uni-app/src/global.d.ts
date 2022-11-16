@@ -1,25 +1,25 @@
-import type { UanError, UanResponse, UanConfig } from 'uni-app-network';
+import type { UnError, UnResponse, UnConfig } from '@uni-helper/uni-network';
 
 declare global {
-  /** uni-app-network */
-  type IUanShowErrorType = 'toast' | 'modal';
-  interface IUanRequestData {
+  /** @uni-helper/uni-network */
+  type IUnShowErrorType = 'toast' | 'modal';
+  interface IUnRequestData {
     [key: string]: any;
   }
-  interface IUanResponseData {
+  interface IUnResponseData {
     success: boolean;
     code: string;
     message: string;
     [key: string]: any;
   }
-  interface IUanConfig<T = IUanResponseData, D = IUanRequestData> extends UanConfig<T, D> {
+  interface IUnConfig<T = IUnResponseData, D = IUnRequestData> extends UnConfig<T, D> {
     showError?: boolean;
     showErrorType?: ShowErrorType;
   }
-  interface IUanResponse<T = IUanResponseData, D = IUanRequestData> extends UanResponse<T, D> {}
-  type IUanPromise<T = IUanResponseData, D = IUanRequestData> = Promise<IUanResponse<T, D>>;
-  interface IUanError<T = IUanResponseData, D = IUanRequestData> extends UanError<T, D> {
-    response?: IUanResponse<T, D>;
+  interface IUnResponse<T = IUnResponseData, D = IUnRequestData> extends UnResponse<T, D> {}
+  type IUnPromise<T = IUnResponseData, D = IUnRequestData> = Promise<IUnResponse<T, D>>;
+  interface IUnError<T = IUnResponseData, D = IUnRequestData> extends UnError<T, D> {
+    response?: IUnResponse<T, D>;
   }
 }
 

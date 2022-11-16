@@ -4,7 +4,7 @@
 import manifest from '@/manifest.json';
 import { hideLoading, showLoading } from './loading';
 import { showModal } from './modal';
-import { uanInstance } from './network';
+import { unInstance } from './network';
 
 /* #ifdef APP-PLUS */
 const removeInstalledResources = () => {
@@ -61,7 +61,7 @@ export const getUpdate = ({ hasLoading = false } = {}) => {
   }
   const { platform } = uni.getSystemInfoSync();
   plus.runtime.getProperty(plus.runtime.appid || '', (widgetInfo) => {
-    uanInstance<IUanResponseData, IUanRequestData>({
+    unInstance<IUnResponseData, IUnRequestData>({
       // TODO 补充链接
       url: '',
       data: {

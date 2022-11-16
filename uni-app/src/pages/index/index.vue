@@ -5,7 +5,7 @@ const title = ref('Hello Vue & UniApp');
 
 const id = ref(1);
 
-const { data, isLoading } = useQuery<IUanResponseData, IUanRequestData>([
+const { data, isLoading } = useQuery<IUnResponseData, IUnRequestData>([
   computed(() => `/posts/${id.value}`),
 ]);
 
