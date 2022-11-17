@@ -116,6 +116,8 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
+.nitro
+.output
 dist
 
 # Rax.js build
