@@ -24,11 +24,11 @@ export default defineConfig({
     cssTarget: 'chrome61',
   },
   css: {
-    // FIX: not support postcss config file yet
+    // FIXME not support postcss config file yet
     postcss: {
       plugins: [
         nested(),
-        // FIX: [plugin:unocss:global:build:scan] this.addWatchFile is not a function
+        // FIXME [plugin:unocss:global:build:scan] this.addWatchFile is not a function
         tailwindcss({
           config: tailwindcssConfig,
         }),
@@ -60,7 +60,7 @@ export default defineConfig({
       dirs: ['src/components'],
       resolvers: [
         // {
-        //   // FIX: breaks building
+        //   // FIXME breaks building
         //   type: 'component',
         //   resolve: (componentName) => {
         //     if (componentName.startsWith('Uni')) {
