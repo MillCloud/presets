@@ -17,9 +17,9 @@ import { vueQueryPluginOptions } from './helpers';
 
 import '@/styles/preflight.css';
 import 'modern-normalize';
+import '@/styles/global.css';
 import '@/styles/tailwind.css';
 import 'uno.css';
-import '@/styles/global.css';
 
 dayjs.locale('zh-cn');
 dayjs.extend(customParseFormat);
