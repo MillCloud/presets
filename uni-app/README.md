@@ -26,9 +26,18 @@ uni-app 模板，适用于小程序和移动端应用开发。
 - [vue-use](https://vueuse.org/)
 - [@uni-helper/uni-use](https://github.com/uni-helper/uni-use)
 
+### 路由
+
+- [自带路由](https://uniapp.dcloud.net.cn/api/router.html)
+
 ### 状态管理
 
 - [pinia](https://pinia.vuejs.org/)
+
+## 请求
+
+- [@uni-helper/uni-network](https://github.com/uni-helper/uni-network)
+- [@tanstack/vue-query](https://tanstack.com/query)
 
 ### 其它插件
 

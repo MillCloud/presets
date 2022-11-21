@@ -38,6 +38,11 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 
 - [pinia](https://pinia.vuejs.org/)
 
+### 请求
+
+- [axios](https://github.com/axios/axios)
+- [@tanstack/vue-query](https://tanstack.com/query)
+
 ### 其它插件
 
 - [unplugin-vue-macros](https://github.com/sxzz/unplugin-vue-macros)
