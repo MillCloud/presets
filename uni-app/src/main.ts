@@ -17,7 +17,7 @@ import { vueQueryPluginOptions } from './helpers';
 
 import '@/styles/preflight.css';
 import 'modern-normalize';
-import '@/styles/global.css';
+import '@/styles/global.scss';
 import '@/styles/tailwind.css';
 import 'uno.css';
 
