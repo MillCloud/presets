@@ -1,0 +1,10 @@
+@use 'element-plus/theme-chalk/src/index.scss' as *;
+@use 'element-plus/theme-chalk/src/display.scss' as *;
+
+.el-select {
+  @apply w-full;
+}
+
+.el-collapse-item__arrow {
+  @apply order-first;
+}

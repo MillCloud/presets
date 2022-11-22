@@ -1,0 +1,14 @@
+{
+  // https://nuxt.com/docs/guide/concepts/typescript
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "element-plus/global",
+      "element-pro-components/types/components",
+      "jsdom",
+      "node",
+      "type-fest",
+      "unplugin-icons/types/vue"
+    ]
+  }
+}

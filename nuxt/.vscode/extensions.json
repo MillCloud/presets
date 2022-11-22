@@ -1,0 +1,32 @@
+{
+  "recommendations": [
+    "russell.any-rule",
+    "streetsidesoftware.code-spell-checker",
+    "adam-bender.commit-message-editor",
+    "dotenv.dotenv-vscode",
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "mhutchie.git-graph",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "lokalise.i18n-ally",
+    "kisstkondoros.vscode-gutter-preview",
+    "yzhang.markdown-all-in-one",
+    "shd101wyy.markdown-preview-enhanced",
+    "davidanson.vscode-markdownlint",
+    "esbenp.prettier-vscode",
+    "iceworks-team.iceworks-style-helper",
+    "chrmarti.regex",
+    "syler.sass-indented",
+    "stylelint.vscode-stylelint",
+    "jock.svg",
+    "bradlc.vscode-tailwindcss",
+    "gruntfuggly.todo-tree",
+    "redhat.vscode-yaml",
+    "Vue.volar"
+  ],
+  // 这实际上不会起作用
+  // 参考 https://github.com/johnsoncodehk/volar/discussions/471
+  // 参考 https://github.com/microsoft/vscode/issues/40239
+  "disabled": ["vscode.typescript-language-features"]
+}
