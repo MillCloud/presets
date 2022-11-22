@@ -53,7 +53,16 @@ export default defineConfig({
   },
   plugins: [
     autoImport({
-      dirs: ['src/composables', 'src/composables/**', 'src/stores', 'src/stores/**'],
+      dirs: [
+        'src/composables',
+        'src/composables/**',
+        'src/helpers',
+        'src/helpers/**',
+        'src/stores',
+        'src/stores/**',
+        'src/utils',
+        'src/utils/**',
+      ],
       imports: ['vue', 'vue/macros', 'pinia', '@vueuse/core', 'uni-app'],
     }),
     vueComponents({
