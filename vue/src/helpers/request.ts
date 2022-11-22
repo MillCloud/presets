@@ -7,6 +7,23 @@ import { Headers } from '@/constants';
 import router from '@/router';
 import { getToken, setToken } from './storage';
 import type { VueQueryPluginOptions } from '@tanstack/vue-query';
+import type { AxiosError, AxiosResponse, AxiosRequestConfig } from 'axios';
+
+export type IRequestShowErrorType = 'alert' | 'message' | 'notification';
+export interface IResponseData {
+  success: boolean;
+  code: string;
+  message: string;
+  [key: string]: any;
+}
+export interface IResponse extends AxiosResponse<IResponseData> {}
+export interface IResponseError extends AxiosError<IResponseData> {
+  response?: IResponse;
+}
+export interface IRequestConfig extends AxiosRequestConfig {
+  showError?: boolean;
+  showErrorType?: IRequestShowErrorType;
+}
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
@@ -41,18 +58,18 @@ instance.interceptors.request.use((config) => ({
 export { instance as axiosInstance };
 
 let hasMessageBox = false;
-export const showError = ({
+export const showRequestError = ({
   hasPrefix = true,
   message,
   response,
   error,
-  showErrorType = 'alert',
+  type = 'alert',
 }: {
   hasPrefix?: boolean;
   message?: string;
-  response?: IAxiosResponse;
-  error?: IAxiosResponseError;
-  showErrorType?: IAxiosShowErrorType;
+  response?: IResponse;
+  error?: IResponseError;
+  type?: IRequestShowErrorType;
 } = {}) => {
   // method
   const method =
@@ -152,7 +169,7 @@ export const showError = ({
     .filter((item) => !!item)
     .join('<br />')}`;
 
-  if (showErrorType === 'alert' && !hasMessageBox) {
+  if (type === 'alert' && !hasMessageBox) {
     hasMessageBox = true;
     ElMessageBox.alert(content, {
       title: '错误',
@@ -167,7 +184,7 @@ export const showError = ({
       });
     return;
   }
-  if (showErrorType === 'notification') {
+  if (type === 'notification') {
     ElNotification.error({
       title: '错误',
       message: content,
@@ -175,7 +192,7 @@ export const showError = ({
     });
     return;
   }
-  if (showErrorType === 'message') {
+  if (type === 'message') {
     ElMessage.error({
       message: content,
       dangerouslyUseHTMLString: true,
@@ -186,12 +203,12 @@ export const showError = ({
 export const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
-      showError({ error: error as IAxiosResponseError });
+      showRequestError({ error: error as IResponseError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
-      showError({ error: error as IAxiosResponseError });
+      showRequestError({ error: error as IResponseError });
     },
   }),
   defaultOptions: {
@@ -207,8 +224,8 @@ export const queryClient = new QueryClient({
           url = url.replace(`:${idx}`, param.toString() as string);
         }
         const params = key[2] as Record<string, any>;
-        const config = key[3] as IAxiosRequestConfig;
-        const response = await instance.request<IAxiosResponseData>({
+        const config = key[3] as IRequestConfig;
+        const response = await instance.request<IResponseData>({
           method: 'GET',
           url,
           params,
@@ -217,7 +234,7 @@ export const queryClient = new QueryClient({
         if (!(response?.data?.success ?? true)) {
           if (reSignInCodes.has(response?.data.code ?? '')) {
             setToken();
-            showError({
+            showRequestError({
               hasPrefix: false,
               message: '请重新登录。',
             });
@@ -228,10 +245,10 @@ export const queryClient = new QueryClient({
               },
             });
           } else if (config?.showError ?? true) {
-            showError({
+            showRequestError({
               response,
-              error: response?.data as unknown as IAxiosResponseError,
-              showErrorType: config?.showErrorType,
+              error: response?.data as unknown as IResponseError,
+              type: config?.showErrorType,
             });
           }
         }
@@ -244,15 +261,15 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('variables', variables);
         // console.log('');
-        const config = reactive({ ...(variables as IAxiosRequestConfig) });
-        const response = await instance.request<IAxiosResponseData>({
+        const config = reactive({ ...(variables as IRequestConfig) });
+        const response = await instance.request<IResponseData>({
           method: 'POST',
           ...config,
         });
         if (!(response?.data?.success ?? true)) {
           if (reSignInCodes.has(response?.data?.code ?? '')) {
             setToken();
-            showError({
+            showRequestError({
               hasPrefix: false,
               message: '请重新登录。',
             });
@@ -263,10 +280,10 @@ export const queryClient = new QueryClient({
               },
             });
           } else if (config?.showError ?? true) {
-            showError({
+            showRequestError({
               response,
-              error: response?.data as unknown as IAxiosResponseError,
-              showErrorType: config?.showErrorType,
+              error: response?.data as unknown as IResponseError,
+              type: config?.showErrorType,
             });
           }
         }
