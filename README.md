@@ -107,9 +107,7 @@ rm -rf presets
 
 ## [Nuxt 3](https://v3.nuxtjs.org/)
 
-**计划内，Nuxt 3 Stable 后**
-
-nuxt 模板，适用于桌面端网页和移动端网页开发。
+nuxt 模板，适用于对 SSR 有要求的桌面端网页和移动端网页开发。
 
 请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
 
