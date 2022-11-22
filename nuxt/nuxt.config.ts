@@ -6,7 +6,16 @@ import viteInspect from 'vite-plugin-inspect';
 
 export default defineNuxtConfig({
   imports: {
-    dirs: ['@/composables', '@/composables/**', '@/stores', '@/stores/**'],
+    dirs: [
+      '@/composables',
+      '@/composables/**',
+      '@/helpers',
+      '@/helpers/**',
+      '@/stores',
+      '@/stores/**',
+      '@/utils',
+      '@/utils/**',
+    ],
   },
   app: {
     head: {
@@ -25,14 +34,25 @@ export default defineNuxtConfig({
       noscript: [{ children: '<strong>请允许 JavaScript 执行。</strong>' }],
     },
   },
+  build: {
+    transpile: ['element-plus/es'],
+  },
   css: [
+    'element-pro-components/lib/styles/index',
     'nprogress/nprogress.css',
     'modern-normalize',
     '@/styles/preflight.css',
     '@/styles/element.scss',
     '@/styles/global.scss',
   ],
-  modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@vueuse/nuxt', '@unocss/nuxt'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@vueuse/nuxt',
+    '@unocss/nuxt',
+    // 'unplugin-icons/nuxt',
+    'nuxt-typed-router',
+  ],
   experimental: {
     reactivityTransform: true,
   },

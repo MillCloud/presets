@@ -47,7 +47,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/eslint-parser": "^7.19.1",
-    "@commitlint/cli": "^17.2.0",
+    "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
     "@commitlint/prompt": "^17.3.0",
     "@iconify/json": "^2.1.141",
@@ -88,6 +88,7 @@
     "npm-check-updates": "^16.4.1",
     "npm-run-all": "^4.1.5",
     "nuxt": "^3.0.0",
+    "nuxt-typed-router": "^1.2.3",
     "picocolors": "^1.0.0",
     "postcss": "^8.4.19",
     "postcss-preset-env": "^7.8.3",

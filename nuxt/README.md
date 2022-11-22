@@ -5,14 +5,10 @@
 <details>
   <summary>tasks</summary>
 
-- [ ] postcss configs
-- [ ] legacy
-- [ ] unplugin-icons
-- [ ] router & routes
-- [ ] helpers
-- [ ] pages
-- [ ] layouts
-- [ ] element-plus
+- [ ] is postcss working?
+- [ ] legacy bundle <https://github.com/nuxt/framework/issues/6716>
+- [ ] unplugin-icons <https://github.com/antfu/unplugin-icons/pull/250>
+- [ ] redirect because of request failure
 
 </details>
 
