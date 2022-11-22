@@ -5,15 +5,9 @@ import 'core-js/actual/object/assign';
 import 'core-js/actual/promise/finally';
 import 'core-js/actual/string/replace-all';
 import { createSSRApp } from 'vue';
-
-import dayjs from 'dayjs';
-import 'dayjs/locale/zh-cn';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
-
-import { VueQueryPlugin } from '@tanstack/vue-query';
-
+import { pinia } from './stores';
 import App from './App.vue';
-import { vueQueryPluginOptions } from './helpers';
+import { dayjs, vueQuery } from './plugins';
 
 import '@/styles/preflight.css';
 import 'modern-normalize';
@@ -21,10 +15,7 @@ import '@/styles/global.scss';
 import '@/styles/tailwind.css';
 import 'uno.css';
 
-dayjs.locale('zh-cn');
-dayjs.extend(customParseFormat);
-
 export function createApp() {
-  const app = createSSRApp(App).use(pinia).use(VueQueryPlugin, vueQueryPluginOptions);
+  const app = createSSRApp(App).use(pinia).use(dayjs).use(vueQuery);
   return { app };
 }
