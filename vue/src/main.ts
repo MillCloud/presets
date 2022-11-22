@@ -1,17 +1,7 @@
-import ElementPlus from 'element-plus';
-import ElementProComponents from 'element-pro-components';
-import 'element-pro-components/lib/styles/index';
-
-import browserUpdate from 'browser-update';
-import dayjs from 'dayjs';
-import 'dayjs/locale/zh-cn';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
-
-import { VueQueryPlugin } from '@tanstack/vue-query';
-
 import App from './App.vue';
+import { pinia } from './stores';
 import router from './router';
-import { vueQueryPluginOptions } from './helpers';
+import { browserUpdate, dayjs, elementPlus, elementProComponents, vueQuery } from './plugins';
 
 import 'nprogress/nprogress.css';
 import 'modern-normalize';
@@ -22,19 +12,12 @@ import '@/styles/tailwind.css';
 import 'uno.css';
 import '@/guard';
 
-browserUpdate({
-  required: { e: 79, f: 67, o: 50, s: 12, c: 63 },
-  insecure: true,
-  unsupported: true,
-});
-
-dayjs.locale('zh-cn');
-dayjs.extend(customParseFormat);
-
 createApp(App)
   .use(pinia)
   .use(router)
-  .use(ElementPlus)
-  .use(ElementProComponents)
-  .use(VueQueryPlugin, vueQueryPluginOptions)
+  .use(browserUpdate)
+  .use(dayjs)
+  .use(elementPlus)
+  .use(elementProComponents)
+  .use(vueQuery)
   .mount('#app');
