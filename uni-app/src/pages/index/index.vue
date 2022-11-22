@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { useQuery } from '@tanstack/vue-query';
+import type { INetworkResponseData, INetworkRequestData } from '@/helpers';
 
 const title = ref('Hello Vue & UniApp');
 
 const id = ref(1);
 
-const { data, isLoading } = useQuery<IUnResponseData, IUnRequestData>([
+const { data, isLoading } = useQuery<INetworkResponseData, INetworkRequestData>([
   computed(() => `/posts/${id.value}`),
 ]);
 

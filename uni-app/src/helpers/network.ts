@@ -7,6 +7,32 @@ import { showModal } from './modal';
 import { getToken, setToken } from './storage';
 import { showToast } from './toast';
 import type { VueQueryPluginOptions } from '@tanstack/vue-query';
+import type { UnError, UnResponse, UnConfig } from '@uni-helper/uni-network';
+
+export type INetworkShowErrorType = 'toast' | 'modal';
+export interface INetworkRequestData {
+  [key: string]: any;
+}
+export interface INetworkResponseData {
+  success: boolean;
+  code: string;
+  message: string;
+  [key: string]: any;
+}
+export interface INetworkConfig<T = INetworkResponseData, D = INetworkRequestData>
+  extends UnConfig<T, D> {
+  showError?: boolean;
+  showErrorType?: INetworkShowErrorType;
+}
+export interface INetworkResponse<T = INetworkResponseData, D = INetworkRequestData>
+  extends UnResponse<T, D> {}
+export type INetworkPromise<T = INetworkResponseData, D = INetworkRequestData> = Promise<
+  INetworkResponse<T, D>
+>;
+export interface INetworkError<T = INetworkResponseData, D = INetworkRequestData>
+  extends UnError<T, D> {
+  response?: INetworkResponse<T, D>;
+}
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
@@ -39,12 +65,12 @@ instance.interceptors.request.use((config) => ({
 export { instance as unInstance };
 
 let hasModal = false;
-export const showError = ({
+export const showNetworkError = ({
   hasPrefix = true,
   message,
   response,
   error,
-  showErrorType = 'modal' as IUnShowErrorType,
+  type = 'modal' as INetworkShowErrorType,
   success,
   fail,
   complete,
@@ -52,9 +78,9 @@ export const showError = ({
   | {
       hasPrefix?: boolean;
       message?: string;
-      response?: IUnResponse;
-      error?: IUnError;
-      showErrorType?: 'modal';
+      response?: INetworkResponse;
+      error?: INetworkError;
+      type?: 'modal';
       success?: UniApp.ShowModalOptions['success'];
       fail?: UniApp.ShowModalOptions['fail'];
       complete?: UniApp.ShowModalOptions['complete'];
@@ -62,9 +88,9 @@ export const showError = ({
   | {
       hasPrefix?: boolean;
       message?: string;
-      response?: IUnResponse;
-      error?: IUnError;
-      showErrorType: 'toast';
+      response?: INetworkResponse;
+      error?: INetworkError;
+      type: 'toast';
       success?: UniApp.ShowToastOptions['success'];
       fail?: UniApp.ShowToastOptions['fail'];
       complete?: UniApp.ShowToastOptions['complete'];
@@ -167,7 +193,7 @@ export const showError = ({
     .filter((item) => !!item)
     .join('\r\n')}`;
 
-  if (showErrorType === 'toast') {
+  if (type === 'toast') {
     showToast({
       title: content,
       success,
@@ -176,7 +202,7 @@ export const showError = ({
     });
     return;
   }
-  if (showErrorType === 'modal' && !hasModal) {
+  if (type === 'modal' && !hasModal) {
     hasModal = true;
     showModal({
       title: '错误',
@@ -197,12 +223,12 @@ export const showError = ({
 export const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
-      showError({ error: error as IUnError });
+      showNetworkError({ error: error as INetworkError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
-      showError({ error: error as IUnError });
+      showNetworkError({ error: error as INetworkError });
     },
   }),
   defaultOptions: {
@@ -218,8 +244,12 @@ export const queryClient = new QueryClient({
           url = url.replace(`:${idx}`, param.toString() as string);
         }
         const params = key[2] as Record<string, any>;
-        const config = key[3] as IUnConfig;
-        const response = await instance.request<IUnResponseData, IUnRequestData, IUnResponse>({
+        const config = key[3] as INetworkConfig;
+        const response = await instance.request<
+          INetworkResponseData,
+          INetworkRequestData,
+          INetworkResponse
+        >({
           method: 'GET',
           url,
           params,
@@ -228,7 +258,7 @@ export const queryClient = new QueryClient({
         if (!(response?.data?.success ?? true)) {
           if (reSignInCodes.has(response?.data?.code ?? '')) {
             setToken();
-            showError({
+            showNetworkError({
               hasPrefix: false,
               message: '请重新登录。',
             });
@@ -236,10 +266,10 @@ export const queryClient = new QueryClient({
               url: '/pages/index',
             });
           } else if (config?.showError ?? true) {
-            showError({
+            showNetworkError({
               response,
-              error: response?.data as unknown as IUnError,
-              showErrorType: config?.showErrorType,
+              error: response?.data as unknown as INetworkError,
+              type: config?.showErrorType,
             });
           }
         }
@@ -252,15 +282,19 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('variables', variables);
         // console.log('');
-        const config = reactive({ ...(variables as IUnConfig) });
-        const response = await instance.request<IUnResponseData, IUnRequestData, IUnResponse>({
+        const config = reactive({ ...(variables as INetworkConfig) });
+        const response = await instance.request<
+          INetworkResponseData,
+          INetworkRequestData,
+          INetworkResponse
+        >({
           method: 'POST',
           ...config,
         });
         if (!(response?.data?.success ?? true)) {
           if (reSignInCodes.has(response?.data?.code ?? '')) {
             setToken();
-            showError({
+            showNetworkError({
               hasPrefix: false,
               message: '请重新登录。',
             });
@@ -268,10 +302,10 @@ export const queryClient = new QueryClient({
               url: '/pages/index',
             });
           } else if (config?.showError ?? true) {
-            showError({
+            showNetworkError({
               response,
-              error: response?.data as unknown as IUnError,
-              showErrorType: config?.showErrorType,
+              error: response?.data as unknown as INetworkError,
+              type: config?.showErrorType,
             });
           }
         }
