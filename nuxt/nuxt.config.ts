@@ -77,6 +77,7 @@ export default defineNuxtConfig({
     },
     plugins: [
       viteEslint({
+        build: false,
         fix: true,
         lintOnStart: true,
         include: [
@@ -105,6 +106,7 @@ export default defineNuxtConfig({
         cacheLocation: '.eslintcache',
       }),
       viteStylelint({
+        build: false,
         fix: true,
         lintOnStart: true,
         include: [

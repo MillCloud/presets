@@ -90,10 +90,12 @@ export default defineConfig({
     }),
     unocss(),
     eslint({
+      build: false,
       fix: true,
       lintOnStart: true,
     }),
     stylelint({
+      build: false,
       fix: true,
       lintOnStart: true,
     }),

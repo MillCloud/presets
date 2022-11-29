@@ -101,10 +101,12 @@ export default defineConfig({
     }),
     uniTailwind(),
     eslint({
+      build: false,
       fix: true,
       lintOnStart: true,
     }),
     stylelint({
+      build: false,
       fix: true,
       lintOnStart: true,
     }),
