@@ -78,6 +78,7 @@ export default defineNuxtConfig({
     plugins: [
       viteEslint({
         build: false,
+        cacheLocation: '.eslintcache',
         fix: true,
         lintOnStart: true,
         include: [
@@ -103,10 +104,10 @@ export default defineNuxtConfig({
           'app.config.ts',
           'nuxt.config.ts',
         ],
-        cacheLocation: '.eslintcache',
       }),
       viteStylelint({
         build: false,
+        cacheLocation: '.stylelintcache',
         fix: true,
         lintOnStart: true,
         include: [
@@ -122,7 +123,6 @@ export default defineNuxtConfig({
           'error.vue',
           'Error.vue',
         ],
-        cacheLocation: '.stylelintcache',
       }),
       // viteMkcert({
       //   autoUpgrade: true,

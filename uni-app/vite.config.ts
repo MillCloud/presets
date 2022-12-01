@@ -102,11 +102,13 @@ export default defineConfig({
     uniTailwind(),
     eslint({
       build: false,
+      cacheLocation: '.eslintcache',
       fix: true,
       lintOnStart: true,
     }),
     stylelint({
       build: false,
+      cacheLocation: '.stylelintcache',
       fix: true,
       lintOnStart: true,
     }),
