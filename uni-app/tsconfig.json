@@ -23,7 +23,8 @@
     ]
   },
   "vueCompilerOptions": {
-    "experimentalRuntimeMode": "runtime-uni-app"
+    "experimentalRuntimeMode": "runtime-uni-app",
+    "nativeTags": ["block", "component", "template", "slot"]
   },
   "include": [
     "**/.*.js",
