@@ -52,7 +52,7 @@
     "@commitlint/prompt": "^17.3.0",
     "@iconify/json": "^2.1.148",
     "@modyqyw/fabric": "^5.13.0",
-    "@modyqyw/vite-plugin-eslint": "^2.1.1",
+    "@modyqyw/vite-plugin-eslint": "^3.0.0",
     "@release-it/conventional-changelog": "^5.1.1",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",

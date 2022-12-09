@@ -52,7 +52,7 @@
     "@commitlint/prompt": "^17.3.0",
     "@iconify/json": "^2.1.148",
     "@modyqyw/fabric": "^5.13.0",
-    "@modyqyw/vite-plugin-eslint": "^2.1.1",
+    "@modyqyw/vite-plugin-eslint": "^3.0.0",
     "@nuxt/test-utils-edge": "3.0.1-rc.0-27837437.9c478ee",
     "@nuxtjs/tailwindcss": "^6.1.3",
     "@release-it/conventional-changelog": "^5.1.1",
