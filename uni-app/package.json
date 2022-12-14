@@ -145,7 +145,7 @@
     "tsx": "^3.12.1",
     "type-fest": "^3.4.0",
     "typescript": "^4.9.4",
-    "unocss": "^0.47.5",
+    "unocss": "^0.46.5",
     "unplugin-auto-import": "^0.12.1",
     "unplugin-vue-components": "^0.22.12",
     "unplugin-vue-macros": "^1.0.3",
