@@ -104,7 +104,7 @@
     "@types/statuses": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
     "@typescript-eslint/parser": "^5.45.1",
-    "@uni-helper/uni-app-types": "^0.2.0",
+    "@uni-helper/uni-app-types": "^0.3.0",
     "@uni-helper/uni-cloud-types": "^0.2.0",
     "@uni-helper/uni-ui-types": "^0.2.0",
     "@uni-helper/vite-plugin-uni-tailwind": "^0.8.1",
