@@ -50,7 +50,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@unocss/nuxt',
-    // 'unplugin-icons/nuxt',
+    'unplugin-icons/nuxt',
     'nuxt-typed-router',
   ],
   experimental: {
@@ -77,8 +77,6 @@ export default defineNuxtConfig({
     },
     plugins: [
       viteEslint({
-        build: false,
-        cacheLocation: '.eslintcache',
         fix: true,
         lintOnStart: true,
         include: [
@@ -106,8 +104,6 @@ export default defineNuxtConfig({
         ],
       }),
       viteStylelint({
-        build: false,
-        cacheLocation: '.stylelintcache',
         fix: true,
         lintOnStart: true,
         include: [

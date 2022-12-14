@@ -4,7 +4,6 @@ import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import vueMacros from 'unplugin-vue-macros/vite';
 import unocss from 'unocss/vite';
-import { presetIcons } from 'unocss';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
 // @ts-ignore
@@ -86,10 +85,7 @@ export default defineConfig({
       types: [],
     }),
     vueMacros(),
-    unocss({
-      presets: [presetIcons()],
-      safelist: ['dark'],
-    }),
+    unocss(),
     uni({
       vueOptions: {
         reactivityTransform: true,
@@ -101,14 +97,10 @@ export default defineConfig({
     }),
     uniTailwind(),
     eslint({
-      build: false,
-      cacheLocation: '.eslintcache',
       fix: true,
       lintOnStart: true,
     }),
     stylelint({
-      build: false,
-      cacheLocation: '.stylelintcache',
       fix: true,
       lintOnStart: true,
     }),
