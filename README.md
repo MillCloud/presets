@@ -105,7 +105,7 @@ cp presets/uni-app your-project-name
 rm -rf presets
 ```
 
-## [Nuxt 3](https://v3.nuxtjs.org/)
+## [Nuxt 3](https://nuxt.com.cn/)
 
 nuxt 模板，适用于对 SSR 有要求的桌面端网页和移动端网页开发。
 
@@ -151,7 +151,7 @@ rm -rf presets
 
 ## [Nest](https://nestjs.com/)
 
-**计划内，TypeScript Decorator 落地并被 Nest 支持后**
+**计划内**
 
 nest 模板，适用于后端服务开发，基于 fastify。
 
