@@ -10,5 +10,11 @@
       "type-fest",
       "unplugin-icons/types/vue"
     ]
+  },
+  "vueCompilerOptions": {
+    "plugins": ["@vue-macros/volar/define-model", "@vue-macros/volar/short-vmodel"],
+    "shortVmodel": {
+      "prefix": "$"
+    }
   }
 }
