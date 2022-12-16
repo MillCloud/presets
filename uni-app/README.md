@@ -41,7 +41,6 @@ uni-app 模板，适用于小程序和移动端应用开发。
 
 ### 其它插件
 
-- [unplugin-vue-macros](https://github.com/sxzz/unplugin-vue-macros)
 - [@vitejs/plugin-vue](https://github.com/vitejs/vite/tree/main/packages/plugin-vue)
 - [@vitejs/plugin-vue-jsx](https://github.com/vitejs/vite/tree/main/packages/plugin-vue-jsx)
 - [@dcloudio/vite-plugin-uni](https://www.npmjs.com/package/@dcloudio/vite-plugin-uni/)

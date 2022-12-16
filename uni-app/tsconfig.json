@@ -17,7 +17,6 @@
       "@uni-helper/uni-ui-types",
       "miniprogram-api-typings",
       "type-fest",
-      "unplugin-vue-macros/macros-global",
       "vite/client",
       "vue/macros-global"
     ]

@@ -7,8 +7,7 @@ import { TypedRouter, RouteListDecl } from './typed-router';
  * Returns instances of $typedRouter and $routesList fully typed to use in your components or your
  * Vuex/Pinia store
  *
- * @exemple ```ts
- * const { router, routes } = useTypedRouter();
+ * @exemple ```ts const { router, routes } = useTypedRouter();
  * ```
  */
 export const useTypedRouter = (): {

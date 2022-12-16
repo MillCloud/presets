@@ -2,7 +2,6 @@ import { fileURLToPath } from 'url';
 import { defineConfig } from 'vitest/config';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
-import vueMacros from 'unplugin-vue-macros/vite';
 import unocss from 'unocss/vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
@@ -84,7 +83,6 @@ export default defineConfig({
       ],
       types: [],
     }),
-    vueMacros(),
     unocss(),
     uni({
       vueOptions: {
