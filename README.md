@@ -75,7 +75,7 @@ Windows 下可使用 Windows Terminal + Git Bash（安装 Git 时附带），其
 
 vue 模板，适用于桌面端网页和移动端网页开发。
 
-自行增加 [vite-plugin-electron](https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron) 和 [vite-plugin-electron-renderer](https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron-renderer) 可以开发桌面端应用。
+自行增加 [vite-plugin-electron](https://github.com/electron-vite/vite-plugin-electron) 并根据文档调整可以开发桌面端应用。
 
 请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
 
@@ -108,6 +108,8 @@ rm -rf presets
 ## [Nuxt 3](https://nuxt.com.cn/)
 
 nuxt 模板，适用于对 SSR 有要求的桌面端网页和移动端网页开发。
+
+自行增加 [nuxt-electron](https://github.com/caoxiemeihao/nuxt-electron) 并根据文档调整可以开发桌面端应用。
 
 请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
 
