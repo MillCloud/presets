@@ -53,7 +53,7 @@
     "@iconify/json": "^2.1.156",
     "@modyqyw/fabric": "^5.14.0",
     "@modyqyw/vite-plugin-eslint": "^3.1.2",
-    "@nuxt/test-utils-edge": "3.0.1-rc.0-27857531.faf2607",
+    "@nuxt/test-utils-edge": "3.0.1-rc.0-27863365.da6fa9a",
     "@nuxtjs/tailwindcss": "^6.2.0",
     "@release-it/conventional-changelog": "^5.1.1",
     "@tailwindcss/line-clamp": "^0.4.2",
