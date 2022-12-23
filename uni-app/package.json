@@ -65,6 +65,7 @@
     "@lukemorales/query-key-factory": "^1.0.3",
     "@tanstack/vue-query": "^4.20.5",
     "@uni-helper/uni-network": "^0.11.1",
+    "@uni-helper/uni-promises": "^0.1.1",
     "@uni-helper/uni-use": "^0.10.1",
     "@vueuse/core": "^9.8.2",
     "change-case": "^4.1.2",
