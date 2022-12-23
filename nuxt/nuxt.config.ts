@@ -48,6 +48,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
+    '@vue-macros/nuxt',
     '@vueuse/nuxt',
     '@unocss/nuxt',
     'unplugin-icons/nuxt',
@@ -128,7 +129,7 @@ export default defineNuxtConfig({
     ],
   },
   // FIXME
-  // @ts-ignore
+  // @ts-ignorez
   pinia: {
     autoImports: ['defineStore'],
   },

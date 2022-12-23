@@ -17,13 +17,18 @@
       "@uni-helper/uni-ui-types",
       "miniprogram-api-typings",
       "type-fest",
+      "unplugin-vue-macros/macros-global",
       "vite/client",
       "vue/macros-global"
     ]
   },
   "vueCompilerOptions": {
     "experimentalRuntimeMode": "runtime-uni-app",
-    "nativeTags": ["block", "component", "template", "slot"]
+    "nativeTags": ["block", "component", "template", "slot"],
+    "plugins": ["@vue-macros/volar/define-model", "@vue-macros/volar/short-vmodel"],
+    "shortVmodel": {
+      "prefix": "$"
+    }
   },
   "include": [
     "**/.*.js",

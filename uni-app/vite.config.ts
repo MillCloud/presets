@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vitest/config';
+import vueMacros from 'unplugin-vue-macros/vite';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import unocss from 'unocss/vite';
@@ -50,6 +51,7 @@ export default defineConfig({
     exclude: ['vue-demi'],
   },
   plugins: [
+    vueMacros({}),
     autoImport({
       dirs: [
         'src/composables',
