@@ -64,7 +64,7 @@
     "@dcloudio/uni-ui": "^1.4.23",
     "@lukemorales/query-key-factory": "^1.0.3",
     "@tanstack/vue-query": "^4.20.5",
-    "@uni-helper/uni-network": "^0.11.1",
+    "@uni-helper/uni-network": "^0.12.0",
     "@uni-helper/uni-promises": "^0.1.2",
     "@uni-helper/uni-use": "^0.10.2",
     "@vueuse/core": "^9.9.0",
