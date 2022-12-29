@@ -107,6 +107,7 @@
     "@typescript-eslint/parser": "^5.47.1",
     "@uni-helper/uni-app-types": "^0.3.1",
     "@uni-helper/uni-cloud-types": "^0.3.0",
+    "@uni-helper/uni-deploy": "^0.2.1",
     "@uni-helper/uni-ui-types": "^0.3.1",
     "@uni-helper/vite-plugin-uni-tailwind": "^0.9.0",
     "@vitejs/plugin-legacy": "^2.3.1",
