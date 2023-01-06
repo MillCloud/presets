@@ -7,32 +7,6 @@ import { showModal } from './modal';
 import { getToken, setToken } from './storage';
 import { showToast } from './toast';
 import type { VueQueryPluginOptions } from '@tanstack/vue-query';
-import type { UnError, UnResponse, UnConfig } from '@uni-helper/uni-network';
-
-export type INetworkShowErrorType = 'toast' | 'modal';
-export interface INetworkRequestData {
-  [key: string]: any;
-}
-export interface INetworkResponseData {
-  success: boolean;
-  code: string;
-  message: string;
-  [key: string]: any;
-}
-export interface INetworkConfig<T = INetworkResponseData, D = INetworkRequestData>
-  extends UnConfig<T, D> {
-  showError?: boolean;
-  showErrorType?: INetworkShowErrorType;
-}
-export interface INetworkResponse<T = INetworkResponseData, D = INetworkRequestData>
-  extends UnResponse<T, D> {}
-export type INetworkPromise<T = INetworkResponseData, D = INetworkRequestData> = Promise<
-  INetworkResponse<T, D>
->;
-export interface INetworkError<T = INetworkResponseData, D = INetworkRequestData>
-  extends UnError<T, D> {
-  response?: INetworkResponse<T, D>;
-}
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
@@ -70,7 +44,7 @@ export const showNetworkError = ({
   message,
   response,
   error,
-  type = 'modal' as INetworkShowErrorType,
+  type = 'modal' as IUnShowErrorType,
   success,
   fail,
   complete,
@@ -78,8 +52,8 @@ export const showNetworkError = ({
   | {
       hasPrefix?: boolean;
       message?: string;
-      response?: INetworkResponse;
-      error?: INetworkError;
+      response?: IUnResponse;
+      error?: IUnError;
       type?: 'modal';
       success?: UniApp.ShowModalOptions['success'];
       fail?: UniApp.ShowModalOptions['fail'];
@@ -88,8 +62,8 @@ export const showNetworkError = ({
   | {
       hasPrefix?: boolean;
       message?: string;
-      response?: INetworkResponse;
-      error?: INetworkError;
+      response?: IUnResponse;
+      error?: IUnError;
       type: 'toast';
       success?: UniApp.ShowToastOptions['success'];
       fail?: UniApp.ShowToastOptions['fail'];
@@ -223,12 +197,12 @@ export const showNetworkError = ({
 export const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
-      showNetworkError({ error: error as INetworkError });
+      showNetworkError({ error: error as IUnError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
-      showNetworkError({ error: error as INetworkError });
+      showNetworkError({ error: error as IUnError });
     },
   }),
   defaultOptions: {
@@ -244,12 +218,8 @@ export const queryClient = new QueryClient({
           url = url.replace(`:${idx}`, param.toString() as string);
         }
         const params = key[2] as Record<string, any>;
-        const config = key[3] as INetworkConfig;
-        const response = await instance.request<
-          INetworkResponseData,
-          INetworkRequestData,
-          INetworkResponse
-        >({
+        const config = key[3] as IUnConfig;
+        const response = await instance.request<IUnResponseData, IUnRequestData, IUnResponse>({
           method: 'GET',
           url,
           params,
@@ -268,7 +238,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showNetworkError({
               response,
-              error: response?.data as unknown as INetworkError,
+              error: response?.data as unknown as IUnError,
               type: config?.showErrorType,
             });
           }
@@ -282,12 +252,8 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('variables', variables);
         // console.log('');
-        const config = reactive({ ...(variables as INetworkConfig) });
-        const response = await instance.request<
-          INetworkResponseData,
-          INetworkRequestData,
-          INetworkResponse
-        >({
+        const config = reactive({ ...(variables as IUnConfig) });
+        const response = await instance.request<IUnResponseData, IUnRequestData, IUnResponse>({
           method: 'POST',
           ...config,
         });
@@ -304,7 +270,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showNetworkError({
               response,
-              error: response?.data as unknown as INetworkError,
+              error: response?.data as unknown as IUnError,
               type: config?.showErrorType,
             });
           }
