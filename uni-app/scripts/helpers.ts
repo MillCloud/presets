@@ -5,9 +5,9 @@ import pinoPretty from 'pino-pretty';
 
 export const logger = pino(
   pinoPretty({
-    levelFirst: true,
     colorize: true,
-    translateTime: true,
+    translateTime: 'SYS:standard',
+    ignore: 'pid,hostname',
   }),
 );
 
