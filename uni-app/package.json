@@ -92,7 +92,7 @@
     "@dcloudio/uni-stacktracey": "3.0.0-alpha-3061620221230002",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3061620221230002",
     "@iconify/json": "^2.1.159",
-    "@mini-types/alipay": "^2.0.19",
+    "@mini-types/alipay": "^3.0.0",
     "@modyqyw/fabric": "^5.14.0",
     "@modyqyw/vite-plugin-eslint": "^3.1.4",
     "@release-it/conventional-changelog": "^5.1.1",
