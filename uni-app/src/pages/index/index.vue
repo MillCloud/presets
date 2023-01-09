@@ -5,9 +5,9 @@ const title = ref('Hello Vue & UniApp');
 
 const id = ref(1);
 
-const { data, isLoading } = useQuery<IUnResponseData, IUnRequestData>([
-  computed(() => `/posts/${id.value}`),
-]);
+const { data, isLoading } = useQuery<IUnResponseData, IUnRequestData>({
+  queryKey: [computed(() => `/posts/${id.value}`)],
+});
 
 const isPrimaryButtonDisabled = ref(false);
 const handleClickPrimaryButton = () => {
