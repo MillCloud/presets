@@ -128,8 +128,7 @@ export default defineNuxtConfig({
       viteInspect(),
     ],
   },
-  // FIXME
-  // @ts-ignorez
+  // @ts-ignore
   pinia: {
     autoImports: ['defineStore'],
   },

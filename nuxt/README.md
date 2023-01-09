@@ -22,7 +22,7 @@ nuxt 模板，适用于对 SSR 有要求的桌面端网页和移动端网页开�
 
 - [elmenet-plus](https://element-plus.org) - Vue 生态圈最流行的 UI 框架
 - [tailwindcss](https://tailwindcss.com) - 原子化 CSS
-- [unocss](hhttps://github.com/unocss/unocss) - 原子化 CSS，考虑到稳定性问题，这里 UnoCSS 仅提供图标支持
+- [unocss](https://github.com/unocss/unocss) - 原子化 CSS，考虑到稳定性问题，这里 UnoCSS 仅提供图标支持
 
 <details>
   <summary> element-plus 外的选择 </summary>

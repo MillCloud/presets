@@ -1,29 +1,12 @@
 import { reactive } from 'vue';
 import { ElMessageBox, ElNotification, ElMessage } from 'element-plus';
-import axios from 'axios';
+import axios, { type AxiosRequestConfig } from 'axios';
 import qs from 'qs';
 import { QueryClient, QueryCache, MutationCache } from '@tanstack/vue-query';
 import { Headers } from '@/constants';
 import router from '@/router';
 import { getToken, setToken } from './storage';
 import type { VueQueryPluginOptions } from '@tanstack/vue-query';
-import type { AxiosError, AxiosResponse, AxiosRequestConfig } from 'axios';
-
-export type IRequestShowErrorType = 'alert' | 'message' | 'notification';
-export interface IResponseData {
-  success: boolean;
-  code: string;
-  message: string;
-  [key: string]: any;
-}
-export interface IResponse extends AxiosResponse<IResponseData> {}
-export interface IResponseError extends AxiosError<IResponseData> {
-  response?: IResponse;
-}
-export interface IRequestConfig extends AxiosRequestConfig {
-  showError?: boolean;
-  showErrorType?: IRequestShowErrorType;
-}
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
@@ -45,15 +28,18 @@ const instance = axios.create({
       ),
   },
 });
-instance.interceptors.request.use((config) => ({
-  ...config,
-  headers: {
-    ...config.headers,
-    token: getToken(),
-    'X-Token': getToken(),
-    'X-Access-Token': getToken(),
-  },
-}));
+instance.interceptors.request.use(
+  (config) =>
+    ({
+      ...config,
+      headers: {
+        ...config.headers,
+        token: getToken(),
+        'X-Token': getToken(),
+        'X-Access-Token': getToken(),
+      },
+    } as AxiosRequestConfig),
+);
 
 export { instance as axiosInstance };
 
@@ -67,9 +53,9 @@ export const showRequestError = ({
 }: {
   hasPrefix?: boolean;
   message?: string;
-  response?: IResponse;
-  error?: IResponseError;
-  type?: IRequestShowErrorType;
+  response?: IAxiosResponse;
+  error?: IAxiosError;
+  type?: IAxiosShowErrorType;
 } = {}) => {
   // method
   const method =
@@ -203,12 +189,12 @@ export const showRequestError = ({
 export const queryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
-      showRequestError({ error: error as IResponseError });
+      showRequestError({ error: error as IAxiosError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
-      showRequestError({ error: error as IResponseError });
+      showRequestError({ error: error as IAxiosError });
     },
   }),
   defaultOptions: {
@@ -224,8 +210,8 @@ export const queryClient = new QueryClient({
           url = url.replace(`:${idx}`, param.toString() as string);
         }
         const params = key[2] as Record<string, any>;
-        const config = key[3] as IRequestConfig;
-        const response = await instance.request<IResponseData>({
+        const config = key[3] as IAxiosRequestConfig;
+        const response = await instance.request<IAxiosResponseData>({
           method: 'GET',
           url,
           params,
@@ -247,7 +233,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showRequestError({
               response,
-              error: response?.data as unknown as IResponseError,
+              error: response?.data as unknown as IAxiosError,
               type: config?.showErrorType,
             });
           }
@@ -261,8 +247,8 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('variables', variables);
         // console.log('');
-        const config = reactive({ ...(variables as IRequestConfig) });
-        const response = await instance.request<IResponseData>({
+        const config = reactive({ ...(variables as IAxiosRequestConfig) });
+        const response = await instance.request<IAxiosResponseData>({
           method: 'POST',
           ...config,
         });
@@ -282,7 +268,7 @@ export const queryClient = new QueryClient({
           } else if (config?.showError ?? true) {
             showRequestError({
               response,
-              error: response?.data as unknown as IResponseError,
+              error: response?.data as unknown as IAxiosError,
               type: config?.showErrorType,
             });
           }

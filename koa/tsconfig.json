@@ -2,7 +2,8 @@
   "extends": "@tsconfig/node18",
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "es2022",
+    "lib": ["ESNext"],
+    "module": "ESNext",
     "resolveJsonModule": true,
     "paths": {
       "@/*": ["./src/*"]
