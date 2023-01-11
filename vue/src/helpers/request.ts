@@ -4,7 +4,7 @@ import axios, { type AxiosRequestConfig } from 'axios';
 import qs from 'qs';
 import { QueryClient, QueryCache, MutationCache } from '@tanstack/vue-query';
 import { Headers } from '@/constants';
-import router from '@/router';
+import { router } from '@/router';
 import { getToken, setToken } from './storage';
 import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 
