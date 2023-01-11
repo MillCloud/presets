@@ -58,7 +58,7 @@
     "@dcloudio/uni-mp-kuaishou": "3.0.0-alpha-3061620221230002",
     "@dcloudio/uni-mp-lark": "3.0.0-alpha-3061620221230002",
     "@dcloudio/uni-mp-qq": "3.0.0-alpha-3061620221230002",
-    "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-3061620221230002",
+    "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-3061720230111001",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3061620221230002",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3061620221230002",
     "@dcloudio/uni-ui": "^1.4.24",
