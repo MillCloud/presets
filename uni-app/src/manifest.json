@@ -1,5 +1,5 @@
 {
-  "$schema": "https://gitee.com/uni-helper/uni-app-schemas-vscode/raw/main/schemas/manifest.json",
+  "$schema": "hhttps://raw.githubusercontent.com/uni-helper/uni-app-schemas-vscode/main/schemas/manifest.json",
   "name": "uni-app",
   "appid": "",
   "description": "A boilerplate for uni-app.",
