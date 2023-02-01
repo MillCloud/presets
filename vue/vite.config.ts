@@ -98,7 +98,7 @@ export default defineConfig({
       fix: true,
       lintOnStart: true,
     }),
-    compression({}),
+    compression(),
     inspect(),
   ],
   resolve: {
