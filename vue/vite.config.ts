@@ -2,6 +2,8 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
 import pages from 'vite-plugin-pages';
 import layouts from 'vite-plugin-vue-layouts';
+// @ts-expect-error Cannot find module 'unplugin-vue-macros/vite' or its corresponding type declarations.ts(2307)
+// https://github.com/sxzz/unplugin-vue-macros/issues/257
 import vueMacros from 'unplugin-vue-macros/vite';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
@@ -11,10 +13,9 @@ import unocss from 'unocss/vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
-import eslint from '@modyqyw/vite-plugin-eslint';
+import eslint from 'vite-plugin-eslint2';
 import stylelint from 'vite-plugin-stylelint';
-import compression from 'vite-plugin-compression';
-// import mkcert from 'vite-plugin-mkcert';
+import compression from 'vite-plugin-compression2';
 import inspect from 'vite-plugin-inspect';
 
 export default defineConfig({
@@ -97,11 +98,7 @@ export default defineConfig({
       fix: true,
       lintOnStart: true,
     }),
-    compression(),
-    // mkcert({
-    //   autoUpgrade: true,
-    //   source: 'coding',
-    // }),
+    compression({}),
     inspect(),
   ],
   resolve: {
