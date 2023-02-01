@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import viteEslint from '@modyqyw/vite-plugin-eslint';
+import viteEslint from 'vite-plugin-eslint2';
 import viteStylelint from 'vite-plugin-stylelint';
-// import viteMkcert from 'vite-plugin-mkcert';
 import viteInspect from 'vite-plugin-inspect';
 
 export default defineNuxtConfig({
@@ -20,7 +19,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       meta: [
-        { charset: 'utf-8' },
+        { charset: 'utf8' },
         { name: 'renderer', content: 'webkit' },
         { name: 'force-rendering', content: 'webkit' },
         { 'http-equiv': 'x-ua-compatible', content: 'IE=Edge,chrome=1' },
@@ -56,9 +55,6 @@ export default defineNuxtConfig({
   ],
   experimental: {
     reactivityTransform: true,
-  },
-  postcss: {
-    config: true,
   },
   typescript: {
     shim: false,
@@ -108,27 +104,23 @@ export default defineNuxtConfig({
         fix: true,
         lintOnStart: true,
         include: [
-          'components/**/*.{css,less,scss,sass,vue}',
-          'content/**/*.{css,less,scss,sass,vue}',
-          'layouts/**/*.{css,less,scss,sass,vue}',
-          'pages/**/*.{css,less,scss,sass,vue}',
-          'server/**/*.{css,less,scss,sass,vue}',
-          'src/**/*.{css,less,scss,sass,vue}',
-          'styles/**/*.{css,less,scss,sass,vue}',
+          'components/**/*.{css,scss,vue}',
+          'content/**/*.{css,scss,vue}',
+          'layouts/**/*.{css,scss,vue}',
+          'pages/**/*.{css,scss,vue}',
+          'server/**/*.{css,scss,vue}',
+          'src/**/*.{css,scss,vue}',
+          'styles/**/*.{css,scss,vue}',
           'app.vue',
           'App.vue',
           'error.vue',
           'Error.vue',
         ],
       }),
-      // viteMkcert({
-      //   autoUpgrade: true,
-      //   source: 'coding',
-      // }),
       viteInspect(),
     ],
   },
-  // @ts-ignore
+  // @ts-expect-error type lost
   pinia: {
     autoImports: ['defineStore'],
   },
