@@ -2,17 +2,17 @@ import { reactive } from 'vue';
 import un from '@uni-helper/uni-network';
 import qs from 'qs';
 import { QueryClient, QueryCache, MutationCache } from '@tanstack/vue-query';
-import { Headers } from '@/constants';
+import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 import { showModal } from './modal';
 import { getToken, setToken } from './storage';
 import { showToast } from './toast';
-import type { VueQueryPluginOptions } from '@tanstack/vue-query';
+import { Headers } from '@/constants';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
 const instance = un.create({
   baseUrl: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/',
-  timeout: 30000,
+  timeout: 30_000,
   headers: {
     ...Headers,
   },
@@ -26,15 +26,13 @@ const instance = un.create({
       ),
     ),
 });
-instance.interceptors.request.use((config) => ({
-  ...config,
-  headers: {
-    ...config.headers,
-    token: getToken(),
-    'X-Token': getToken(),
-    'X-Access-Token': getToken(),
-  },
-}));
+instance.interceptors.request.use((config) => {
+  config.headers = config.headers ?? {};
+  config.headers.token = getToken();
+  config.headers['X-Token'] = getToken();
+  config.headers['X-Access-Token'] = getToken();
+  return config;
+});
 
 export { instance as unInstance };
 
@@ -73,11 +71,11 @@ export const showNetworkError = ({
   const method =
     error?.config?.method ??
     error?.task?.method ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.method ??
     response?.config?.method ??
     response?.task?.method ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.method ??
     '';
   const methodText = method ? `请求方法：${method}` : '';
@@ -86,11 +84,11 @@ export const showNetworkError = ({
   const url =
     error?.config?.url ??
     error?.task?.url ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.url ??
     response?.config?.url ??
     response?.task?.url ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.url ??
     '';
   const urlText = url ? `请求地址：${url}` : '';
@@ -98,14 +96,14 @@ export const showNetworkError = ({
   // statusCode
   const statusCode =
     error?.status ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.statusCode ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.status ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.statusCode ??
     response?.status ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.statusCode ??
     response?.data?.status ??
     response?.data?.statusCode ??
@@ -115,15 +113,14 @@ export const showNetworkError = ({
   // errorCode
   const errorCode =
     error?.code ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.errno ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.code ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.errno ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.code ??
-    // @ts-ignore
     response?.errno ??
     response?.data?.code ??
     response?.data?.errno ??
@@ -132,25 +129,24 @@ export const showNetworkError = ({
 
   // errorMessage
   const errorMessage =
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.errMsg ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.message ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.msg ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.errMsg ??
     error?.message ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.msg ??
     response?.data?.errMsg ??
     response?.data?.message ??
     response?.data?.msg ??
-    // @ts-ignore
     response?.errMsg ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.message ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.msg ??
     message ??
     '';

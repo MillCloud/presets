@@ -1,17 +1,17 @@
 // 小程序更新见 https://uniapp.dcloud.io/api/other/update?id=getupdatemanager
 // 整包更新见 https://ask.dcloud.net.cn/article/34972
 // 热更新见 https://ask.dcloud.net.cn/article/35667
-import manifest from '@/manifest.json';
 import { hideLoading, showLoading } from './loading';
 import { showModal } from './modal';
 import { unInstance } from './network';
+import manifest from '@/manifest.json';
 
 /* #ifdef APP-PLUS */
 const removeInstalledResources = () => {
   plus.io.requestFileSystem(plus.io.PUBLIC_DOWNLOADS, (fs) => {
     const directoryReader = fs.root?.createReader();
     if (directoryReader) {
-      // @ts-ignore
+      // @ts-expect-error wrong types
       directoryReader.readEntries((entries: (PlusIoDirectoryEntry | PlusIoFileEntry)[]) => {
         const apkFiles = entries.filter(
           (entry) =>
@@ -21,13 +21,14 @@ const removeInstalledResources = () => {
               entry?.name?.toUpperCase()?.endsWith('.WGTU')) &&
             entry?.name?.toUpperCase()?.includes('ECARD'),
         ) as PlusIoFileEntry[];
-        apkFiles.forEach((apkFile) => apkFile.remove());
+        for (const apkFile of apkFiles) apkFile.remove();
       });
     }
   });
 };
 /* #endif */
 
+// eslint-disable-next-line sonarjs/cognitive-complexity
 export const getUpdate = ({ hasLoading = false } = {}) => {
   /* #ifdef MP */
   const updater = uni.getUpdateManager();
