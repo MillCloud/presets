@@ -1,3 +1,1 @@
-import { Icon } from '@iconify/vue';
-
-export default Icon;
+export { Icon as default } from '@iconify/vue';
