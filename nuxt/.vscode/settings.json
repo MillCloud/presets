@@ -8,10 +8,8 @@
     "json",
     "jsonc",
     "json5",
-    "less",
     "markdown",
     "plaintext",
-    "sass",
     "scss",
     "text",
     "typescript",
@@ -53,7 +51,6 @@
   "git.autofetch": true,
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "less.validate": false,
   "scss.validate": false,
   "search.exclude": {
     "**/cache/**": true,
@@ -66,8 +63,8 @@
     "**/out/**": true,
     "**/*lock*": true
   },
-  "stylelint.snippet": ["css", "less", "sass", "scss", "vue"],
-  "stylelint.validate": ["css", "less", "sass", "scss", "vue"],
+  "stylelint.snippet": ["css", "scss", "vue"],
+  "stylelint.validate": ["css", "scss", "vue"],
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
     "editor.codeActionsOnSave": {
@@ -90,16 +87,6 @@
     }
   },
   "[css]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": true
-    }
-  },
-  "[less]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.stylelint": true
-    }
-  },
-  "[sass]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.stylelint": true
     }
