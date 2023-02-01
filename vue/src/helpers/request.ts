@@ -1,12 +1,16 @@
 import { reactive } from 'vue';
 import { ElMessageBox, ElNotification, ElMessage } from 'element-plus';
-import axios, { type AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import qs from 'qs';
-import { QueryClient, QueryCache, MutationCache } from '@tanstack/vue-query';
+import {
+  QueryClient,
+  QueryCache,
+  MutationCache,
+  type VueQueryPluginOptions,
+} from '@tanstack/vue-query';
+import { getToken, setToken } from './storage';
 import { Headers } from '@/constants';
 import { router } from '@/router';
-import { getToken, setToken } from './storage';
-import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
@@ -28,18 +32,12 @@ const instance = axios.create({
       ),
   },
 });
-instance.interceptors.request.use(
-  (config) =>
-    ({
-      ...config,
-      headers: {
-        ...config.headers,
-        token: getToken(),
-        'X-Token': getToken(),
-        'X-Access-Token': getToken(),
-      },
-    } as AxiosRequestConfig),
-);
+instance.interceptors.request.use((config) => {
+  config.headers.token = getToken();
+  config.headers['X-Token'] = getToken();
+  config.headers['X-Access-Token'] = getToken();
+  return config;
+});
 
 export { instance as axiosInstance };
 
@@ -61,11 +59,11 @@ export const showRequestError = ({
   const method =
     error?.config?.method ??
     error?.request?.method ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.method ??
     response?.config?.method ??
     response?.request?.method ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.method ??
     '';
   const methodText = method ? `请求方法：${method}` : '';
@@ -74,11 +72,11 @@ export const showRequestError = ({
   const url =
     error?.config?.url ??
     error?.request?.url ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.url ??
     response?.config?.url ??
     response?.request?.url ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.url ??
     '';
   const urlText = url ? `请求地址：${url}` : '';
@@ -86,14 +84,14 @@ export const showRequestError = ({
   // statusCode
   const statusCode =
     error?.status ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.statusCode ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.status ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.statusCode ??
     response?.status ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.statusCode ??
     response?.data?.status ??
     response?.data?.statusCode ??
@@ -103,15 +101,15 @@ export const showRequestError = ({
   // errorCode
   const errorCode =
     error?.code ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.errno ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.code ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.errno ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.code ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.errno ??
     response?.data?.code ??
     response?.data?.errno ??
@@ -120,25 +118,25 @@ export const showRequestError = ({
 
   // errorMessage
   const errorMessage =
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.errMsg ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.message ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.data?.msg ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.errMsg ??
     error?.message ??
-    // @ts-ignore
+    // @ts-expect-error no types
     error?.msg ??
     response?.data?.errMsg ??
     response?.data?.message ??
     response?.data?.msg ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.errMsg ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.message ??
-    // @ts-ignore
+    // @ts-expect-error no types
     response?.msg ??
     message ??
     '';
