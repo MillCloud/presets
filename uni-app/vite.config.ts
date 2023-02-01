@@ -1,17 +1,18 @@
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
+// @ts-expect-error Cannot find module 'unplugin-vue-macros/vite' or its corresponding type declarations.ts(2307)
+// https://github.com/sxzz/unplugin-vue-macros/issues/257
 import vueMacros from 'unplugin-vue-macros/vite';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import unocss from 'unocss/vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
-// @ts-ignore
+// @ts-expect-error no types
 import nested from 'tailwindcss/nesting';
-// @ts-ignore
 import postcssPresetEnv from 'postcss-preset-env';
 import uniTailwind from '@uni-helper/vite-plugin-uni-tailwind';
-import eslint from '@modyqyw/vite-plugin-eslint';
+import eslint from 'vite-plugin-eslint2';
 import stylelint from 'vite-plugin-stylelint';
 import inspect from 'vite-plugin-inspect';
 import tailwindcssConfig from './tailwind.config.cjs';
