@@ -2,9 +2,7 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "dist",
     "allowJs": true,
-    "jsx": "preserve",
     "lib": ["ESNext"],
     "paths": {
       "@/*": ["./src/*"]
@@ -25,18 +23,16 @@
     ]
   },
   "vueCompilerOptions": {
-    "plugins": ["@vue-macros/volar/define-model", "@vue-macros/volar/short-vmodel"],
-    "shortVmodel": {
-      "prefix": "$"
-    }
+    "plugins": [
+      "@vue-macros/volar/define-model",
+      "@vue-macros/volar/define-props",
+      "@vue-macros/volar/define-props-refs",
+      "@vue-macros/volar/short-vmodel",
+      "@vue-macros/volar/define-slots",
+      "@vue-macros/volar/export-props"
+    ]
   },
   "include": [
-    "**/.*.js",
-    "**/.*.cjs",
-    "**/.*.mjs",
-    "**/.*.ts",
-    "**/.*.cts",
-    "**/.*.mts",
     "**/*.js",
     "**/*.cjs",
     "**/*.mjs",
@@ -47,5 +43,5 @@
     "**/*.tsx",
     "**/*.vue"
   ],
-  "exclude": [".cache", ".temp", ".tmp", "cache", "temp", "tmp", "dist*", "node_modules"]
+  "exclude": ["dist", "node_modules"]
 }
