@@ -1,7 +1,7 @@
 import App from './App.vue';
 import { pinia } from './stores';
 import { guardRouter, router } from './router';
-import { browserUpdate, dayjs, elementPlus, elementProComponents, vueQuery } from './plugins';
+import { browserUpdate, dayjs, elementPlus, vueQuery } from './plugins';
 
 import 'nprogress/nprogress.css';
 import 'modern-normalize';
@@ -17,7 +17,6 @@ const app = createApp(App)
   .use(browserUpdate)
   .use(dayjs)
   .use(elementPlus)
-  .use(elementProComponents)
   .use(vueQuery);
 
 guardRouter();

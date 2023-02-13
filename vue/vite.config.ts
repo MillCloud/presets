@@ -2,9 +2,7 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
 import pages from 'vite-plugin-pages';
 import layouts from 'vite-plugin-vue-layouts';
-// @ts-expect-error Cannot find module 'unplugin-vue-macros/vite' or its corresponding type declarations.ts(2307)
-// https://github.com/sxzz/unplugin-vue-macros/issues/257
-import vueMacros from 'unplugin-vue-macros/vite';
+import unpluginVueDefineOptions from 'unplugin-vue-define-options';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import iconsResolver from 'unplugin-icons/resolver';
@@ -60,7 +58,7 @@ export default defineConfig({
         'src/utils',
         'src/utils/**',
       ],
-      imports: ['vue', 'vue/macros', 'vue-router', 'pinia', '@vueuse/core'],
+      imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
     }),
     vueComponents({
       dirs: ['src/components'],
@@ -81,14 +79,13 @@ export default defineConfig({
       defaultClass: 'el-icon el-icon-',
     }),
     unocss(),
-    vueMacros({
-      plugins: {
-        vue: vue({ reactivityTransform: true }),
-        vueJsx: vueJsx(),
-      },
-    }),
+    unpluginVueDefineOptions.vite(),
+    vue(),
+    vueJsx(),
     legacy({
       targets: ['defaults', 'edge >= 79', 'firefox >= 67', 'safari >= 12', 'chrome >= 63'],
+      polyfills: true,
+      modernPolyfills: true,
     }),
     eslint({
       fix: true,

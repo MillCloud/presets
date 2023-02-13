@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "allowJs": true,
+    "sourceMap": true,
     "lib": ["ESNext"],
     "paths": {
       "@/*": ["./src/*"]
@@ -16,22 +17,13 @@
       "@uni-helper/uni-ui-types",
       "miniprogram-api-typings",
       "type-fest",
-      "unplugin-vue-macros/macros-global",
-      "vite/client",
-      "vue/macros-global"
+      "unplugin-vue-define-options/macros-global",
+      "vite/client"
     ]
   },
   "vueCompilerOptions": {
     "experimentalRuntimeMode": "runtime-uni-app",
-    "nativeTags": ["block", "component", "template", "slot"],
-    "plugins": [
-      "@vue-macros/volar/define-model",
-      "@vue-macros/volar/define-props",
-      "@vue-macros/volar/define-props-refs",
-      "@vue-macros/volar/short-vmodel",
-      "@vue-macros/volar/define-slots",
-      "@vue-macros/volar/export-props"
-    ]
+    "nativeTags": ["block", "component", "template", "slot"]
   },
   "include": [
     "**/*.js",

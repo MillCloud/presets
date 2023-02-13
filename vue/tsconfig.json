@@ -10,26 +10,14 @@
     "typeRoots": ["./node_modules/@types", "./src/types"],
     "types": [
       "element-plus/global",
-      "element-pro-components/types/components",
       "jsdom",
       "node",
       "type-fest",
       "unplugin-icons/types/vue",
-      "unplugin-vue-macros/macros-global",
+      "unplugin-vue-define-options/macros-global",
       "vite/client",
       "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client",
-      "vue/macros-global"
-    ]
-  },
-  "vueCompilerOptions": {
-    "plugins": [
-      "@vue-macros/volar/define-model",
-      "@vue-macros/volar/define-props",
-      "@vue-macros/volar/define-props-refs",
-      "@vue-macros/volar/short-vmodel",
-      "@vue-macros/volar/define-slots",
-      "@vue-macros/volar/export-props"
+      "vite-plugin-vue-layouts/client"
     ]
   },
   "include": [

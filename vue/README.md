@@ -45,7 +45,6 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 
 ### 其它插件
 
-- [unplugin-vue-macros](https://github.com/sxzz/unplugin-vue-macros)
 - [@vitejs/plugin-vue](https://github.com/vitejs/vite/tree/main/packages/plugin-vue)
 - [@vitejs/plugin-vue-jsx](https://github.com/vitejs/vite/tree/main/packages/plugin-vue-jsx)
 - [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy)

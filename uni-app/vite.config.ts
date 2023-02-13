@@ -1,8 +1,6 @@
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
-// @ts-expect-error Cannot find module 'unplugin-vue-macros/vite' or its corresponding type declarations.ts(2307)
-// https://github.com/sxzz/unplugin-vue-macros/issues/257
-import vueMacros from 'unplugin-vue-macros/vite';
+import unpluginVueDefineOptions from 'unplugin-vue-define-options';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import unocss from 'unocss/vite';
@@ -24,11 +22,9 @@ export default defineConfig({
     cssTarget: 'chrome61',
   },
   css: {
-    // FIXME not support postcss config file yet
     postcss: {
       plugins: [
         nested(),
-        // FIXME [plugin:unocss:global:build:scan] this.addWatchFile is not a function
         tailwindcss({
           config: tailwindcssConfig,
         }),
@@ -52,7 +48,7 @@ export default defineConfig({
     exclude: ['vue-demi'],
   },
   plugins: [
-    vueMacros({}),
+    unpluginVueDefineOptions.vite(),
     autoImport({
       dirs: [
         'src/composables',
@@ -64,7 +60,7 @@ export default defineConfig({
         'src/utils',
         'src/utils/**',
       ],
-      imports: ['vue', 'vue/macros', 'pinia', '@vueuse/core', 'uni-app'],
+      imports: ['vue', 'pinia', '@vueuse/core', 'uni-app'],
     }),
     vueComponents({
       dirs: ['src/components'],
@@ -88,12 +84,12 @@ export default defineConfig({
     }),
     unocss(),
     uni({
-      vueOptions: {
-        reactivityTransform: true,
-      },
+      vueOptions: {},
       vueJsxOptions: {},
       viteLegacyOptions: {
         targets: ['ios >= 10', 'chrome >= 53'],
+        polyfills: true,
+        modernPolyfills: true,
       },
     }),
     uniTailwind(),

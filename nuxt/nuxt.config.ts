@@ -1,7 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import unpluginVueDefineOptions from 'unplugin-vue-define-options';
 import viteEslint from 'vite-plugin-eslint2';
 import viteStylelint from 'vite-plugin-stylelint';
 import viteInspect from 'vite-plugin-inspect';
+
+// track https://github.com/nuxt/nuxt/issues/14634 for legacy browsers support
 
 export default defineNuxtConfig({
   imports: {
@@ -37,7 +40,6 @@ export default defineNuxtConfig({
     transpile: ['element-plus/es'],
   },
   css: [
-    'element-pro-components/lib/styles/index',
     'nprogress/nprogress.css',
     'modern-normalize',
     '@/styles/preflight.css',
@@ -45,13 +47,13 @@ export default defineNuxtConfig({
     '@/styles/global.scss',
   ],
   modules: [
+    '@nuxt/devtools',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
-    '@vue-macros/nuxt',
-    '@vueuse/nuxt',
     '@unocss/nuxt',
-    'unplugin-icons/nuxt',
+    '@vueuse/nuxt',
     'nuxt-typed-router',
+    'unplugin-icons/nuxt',
   ],
   experimental: {
     reactivityTransform: true,
@@ -73,6 +75,7 @@ export default defineNuxtConfig({
       },
     },
     plugins: [
+      unpluginVueDefineOptions.vite(),
       viteEslint({
         fix: true,
         lintOnStart: true,
