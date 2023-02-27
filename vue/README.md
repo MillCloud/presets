@@ -2,9 +2,9 @@
 
 vue 模板，适用于桌面端网页和移动端网页开发。
 
-自行增加 [vite-plugin-electron](https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron) 和 [vite-plugin-electron-renderer](https://github.com/electron-vite/vite-plugin-electron/tree/main/packages/electron-renderer) 可以开发桌面端应用。
+如果需要开发桌面端应用，请参考 [electron-vite-vue](https://github.com/electron-vite/electron-vite-vue) 或 [Tauri - Getting Started - Vite](https://tauri.app/v1/guides/getting-started/setup/vite/)。
 
-请使用 [Volar](https://github.com/johnsoncodehk/volar) 和 [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471)。
+请使用 [Vue Language Features (Volar)](https://github.com/vuejs/language-tools) 和 [接管模式 Takeover Mode](https://cn.vuejs.org/guide/typescript/overview.html#volar-takeover-mode)。
 
 ## 特性
 
@@ -17,8 +17,7 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 <details>
   <summary> element-plus 外的选择 </summary>
 
-- [vuetify](https://vuetifyjs.com/)
-- [ant-design-vue](https://antdv.com/)
+- [naive-ui](https://www.naiveui.com/)
 - [vant](https://vant-ui.github.io/vant/)
 - [nut-ui](https://nutui.jd.com/)
 
@@ -43,13 +42,21 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 - [axios](https://github.com/axios/axios)
 - [@tanstack/vue-query](https://tanstack.com/query)
 
-### 其它插件
+### 模拟请求
+
+- [msw](https://mswjs.io/)
+- [fakerjs](https://fakerjs.dev/)
+
+### 其它依赖
 
 - [@vitejs/plugin-vue](https://github.com/vitejs/vite/tree/main/packages/plugin-vue)
 - [@vitejs/plugin-vue-jsx](https://github.com/vitejs/vite/tree/main/packages/plugin-vue-jsx)
 - [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy)
 - [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)
-- [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
 - [unplugin-icons](https://github.com/antfu/unplugin-icons)
-- [vite-plugin-compression](https://github.com/vbenjs/vite-plugin-compression)
+- [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
+- [unplugin-vue-define-options](https://vue-macros.sxzz.moe/macros/define-options.html)
+- [vite-plugin-compression2](https://github.com/nonzzz/vite-compression-plugin)
 - [vite-plugin-inspect](https://github.com/antfu/vite-plugin-inspect)
+- [bumpp](https://github.com/antfu/bumpp)
+- [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog)
