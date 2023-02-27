@@ -1,13 +1,12 @@
 <template>
   <el-row class="flex flex-col items-center justify-center">
     <el-row>
+      <span>Iconify</span>
       <v-icon icon="logos:vue"></v-icon>
     </el-row>
     <el-row>
-      <i-logos-vue></i-logos-vue>
-    </el-row>
-    <el-row>
-      <div class="i-logos:vue"></div>
+      <span>Nuxt Icon</span>
+      <Icon name="logos:vue"></Icon>
     </el-row>
     <el-row>index</el-row>
     <el-row class="mt-4">

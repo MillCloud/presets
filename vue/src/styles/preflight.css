@@ -11,8 +11,8 @@
 
   /* 滚动条美化 */
   body {
-    overflow: overlay;
     margin: 0;
+    overflow: overlay;
     background-color: transparent;
     transition: 0.3s background-color;
   }

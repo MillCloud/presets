@@ -12,7 +12,6 @@ import postcssPresetEnv from 'postcss-preset-env';
 import uniTailwind from '@uni-helper/vite-plugin-uni-tailwind';
 import eslint from 'vite-plugin-eslint2';
 import stylelint from 'vite-plugin-stylelint';
-import inspect from 'vite-plugin-inspect';
 import tailwindcssConfig from './tailwind.config.cjs';
 
 // https://vitejs.dev/config/
@@ -101,7 +100,6 @@ export default defineConfig({
       fix: true,
       lintOnStart: true,
     }),
-    inspect(),
   ],
   resolve: {
     alias: {

@@ -7,7 +7,6 @@
       "jsdom",
       "node",
       "type-fest",
-      "unplugin-icons/types/vue",
       "unplugin-vue-define-options/macros-global"
     ]
   }

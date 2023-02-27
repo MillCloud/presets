@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config';
 import unpluginVueDefineOptions from 'unplugin-vue-define-options';
 import viteEslint from 'vite-plugin-eslint2';
 import viteStylelint from 'vite-plugin-stylelint';
-import viteInspect from 'vite-plugin-inspect';
 
 // track https://github.com/nuxt/nuxt/issues/14634 for legacy browsers support
 
@@ -47,17 +47,13 @@ export default defineNuxtConfig({
     '@/styles/global.scss',
   ],
   modules: [
-    '@nuxt/devtools',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@unocss/nuxt',
     '@vueuse/nuxt',
+    'nuxt-icon',
     'nuxt-typed-router',
-    'unplugin-icons/nuxt',
   ],
-  experimental: {
-    reactivityTransform: true,
-  },
   typescript: {
     shim: false,
   },
@@ -120,10 +116,8 @@ export default defineNuxtConfig({
           'Error.vue',
         ],
       }),
-      viteInspect(),
     ],
   },
-  // @ts-expect-error type lost
   pinia: {
     autoImports: ['defineStore'],
   },
