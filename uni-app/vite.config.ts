@@ -111,7 +111,7 @@ export default defineConfig({
       provider: 'c8',
       reporter: ['text', 'json', 'html'],
     },
-    environment: 'jsdom',
-    threads: false,
+    environment: 'happy-dom',
+    singleThread: true,
   },
 });

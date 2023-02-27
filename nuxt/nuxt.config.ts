@@ -36,23 +36,13 @@ export default defineNuxtConfig({
       noscript: [{ children: '<strong>请允许 JavaScript 执行。</strong>' }],
     },
   },
-  build: {
-    transpile: ['element-plus/es'],
-  },
   css: [
     'nprogress/nprogress.css',
     'modern-normalize',
     '@/styles/preflight.css',
     '@/styles/element.scss',
     '@/styles/global.scss',
-  ],
-  modules: [
-    '@nuxtjs/tailwindcss',
-    '@pinia/nuxt',
-    '@unocss/nuxt',
-    '@vueuse/nuxt',
-    'nuxt-icon',
-    'nuxt-typed-router',
+    '@/styles/tailwind.css',
   ],
   typescript: {
     shim: false,
@@ -118,12 +108,19 @@ export default defineNuxtConfig({
       }),
     ],
   },
+  modules: [
+    '@pinia/nuxt',
+    '@unocss/nuxt',
+    '@sidebase/nuxt-auth',
+    '@vueuse/nuxt',
+    'nuxt-icon',
+    'nuxt-typed-router',
+    'nuxt-vitest',
+  ],
   pinia: {
     autoImports: ['defineStore'],
   },
-  tailwindcss: {
-    cssPath: 'styles/tailwind.css',
-    injectPosition: 'last',
-    exposeConfig: true,
+  vueuse: {
+    ssrHandlers: true,
   },
 });
