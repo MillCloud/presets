@@ -1,4 +1,5 @@
 module.exports = {
-  '*.md': 'markdownlint --fix',
-  '*.{js,cjs,mjs,ts,cts,mts}': 'eslint --fix --cache',
+  'package.json': 'sort-package-json',
+  '*.md': 'markdownlint --fix --ignore=CHANGELOG.md --ignore-path=.gitignore',
+  '*.{js,cjs,mjs,ts,cts,mts}': 'eslint --fix --cache --ignore-path=.gitignore',
 };
