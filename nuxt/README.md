@@ -54,6 +54,7 @@ nuxt 模板，适用于对 SSR 有要求的桌面端网页和移动端网页开�
 
 ### 其它插件
 
+- [nuxt-auth](https://sidebase.io/nuxt-auth)
 - [nuxt-icons](@nuxtjs/tailwindcss)
 - [unplugin-vue-define-options](https://vue-macros.sxzz.moe/macros/define-options.html)
 - [bumpp](https://github.com/antfu/bumpp)

@@ -10,7 +10,6 @@
     "typeRoots": ["./node_modules/@types", "./src/types"],
     "types": [
       "element-plus/global",
-      "jsdom",
       "node",
       "type-fest",
       "unplugin-icons/types/vue",
