@@ -194,13 +194,13 @@ export const queryClient = new QueryClient({
   }),
   defaultOptions: {
     queries: {
-      queryFn: async ({ queryKey }) => {
-        // console.log('');
-        // console.log('queryKey', queryKey);
-        // console.log('');
-        const config = reactive({ ...(queryKey as IAxiosRequestConfig) });
+      queryFn: async (context) => {
+        const queryKey = reactive({ ...context.queryKey });
+        const url = queryKey[0] as string;
+        const config = reactive({ ...(queryKey[1] as IAxiosRequestConfig) });
         const response = await instance.request<IAxiosResponseData>({
           method: 'GET',
+          url,
           ...config,
         });
         if (!(response?.data?.success ?? true)) {
@@ -224,9 +224,6 @@ export const queryClient = new QueryClient({
     },
     mutations: {
       mutationFn: async (variables) => {
-        // console.log('');
-        // console.log('variables', variables);
-        // console.log('');
         const config = reactive({ ...(variables as IAxiosRequestConfig) });
         const response = await instance.request<IAxiosResponseData>({
           method: 'POST',

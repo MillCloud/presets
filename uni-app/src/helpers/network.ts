@@ -203,13 +203,13 @@ export const queryClient = new QueryClient({
   }),
   defaultOptions: {
     queries: {
-      queryFn: async ({ queryKey }) => {
-        // console.log('');
-        // console.log('queryKey', queryKey);
-        // console.log('');
-        const config = reactive({ ...(queryKey as IUnConfig) });
+      queryFn: async (context) => {
+        const queryKey = reactive({ ...context.queryKey });
+        const url = queryKey[0] as string;
+        const config = reactive({ ...(queryKey[1] as IUnConfig) });
         const response = await instance.request<IUnResponseData, IUnRequestData, IUnResponse>({
           method: 'GET',
+          url,
           ...config,
         });
         if (!(response?.data?.success ?? true)) {
@@ -236,9 +236,6 @@ export const queryClient = new QueryClient({
     },
     mutations: {
       mutationFn: async (variables) => {
-        // console.log('');
-        // console.log('variables', variables);
-        // console.log('');
         const config = reactive({ ...(variables as IUnConfig) });
         const response = await instance.request<IUnResponseData, IUnRequestData, IUnResponse>({
           method: 'POST',
