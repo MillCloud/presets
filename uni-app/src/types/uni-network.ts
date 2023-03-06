@@ -1,46 +1,46 @@
 import type { UnError, UnResponse, UnConfig } from '@uni-helper/uni-network';
 
-type _IUnShowErrorType = 'toast' | 'modal';
+type IUnShowErrorType_ = 'toast' | 'modal';
 
-interface _IUnRequestData {
+interface IUnRequestData_ {
   [key: string]: any;
 }
 
-interface _IUnResponseData {
+interface IUnResponseData_ {
   success: boolean;
   code: string;
   message: string;
   [key: string]: any;
 }
 
-interface _IUnConfig<T = _IUnResponseData, D = _IUnRequestData> extends UnConfig<T, D> {
+interface IUnConfig_<T = IUnResponseData_, D = IUnRequestData_> extends UnConfig<T, D> {
   showError?: boolean;
-  showErrorType?: _IUnShowErrorType;
+  showErrorType?: IUnShowErrorType_;
 }
-interface _IUnResponse<T = _IUnResponseData, D = _IUnRequestData> extends UnResponse<T, D> {}
+interface IUnResponse_<T = IUnResponseData_, D = IUnRequestData_> extends UnResponse<T, D> {}
 
-type _IUnPromise<T = _IUnResponseData, D = _IUnRequestData> = Promise<_IUnResponse<T, D>>;
+type IUnPromise_<T = IUnResponseData_, D = IUnRequestData_> = Promise<IUnResponse_<T, D>>;
 
-interface _IUnError<T = _IUnResponseData, D = _IUnRequestData> extends UnError<T, D> {
-  response?: _IUnResponse<T, D>;
+interface IUnError_<T = IUnResponseData_, D = IUnRequestData_> extends UnError<T, D> {
+  response?: IUnResponse_<T, D>;
 }
 
 export type {
-  _IUnShowErrorType as IUnShowErrorType,
-  _IUnRequestData as IUnRequestData,
-  _IUnResponseData as IUnResponseData,
-  _IUnConfig as IUnConfig,
-  _IUnResponse as IUnResponse,
-  _IUnPromise as IUnPromise,
-  _IUnError as IUnError,
+  IUnShowErrorType_ as IUnShowErrorType,
+  IUnRequestData_ as IUnRequestData,
+  IUnResponseData_ as IUnResponseData,
+  IUnConfig_ as IUnConfig,
+  IUnResponse_ as IUnResponse,
+  IUnPromise_ as IUnPromise,
+  IUnError_ as IUnError,
 };
 
 declare global {
-  type IUnShowErrorType = _IUnShowErrorType;
-  interface IUnRequestData extends _IUnRequestData {}
-  interface IUnResponseData extends _IUnResponseData {}
-  interface IUnConfig<T = _IUnResponseData, D = _IUnRequestData> extends _IUnConfig<T, D> {}
-  interface IUnResponse<T = _IUnResponseData, D = _IUnRequestData> extends _IUnResponse<T, D> {}
-  type IUnPromise<T = _IUnResponseData, D = _IUnRequestData> = _IUnPromise<T, D>;
-  interface IUnError<T = _IUnResponseData, D = _IUnRequestData> extends _IUnError<T, D> {}
+  type IUnShowErrorType = IUnShowErrorType_;
+  interface IUnRequestData extends IUnRequestData_ {}
+  interface IUnResponseData extends IUnResponseData_ {}
+  interface IUnConfig<T = IUnResponseData_, D = IUnRequestData_> extends IUnConfig_<T, D> {}
+  interface IUnResponse<T = IUnResponseData_, D = IUnRequestData_> extends IUnResponse_<T, D> {}
+  type IUnPromise<T = IUnResponseData_, D = IUnRequestData_> = IUnPromise_<T, D>;
+  interface IUnError<T = IUnResponseData_, D = IUnRequestData_> extends IUnError_<T, D> {}
 }

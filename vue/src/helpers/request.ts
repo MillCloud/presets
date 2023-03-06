@@ -201,18 +201,9 @@ export const queryClient = new QueryClient({
         // console.log('');
         // console.log('queryKey', queryKey);
         // console.log('');
-        const key = reactive(queryKey);
-        const urlParams = Array.isArray(key[1]) ? key[1] : [];
-        let url = (key[0] as any).toString() as string;
-        for (const [idx, param] of urlParams.entries()) {
-          url = url.replace(`:${idx}`, param.toString() as string);
-        }
-        const params = key[2] as Record<string, any>;
-        const config = key[3] as IAxiosRequestConfig;
+        const config = reactive({ ...(queryKey as IAxiosRequestConfig) });
         const response = await instance.request<IAxiosResponseData>({
           method: 'GET',
-          url,
-          params,
           ...config,
         });
         if (!(response?.data?.success ?? true)) {

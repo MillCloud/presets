@@ -1,41 +1,41 @@
 import type { AxiosResponse, AxiosError, AxiosRequestConfig } from 'axios';
 
-type _IAxiosShowErrorType = 'alert' | 'message' | 'notification';
+type IAxiosShowErrorType_ = 'alert' | 'message' | 'notification';
 
-interface _IAxiosResponseData {
+interface IAxiosResponseData_ {
   success: boolean;
   code: string;
   message: string;
   [key: string]: any;
 }
 
-interface _IAxiosRequestConfig<D = any> extends AxiosRequestConfig<D> {
+interface IAxiosRequestConfig_<D = any> extends AxiosRequestConfig<D> {
   showError?: boolean;
-  showErrorType?: _IAxiosShowErrorType;
+  showErrorType?: IAxiosShowErrorType_;
 }
 
-interface _IAxiosResponse<T = _IAxiosResponseData, D = any> extends AxiosResponse<T, D> {}
+interface IAxiosResponse_<T = IAxiosResponseData_, D = any> extends AxiosResponse<T, D> {}
 
-type _IAxiosPromise<T = _IAxiosResponseData, D = any> = Promise<_IAxiosResponse<T, D>>;
+type IAxiosPromise_<T = IAxiosResponseData_, D = any> = Promise<IAxiosResponse_<T, D>>;
 
-interface _IAxiosError<T = _IAxiosResponseData, D = any> extends AxiosError<T, D> {
-  response?: _IAxiosResponse<T, D>;
+interface IAxiosError_<T = IAxiosResponseData_, D = any> extends AxiosError<T, D> {
+  response?: IAxiosResponse_<T, D>;
 }
 
 export type {
-  _IAxiosShowErrorType as IAxiosShowErrorType,
-  _IAxiosResponseData as IAxiosResponseData,
-  _IAxiosRequestConfig as IAxiosRequestConfig,
-  _IAxiosResponse as IAxiosResponse,
-  _IAxiosPromise as IAxiosPromise,
-  _IAxiosError as IAxiosError,
+  IAxiosShowErrorType_ as IAxiosShowErrorType,
+  IAxiosResponseData_ as IAxiosResponseData,
+  IAxiosRequestConfig_ as IAxiosRequestConfig,
+  IAxiosResponse_ as IAxiosResponse,
+  IAxiosPromise_ as IAxiosPromise,
+  IAxiosError_ as IAxiosError,
 };
 
 declare global {
-  type IAxiosShowErrorType = _IAxiosShowErrorType;
-  interface IAxiosResponseData extends _IAxiosResponseData {}
-  interface IAxiosRequestConfig<D = any> extends _IAxiosRequestConfig<D> {}
-  interface IAxiosResponse<T = _IAxiosResponseData, D = any> extends _IAxiosResponse<T, D> {}
-  type IAxiosPromise<T = _IAxiosResponseData, D = any> = _IAxiosPromise<T, D>;
-  interface IAxiosError<T = _IAxiosResponseData, D = any> extends _IAxiosError<T, D> {}
+  type IAxiosShowErrorType = IAxiosShowErrorType_;
+  interface IAxiosResponseData extends IAxiosResponseData_ {}
+  interface IAxiosRequestConfig<D = any> extends IAxiosRequestConfig_<D> {}
+  interface IAxiosResponse<T = IAxiosResponseData_, D = any> extends IAxiosResponse_<T, D> {}
+  type IAxiosPromise<T = IAxiosResponseData_, D = any> = IAxiosPromise_<T, D>;
+  interface IAxiosError<T = IAxiosResponseData_, D = any> extends IAxiosError_<T, D> {}
 }
