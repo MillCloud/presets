@@ -5,7 +5,7 @@ import qs from 'qs';
 import { QueryClient, QueryCache, MutationCache } from '@tanstack/vue-query';
 import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 import { getToken, setToken } from './storage';
-import { Headers } from '@/constants';
+import { DefaultHeaders } from '@/constants';
 
 console.log('import.meta.env.PROD', import.meta.env.PROD);
 
@@ -17,7 +17,7 @@ const instance = axios.create({
     'https://jsonplaceholder.typicode.com/',
   timeout: 30_000,
   headers: {
-    ...Headers,
+    ...DefaultHeaders,
   },
   paramsSerializer: {
     serialize: (params) =>

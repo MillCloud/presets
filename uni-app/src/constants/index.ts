@@ -2,14 +2,20 @@ import pkg from '@/../package.json';
 
 export { default as pkg } from '@/../package.json';
 
-export const Headers = {
+// 通用
+/** 每页条目键 */
+export const PageLimitKey = 'pageLimit';
+/** 默认每页条目 */
+export const DefaultPageLimit = 50;
+
+// 请求
+/** 默认请求头 */
+export const DefaultHeaders = {
   Accept: 'application/json',
   'Content-Type': 'application/json; charset=utf-8',
   'X-Version': `${pkg.name}/${pkg.version}`,
 };
-
-export const ThemeKey = 'theme';
+/** 登录态键 */
 export const TokenKey = 'token';
+/** 默认登录态 */
 export const DefaultToken = '';
-export const PageLimitKey = 'pageLimit';
-export const DefaultPageLimit = 10;

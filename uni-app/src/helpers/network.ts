@@ -6,7 +6,7 @@ import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 import { showModal } from './modal';
 import { getToken, setToken } from './storage';
 import { showToast } from './toast';
-import { Headers } from '@/constants';
+import { DefaultHeaders } from '@/constants';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
@@ -14,7 +14,7 @@ const instance = un.create({
   baseUrl: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/',
   timeout: 30_000,
   headers: {
-    ...Headers,
+    ...DefaultHeaders,
   },
   paramsSerializer: (params: any) =>
     qs.stringify(

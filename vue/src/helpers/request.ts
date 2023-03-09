@@ -9,7 +9,7 @@ import {
   type VueQueryPluginOptions,
 } from '@tanstack/vue-query';
 import { getToken, setToken } from './storage';
-import { Headers } from '@/constants';
+import { DefaultHeaders } from '@/constants';
 import { router } from '@/router';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
@@ -18,7 +18,7 @@ const instance = axios.create({
   baseURL: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/',
   timeout: 30_000,
   headers: {
-    ...Headers,
+    ...DefaultHeaders,
   },
   paramsSerializer: {
     serialize: (params) =>
