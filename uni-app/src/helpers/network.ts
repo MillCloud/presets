@@ -232,7 +232,8 @@ export const queryClient = new QueryClient({
         }
         return response?.data;
       },
-      refetchOnWindowFocus: false,
+      retry: 3,
+      refetchOnWindowFocus: import.meta.env.PROD,
     },
     mutations: {
       mutationFn: async (variables) => {
@@ -261,6 +262,7 @@ export const queryClient = new QueryClient({
         }
         return response?.data;
       },
+      retry: 3,
     },
   },
 });

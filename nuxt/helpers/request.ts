@@ -7,6 +7,8 @@ import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 import { getToken, setToken } from './storage';
 import { Headers } from '@/constants';
 
+console.log('import.meta.env.PROD', import.meta.env.PROD);
+
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
 const instance = axios.create({
