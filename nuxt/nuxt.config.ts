@@ -7,6 +7,18 @@ import viteStylelint from 'vite-plugin-stylelint';
 // track https://github.com/nuxt/nuxt/issues/14634 for legacy browsers support
 
 export default defineNuxtConfig({
+  imports: {
+    dirs: [
+      './composables',
+      './composables/**',
+      './helpers',
+      './helpers/**',
+      './stores',
+      './stores/**',
+      './utils',
+      './utils/**',
+    ],
+  },
   app: {
     head: {
       meta: [
