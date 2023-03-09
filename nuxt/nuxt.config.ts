@@ -7,18 +7,6 @@ import viteStylelint from 'vite-plugin-stylelint';
 // track https://github.com/nuxt/nuxt/issues/14634 for legacy browsers support
 
 export default defineNuxtConfig({
-  imports: {
-    dirs: [
-      '@/composables',
-      '@/composables/**',
-      '@/helpers',
-      '@/helpers/**',
-      '@/stores',
-      '@/stores/**',
-      '@/utils',
-      '@/utils/**',
-    ],
-  },
   app: {
     head: {
       meta: [
@@ -34,6 +22,16 @@ export default defineNuxtConfig({
       ],
       link: [{ rel: 'icon', href: '/nuxt.svg', type: 'image/svg+xml' }],
       noscript: [{ children: '<strong>请允许 JavaScript 执行。</strong>' }],
+    },
+  },
+  postcss: {
+    plugins: {
+      'tailwindcss/nesting': {},
+      tailwindcss: {},
+      'postcss-preset-env': {
+        stage: 3,
+        features: { 'nesting-rules': false },
+      },
     },
   },
   css: [
@@ -111,7 +109,6 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
     '@unocss/nuxt',
-    '@sidebase/nuxt-auth',
     '@vueuse/nuxt',
     'nuxt-icon',
     'nuxt-typed-router',
