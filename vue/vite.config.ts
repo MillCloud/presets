@@ -39,11 +39,9 @@ export default defineConfig({
   plugins: [
     pages({
       exclude: [
-        '**/components/*.js',
-        '**/components/*.jsx',
-        '**/components/*.ts',
-        '**/components/*.tsx',
-        '**/components/*.vue',
+        '**/components/*.{js,jsx,ts,tsx,vue}',
+        '**/helpers/*.{js,jsx,ts,tsx,vue}',
+        '**/utils/*.{js,jsx,ts,tsx,vue}',
       ],
     }),
     layouts(),
@@ -76,7 +74,7 @@ export default defineConfig({
     }),
     icons({
       compiler: 'vue3',
-      defaultClass: 'el-icon el-icon-',
+      defaultClass: 'el-icon',
     }),
     unocss(),
     unpluginVueDefineOptions.vite(),
