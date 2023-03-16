@@ -38,24 +38,14 @@ export default defineConfig({
   },
   plugins: [
     pages({
-      exclude: [
-        '**/components/*.{js,jsx,ts,tsx,vue}',
-        '**/helpers/*.{js,jsx,ts,tsx,vue}',
-        '**/utils/*.{js,jsx,ts,tsx,vue}',
-      ],
+      exclude: ['**/{components,helpers,utils}/**/*.{js,jsx,ts,tsx,vue}'],
     }),
     layouts(),
     autoImport({
-      dirs: [
-        'src/composables',
-        'src/composables/**',
-        'src/helpers',
-        'src/helpers/**',
-        'src/stores',
-        'src/stores/**',
-        'src/utils',
-        'src/utils/**',
-      ],
+      dirs: ['composables', 'helpers', 'stores', 'utils'].flatMap((item) => [
+        `src/${item}`,
+        `src/${item}/**`,
+      ]),
       imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
     }),
     vueComponents({

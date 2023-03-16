@@ -8,16 +8,10 @@ import viteStylelint from 'vite-plugin-stylelint';
 
 export default defineNuxtConfig({
   imports: {
-    dirs: [
-      './composables',
-      './composables/**',
-      './helpers',
-      './helpers/**',
-      './stores',
-      './stores/**',
-      './utils',
-      './utils/**',
-    ],
+    dirs: ['composables', 'helpers', 'stores', 'utils'].flatMap((item) => [
+      `src/${item}`,
+      `src/${item}/**`,
+    ]),
   },
   app: {
     head: {
