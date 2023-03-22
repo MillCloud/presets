@@ -98,10 +98,8 @@
     "unplugin-vue-define-options": "^1.2.4",
     "vite": "^4.1.4",
     "vite-plugin-compression2": "^0.8.2",
-    "vite-plugin-eslint2": "^3.3.0",
     "vite-plugin-inspect": "^0.7.17",
     "vite-plugin-pages": "^0.29.0",
-    "vite-plugin-stylelint": "^4.3.0",
     "vite-plugin-vue-layouts": "^0.8.0",
     "vitest": "^0.29.3",
     "vue-tsc": "^1.2.0"

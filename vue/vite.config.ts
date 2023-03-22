@@ -10,8 +10,6 @@ import icons from 'unplugin-icons/vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
-import eslint from 'vite-plugin-eslint2';
-import stylelint from 'vite-plugin-stylelint';
 import compression from 'vite-plugin-compression2';
 import inspect from 'vite-plugin-inspect';
 
@@ -72,14 +70,6 @@ export default defineConfig({
       targets: ['defaults', 'edge >= 79', 'firefox >= 67', 'safari >= 12', 'chrome >= 63'],
       polyfills: true,
       modernPolyfills: true,
-    }),
-    eslint({
-      fix: true,
-      lintOnStart: true,
-    }),
-    stylelint({
-      fix: true,
-      lintOnStart: true,
     }),
     compression(),
     inspect(),

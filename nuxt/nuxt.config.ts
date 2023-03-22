@@ -1,8 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config';
 import unpluginVueDefineOptions from 'unplugin-vue-define-options';
-import viteEslint from 'vite-plugin-eslint2';
-import viteStylelint from 'vite-plugin-stylelint';
 
 // track https://github.com/nuxt/nuxt/issues/14634 for legacy browsers support
 
@@ -66,50 +64,6 @@ export default defineNuxtConfig({
     },
     plugins: [
       unpluginVueDefineOptions.vite(),
-      viteEslint({
-        fix: true,
-        lintOnStart: true,
-        include: [
-          'components/**/*.{js,jsx,ts,tsx,vue}',
-          'composables/**/*.{js,jsx,ts,tsx,vue}',
-          'constants/**/*.{js,jsx,ts,tsx,vue}',
-          'content/**/*.{js,jsx,ts,tsx,vue}',
-          'helpers/**/*.{js,jsx,ts,tsx,vue}',
-          'layouts/**/*.{js,jsx,ts,tsx,vue}',
-          'middleware/**/*.{js,jsx,ts,tsx,vue}',
-          'middlewares/**/*.{js,jsx,ts,tsx,vue}',
-          'pages/**/*.{js,jsx,ts,tsx,vue}',
-          'plugins/**/*.{js,jsx,ts,tsx,vue}',
-          'server/**/*.{js,jsx,ts,tsx,vue}',
-          'src/**/*.{js,jsx,ts,tsx,vue}',
-          'stores/**/*.{js,jsx,ts,tsx,vue}',
-          'styles/**/*.{js,jsx,ts,tsx,vue}',
-          'utils/**/*.{js,jsx,ts,tsx,vue}',
-          'app.vue',
-          'App.vue',
-          'error.vue',
-          'Error.vue',
-          'app.config.ts',
-          'nuxt.config.ts',
-        ],
-      }),
-      viteStylelint({
-        fix: true,
-        lintOnStart: true,
-        include: [
-          'components/**/*.{css,scss,vue}',
-          'content/**/*.{css,scss,vue}',
-          'layouts/**/*.{css,scss,vue}',
-          'pages/**/*.{css,scss,vue}',
-          'server/**/*.{css,scss,vue}',
-          'src/**/*.{css,scss,vue}',
-          'styles/**/*.{css,scss,vue}',
-          'app.vue',
-          'App.vue',
-          'error.vue',
-          'Error.vue',
-        ],
-      }),
     ],
   },
   modules: ['@pinia/nuxt', '@vueuse/nuxt', 'nuxt-icon', 'nuxt-typed-router', 'nuxt-vitest'],

@@ -9,8 +9,6 @@ import tailwindcss from 'tailwindcss';
 import nested from 'tailwindcss/nesting';
 import postcssPresetEnv from 'postcss-preset-env';
 import uniTailwind from '@uni-helper/vite-plugin-uni-tailwind';
-import eslint from 'vite-plugin-eslint2';
-import stylelint from 'vite-plugin-stylelint';
 import tailwindcssConfig from './tailwind.config.cjs';
 
 // https://vitejs.dev/config/
@@ -84,14 +82,6 @@ export default defineConfig({
       },
     }),
     uniTailwind(),
-    eslint({
-      fix: true,
-      lintOnStart: true,
-    }),
-    stylelint({
-      fix: true,
-      lintOnStart: true,
-    }),
   ],
   resolve: {
     alias: {
