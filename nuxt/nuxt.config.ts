@@ -112,14 +112,7 @@ export default defineNuxtConfig({
       }),
     ],
   },
-  modules: [
-    '@pinia/nuxt',
-    '@unocss/nuxt',
-    '@vueuse/nuxt',
-    'nuxt-icon',
-    'nuxt-typed-router',
-    'nuxt-vitest',
-  ],
+  modules: ['@pinia/nuxt', '@vueuse/nuxt', 'nuxt-icon', 'nuxt-typed-router', 'nuxt-vitest'],
   pinia: {
     autoImports: ['defineStore'],
   },

@@ -1,4 +1,5 @@
 const { basePreset, elementPlusPreset } = require('tailwind-extensions');
+const { iconsPlugin: icons, getIconCollections } = require('@egoist/tailwindcss-icons');
 const typography = require('@tailwindcss/typography');
 const lineClamp = require('@tailwindcss/line-clamp');
 
@@ -14,5 +15,5 @@ module.exports = {
     `error.{vue,js,jsx,ts,tsx}`,
   ],
   presets: [basePreset, elementPlusPreset()],
-  plugins: [typography, lineClamp],
+  plugins: [typography, lineClamp, icons({ collections: getIconCollections('all') })],
 };

@@ -8,6 +8,10 @@
       <span>Nuxt Icon</span>
       <Icon name="logos:vue"></Icon>
     </el-row>
+    <el-row>
+      <span>TailwindCSS Icon</span>
+      <span class="i-logos-vue"></span>
+    </el-row>
     <el-row>index</el-row>
     <el-row class="mt-4">
       <el-button @click="$router.push('/sign-in')">SIGN IN</el-button>

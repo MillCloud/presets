@@ -7,7 +7,6 @@ import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import iconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
-import unocss from 'unocss/vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
@@ -66,7 +65,6 @@ export default defineConfig({
       compiler: 'vue3',
       defaultClass: 'el-icon',
     }),
-    unocss(),
     unpluginVueDefineOptions.vite(),
     vue(),
     vueJsx(),

@@ -3,7 +3,6 @@ import { defineConfig } from 'vitest/config';
 import unpluginVueDefineOptions from 'unplugin-vue-define-options';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
-import unocss from 'unocss/vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import tailwindcss from 'tailwindcss';
 // @ts-expect-error no types
@@ -75,7 +74,6 @@ export default defineConfig({
       ],
       types: [],
     }),
-    unocss(),
     uni({
       vueOptions: {},
       vueJsxOptions: {},

@@ -9,7 +9,6 @@ import '@/styles/preflight.css';
 import '@/styles/element.scss';
 import '@/styles/global.scss';
 import '@/styles/tailwind.css';
-import 'uno.css';
 
 const app = createApp(App)
   .use(pinia)

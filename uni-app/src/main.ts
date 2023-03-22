@@ -26,7 +26,6 @@ import '@/styles/preflight.css';
 import 'modern-normalize';
 import '@/styles/global.scss';
 import '@/styles/tailwind.css';
-import 'uno.css';
 
 export function createApp() {
   const app = createSSRApp(App).use(pinia).use(dayjs).use(vueQuery);

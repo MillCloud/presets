@@ -1,4 +1,5 @@
 const { basePreset, elementPlusPreset, miniprogramBasePreset } = require('tailwind-extensions');
+const { iconsPlugin: icons, getIconCollections } = require('@egoist/tailwindcss-icons');
 const typography = require('@tailwindcss/typography');
 const lineClamp = require('@tailwindcss/line-clamp');
 
@@ -12,7 +13,7 @@ module.exports = {
     miniprogramBasePreset,
   ],
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  plugins: [typography, lineClamp],
+  plugins: [typography, lineClamp, icons({ collections: getIconCollections('all') })],
   theme: {
     screens: {},
   },
