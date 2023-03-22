@@ -17,8 +17,8 @@ export const DefaultToken = '';
 
 // 通用
 /** 每页条目键 */
-export const PageLimitKey = 'pageLimit';
+export const PageSizeKey = 'pageSize';
 /** 默认每页条目 */
-export const DefaultPageLimit = 10;
+export const DefaultPageSize = 10;
 /** 可选每页条目 */
-export const PageLimits = [10, 20, 50, 100];
+export const PageSizes = [10, 20, 50, 100];

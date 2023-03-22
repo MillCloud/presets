@@ -4,9 +4,9 @@ export { default as pkg } from '@/../package.json';
 
 // 通用
 /** 每页条目键 */
-export const PageLimitKey = 'pageLimit';
+export const PageSizeKey = 'pageSize';
 /** 默认每页条目 */
-export const DefaultPageLimit = 50;
+export const DefaultPageSize = 50;
 
 // 请求
 /** 默认请求头 */
