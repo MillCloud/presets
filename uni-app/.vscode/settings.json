@@ -25,7 +25,6 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue"],
-  "eslint.alwaysShowStatus": true,
   "files.eol": "\n",
   "files.associations": {
     "*.wxml": "html",
@@ -48,7 +47,6 @@
     "settings.json": "jsonc"
   },
   "git.autofetch": true,
-  "js/ts.implicitProjectConfig.experimentalDecorators": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "scss.validate": false,
   "search.exclude": {

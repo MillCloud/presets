@@ -6,7 +6,6 @@ import pinoLogger from 'koa-pino-logger';
 import cors from '@koa/cors';
 import mount from 'koa-mount';
 import serve from 'koa-static';
-import { koaBody as body } from 'koa-body';
 import { routes } from '@/routes';
 import { pinoPrettyStream, logger } from '@/helpers';
 
@@ -18,7 +17,6 @@ app
   .use(pinoLogger(pinoPrettyStream))
   // .use(sslify())
   .use(cors())
-  .use(body({ multipart: true }))
   .use(mount('/static', serve(resolve(__dirname, 'static'))))
   .use(routes('/api'));
 

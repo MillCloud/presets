@@ -1,9 +1,9 @@
-import Router from 'koa-joi-router';
+import Router, { type ZodRouter } from 'koa-zod-router';
 import { initRoutes as initHomeRoutes } from './home';
 
 const router = Router();
 
-const initRoutes = (router: Router.Router) => {
+const initRoutes = (router: ZodRouter) => {
   initHomeRoutes(router);
   return router;
 };

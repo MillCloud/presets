@@ -30,15 +30,15 @@ koa 模板，只适用于后端服务原型开发。
 
 ### 请求体解析
 
-基于 [koa-body](https://github.com/koajs/koa-body)。
+基于 [koa-body-parser](https://github.com/koajs/bodyparser) 和 [formidable](https://github.com/node-formidable/formidable)。
 
 提供常见请求体解析。
 
 ### 路由
 
-基于 [koa-joi-router](https://github.com/koajs/joi-router)。
+基于 [koa-zod-router](https://github.com/jakefenley/koa-zod-router)。
 
-如果不需要 [joi](https://github.com/hapijs/joi) 验证，可以直接像 [@koa/router](https://github.com/koajs/router) 一样使用。
+如果不需要 [zod](https://github.com/colinhacks/zod) 验证，可以直接像 [koa-router](https://github.com/koajs/router) 一样使用。
 
 ### 数据与分层
 

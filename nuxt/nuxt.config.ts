@@ -62,9 +62,7 @@ export default defineNuxtConfig({
         },
       },
     },
-    plugins: [
-      unpluginVueDefineOptions.vite(),
-    ],
+    plugins: [unpluginVueDefineOptions.vite()],
   },
   modules: ['@pinia/nuxt', '@vueuse/nuxt', 'nuxt-icon', 'nuxt-typed-router', 'nuxt-vitest'],
   pinia: {

@@ -23,7 +23,6 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "eslint.alwaysShowStatus": true,
   "files.eol": "\n",
   "files.associations": {
     "tsconfig.json": "jsonc",
