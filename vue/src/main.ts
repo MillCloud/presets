@@ -1,7 +1,7 @@
 import App from './App.vue';
 import { pinia } from './stores';
-import { guardRouter, router } from './router';
-import { browserUpdate, dayjs, elementPlus, vueQuery } from './plugins';
+import { router, routerGuardPlugin } from './router';
+import { browserUpdatePlugin, dayjsPlugin, elementPlusPlugin, vueQueryPlugin } from './plugins';
 
 import 'nprogress/nprogress.css';
 import 'modern-normalize';
@@ -13,11 +13,10 @@ import '@/styles/tailwind.css';
 const app = createApp(App)
   .use(pinia)
   .use(router)
-  .use(browserUpdate)
-  .use(dayjs)
-  .use(elementPlus)
-  .use(vueQuery);
-
-guardRouter();
+  .use(routerGuardPlugin)
+  .use(browserUpdatePlugin)
+  .use(dayjsPlugin)
+  .use(elementPlusPlugin)
+  .use(vueQueryPlugin);
 
 app.mount('#app');

@@ -20,7 +20,7 @@ import 'core-js/actual/string/trim-start';
 import { createSSRApp } from 'vue';
 import { pinia } from './stores';
 import App from './App.vue';
-import { dayjs, vueQuery } from './plugins';
+import { dayjsPlugin, vueQueryPlugin } from './plugins';
 
 import '@/styles/preflight.css';
 import 'modern-normalize';
@@ -28,6 +28,6 @@ import '@/styles/global.scss';
 import '@/styles/tailwind.css';
 
 export function createApp() {
-  const app = createSSRApp(App).use(pinia).use(dayjs).use(vueQuery);
+  const app = createSSRApp(App).use(pinia).use(dayjsPlugin).use(vueQueryPlugin);
   return { app };
 }

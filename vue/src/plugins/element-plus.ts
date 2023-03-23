@@ -1,7 +1,7 @@
 import ep from 'element-plus';
 import type { Plugin } from 'vue';
 
-export const plugin: Plugin = {
+export const elementPlusPlugin: Plugin = {
   install: (app) => {
     app.use(ep);
   },

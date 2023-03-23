@@ -5,8 +5,7 @@
 <details>
   <summary>tasks</summary>
 
-- [ ] is postcss working?
-- [ ] legacy bundle <https://github.com/nuxt/framework/issues/6716>
+- [ ] legacy bundle <https://github.com/nuxt/nuxt/issues/15464>
 
 </details>
 

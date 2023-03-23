@@ -12,6 +12,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
 import compression from 'vite-plugin-compression2';
 import inspect from 'vite-plugin-inspect';
+import { dependencies } from './package.json';
 
 export default defineConfig({
   build: {
@@ -31,11 +32,12 @@ export default defineConfig({
   },
   optimizeDeps: {
     disabled: false,
+    include: Object.keys(dependencies),
     exclude: ['vue-demi'],
   },
   plugins: [
     pages({
-      exclude: ['**/{components,helpers,utils}/**/*.{js,jsx,ts,tsx,vue}'],
+      exclude: ['**/{components,composables,constants,helpers,utils}/**/*.{js,jsx,ts,tsx,vue}'],
     }),
     layouts(),
     autoImport({
@@ -78,12 +80,5 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('src', import.meta.url)),
     },
-  },
-  test: {
-    coverage: {
-      provider: 'c8',
-      reporter: ['text', 'json', 'html'],
-    },
-    environment: 'happy-dom',
   },
 });
