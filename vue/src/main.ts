@@ -1,6 +1,6 @@
 import App from './App.vue';
 import { pinia } from './stores';
-import { router, routerGuardPlugin } from './router';
+import { router, routerGuard } from './router';
 import { browserUpdatePlugin, dayjsPlugin, elementPlusPlugin, vueQueryPlugin } from './plugins';
 
 import 'nprogress/nprogress.css';
@@ -13,7 +13,7 @@ import '@/styles/tailwind.css';
 const app = createApp(App)
   .use(pinia)
   .use(router)
-  .use(routerGuardPlugin)
+  .use(routerGuard)
   .use(browserUpdatePlugin)
   .use(dayjsPlugin)
   .use(elementPlusPlugin)

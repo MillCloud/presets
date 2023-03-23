@@ -36,5 +36,5 @@
     "**/*.tsx",
     "**/*.vue"
   ],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", "node_modules", "coverage"]
 }
