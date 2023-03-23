@@ -184,7 +184,7 @@ export const showRequestError = ({
   }
 };
 
-const queryClient = new QueryClient({
+export const vueQueryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
       showRequestError({ error: error as IAxiosError });
@@ -267,8 +267,7 @@ const queryClient = new QueryClient({
   },
 });
 
-export { queryClient as vueQueryClient };
 
 export const vueQueryPluginOptions: VueQueryPluginOptions = {
-  queryClient,
+  queryClient: vueQueryClient,
 };

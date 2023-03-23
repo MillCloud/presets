@@ -190,7 +190,7 @@ export const showNetworkError = ({
   }
 };
 
-export const queryClient = new QueryClient({
+export const vueQueryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
       showNetworkError({ error: error as IUnError });
@@ -268,5 +268,5 @@ export const queryClient = new QueryClient({
 });
 
 export const vueQueryPluginOptions: VueQueryPluginOptions = {
-  queryClient,
+  queryClient: vueQueryClient,
 };
