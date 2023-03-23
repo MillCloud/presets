@@ -1,5 +1,5 @@
-import ep from 'element-plus';
+import elementPlus from 'element-plus';
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(ep);
+  nuxtApp.vueApp.use(elementPlus);
 });
