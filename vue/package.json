@@ -47,7 +47,7 @@
     "@commitlint/prompt": "^17.5.0",
     "@egoist/tailwindcss-icons": "^1.0.7",
     "@iconify/json": "^2.2.38",
-    "@modyqyw/fabric": "^7.4.1",
+    "@modyqyw/fabric": "^7.5.0",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/browser-update": "^3.3.0",
