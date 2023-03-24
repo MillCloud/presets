@@ -37,14 +37,12 @@ export default defineConfig({
   },
   plugins: [
     pages({
-      exclude: ['**/{components,composables,constants,helpers,utils}/**/*.{js,jsx,ts,tsx,vue}'],
+      exclude: [
+        '**/{components,composables,constants,directives,helpers,styles,types,utils}/**/*.{js,jsx,ts,tsx,vue}',
+      ],
     }),
     layouts(),
     autoImport({
-      dirs: ['composables', 'helpers', 'stores', 'utils'].flatMap((item) => [
-        `src/${item}`,
-        `src/${item}/**`,
-      ]),
       imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
     }),
     vueComponents({
@@ -53,9 +51,7 @@ export default defineConfig({
         {
           type: 'component',
           resolve: (componentName) => {
-            if (componentName === 'VIcon') {
-              return { name: 'Icon', from: '@iconify/vue' };
-            }
+            if (componentName === 'VIcon') return { name: 'Icon', from: '@iconify/vue' };
           },
         },
         iconsResolver(),

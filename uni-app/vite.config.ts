@@ -46,10 +46,6 @@ export default defineConfig({
   plugins: [
     unpluginVueDefineOptions.vite(),
     autoImport({
-      dirs: ['composables', 'helpers', 'stores', 'utils'].flatMap((item) => [
-        `src/${item}`,
-        `src/${item}/**`,
-      ]),
       imports: ['vue', 'pinia', '@vueuse/core', 'uni-app'],
     }),
     vueComponents({

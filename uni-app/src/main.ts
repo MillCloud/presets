@@ -1,7 +1,6 @@
 // check https://wechat-miniprogram.github.io/miniprogram-compat/
 // import 'core-js/actual';
 import 'core-js/actual/structured-clone';
-import 'core-js/actual/array/iterator';
 import 'core-js/actual/array/flat';
 import 'core-js/actual/array/flat-map';
 import 'core-js/actual/object/entries';

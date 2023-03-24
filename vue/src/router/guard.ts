@@ -6,7 +6,7 @@ export const routerGuard: Plugin = {
   install: () => {
     router.beforeEach((to, from, next) => {
       nprogress.start();
-      next();
+      return next();
     });
 
     router.afterEach(() => {

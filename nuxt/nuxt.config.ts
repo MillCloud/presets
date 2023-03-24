@@ -5,12 +5,6 @@ import unpluginVueDefineOptions from 'unplugin-vue-define-options';
 // track https://github.com/nuxt/nuxt/issues/15464 for legacy browsers support
 
 export default defineNuxtConfig({
-  imports: {
-    dirs: ['composables', 'helpers', 'stores', 'utils'].flatMap((item) => [
-      `src/${item}`,
-      `src/${item}/**`,
-    ]),
-  },
   app: {
     head: {
       meta: [

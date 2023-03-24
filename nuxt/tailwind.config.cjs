@@ -5,7 +5,7 @@ const lineClamp = require('@tailwindcss/line-clamp');
 
 module.exports = {
   content: [
-    `{components,layouts,pages}/**/*.{vue,js,jsx,ts,tsx}`,
+    `{components,layouts,pages,styles}/**/*.{vue,js,jsx,ts,tsx}`,
     `[Aa]pp.{vue,js,jsx,ts,tsx}`,
     `[Ee]rror.{vue,js,jsx,ts,tsx}`,
   ],

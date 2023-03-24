@@ -20,7 +20,7 @@ nuxt 模板，适用于对 SSR 有要求的桌面端网页和移动端网页开�
 ### UI
 
 - [elmenet-plus](https://element-plus.org) - Vue 生态圈最流行的 UI 框架
-- [tailwindcss](https://tailwindcss.com) - 原子化 CSS，基于 [@nuxtjs/tailwindcss](https://github.com/nuxt-modules/tailwindcss)
+- [tailwindcss](https://tailwindcss.com) - 原子化 CSS
 
 <details>
   <summary> element-plus 外的选择 </summary>
@@ -52,7 +52,7 @@ nuxt 模板，适用于对 SSR 有要求的桌面端网页和移动端网页开�
 
 ### 其它插件
 
-- [nuxt-icons](@nuxtjs/tailwindcss)
+- [nuxt-icon](https://github.com/nuxt-modules/icon)
 - [unplugin-vue-define-options](https://vue-macros.sxzz.moe/macros/define-options.html)
 - [bumpp](https://github.com/antfu/bumpp)
 - [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog)

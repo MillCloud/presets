@@ -28,7 +28,6 @@ const removeInstalledResources = () => {
 };
 /* #endif */
 
-// eslint-disable-next-line sonarjs/cognitive-complexity
 export const getUpdate = ({ hasLoading = false } = {}) => {
   /* #ifdef MP */
   const updater = uni.getUpdateManager();

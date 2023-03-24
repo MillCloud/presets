@@ -267,7 +267,6 @@ export const vueQueryClient = new QueryClient({
   },
 });
 
-
 export const vueQueryPluginOptions: VueQueryPluginOptions = {
   queryClient: vueQueryClient,
 };
