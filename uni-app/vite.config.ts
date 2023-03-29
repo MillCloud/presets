@@ -9,7 +9,7 @@ import tailwindcss from 'tailwindcss';
 import nested from 'tailwindcss/nesting';
 import postcssPresetEnv from 'postcss-preset-env';
 import uniTailwind from '@uni-helper/vite-plugin-uni-tailwind';
-import tailwindcssConfig from './tailwind.config.cjs';
+import tailwindcssConfig from './tailwind.config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
