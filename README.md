@@ -105,24 +105,6 @@ cp presets/uni-app your-project-name
 rm -rf presets
 ```
 
-## [Nuxt 3](https://nuxt.com.cn/)
-
-nuxt 模板，适用于对 SSR 有要求的桌面端网页和移动端网页开发。
-
-自行增加 [nuxt-electron](https://github.com/caoxiemeihao/nuxt-electron) 并根据文档调整可以开发桌面端应用。
-
-请使用 [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) 和 [Takeover Mode](https://cn.vuejs.org/guide/typescript/overview.html#volar-takeover-mode)。
-
-```sh
-# github
-tiged MillCloud/presets/nuxt your-project-name
-
-# gitee
-git clone --depth 1 git@gitee.com:MillCloud/presets
-cp presets/nuxt your-project-name
-rm -rf presets
-```
-
 ## [Koa](https://koajs.com)
 
 koa 模板，只适用于后端服务原型开发。

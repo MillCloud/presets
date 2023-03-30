@@ -4,8 +4,8 @@ import qs from 'qs';
 import { QueryClient, QueryCache, MutationCache } from '@tanstack/vue-query';
 import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 import { showModal } from './modal';
-import { getToken, setToken } from './storage';
 import { showToast } from './toast';
+import { useAuthStore } from '@/stores';
 import { DefaultHeaders } from '@/constants';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
@@ -13,9 +13,6 @@ const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_S
 const instance = un.create({
   baseUrl: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/',
   timeout: 30_000,
-  headers: {
-    ...DefaultHeaders,
-  },
   paramsSerializer: (params: any) =>
     qs.stringify(
       Object.fromEntries(
@@ -25,13 +22,6 @@ const instance = un.create({
         ),
       ),
     ),
-});
-instance.interceptors.request.use((config) => {
-  config.headers = config.headers ?? {};
-  config.headers.token = getToken();
-  config.headers['X-Token'] = getToken();
-  config.headers['X-Access-Token'] = getToken();
-  return config;
 });
 
 export { instance as unInstance };
@@ -204,6 +194,7 @@ export const vueQueryClient = new QueryClient({
   defaultOptions: {
     queries: {
       queryFn: async (context) => {
+        const authStore = useAuthStore();
         const queryKey = reactive({ ...context.queryKey });
         const url = queryKey[0] as string;
         const config = reactive({ ...(queryKey[1] as IUnConfig) });
@@ -211,10 +202,17 @@ export const vueQueryClient = new QueryClient({
           method: 'GET',
           url,
           ...config,
+          headers: {
+            ...DefaultHeaders,
+            ...config.headers,
+            token: authStore.token,
+            'X-Token': authStore.token,
+            'X-Access-Token': authStore.token,
+          },
         });
         if (!(response?.data?.success ?? true)) {
           if (reSignInCodes.has(response?.data?.code ?? '')) {
-            setToken();
+            authStore.setToken();
             showNetworkError({
               hasPrefix: false,
               message: '请重新登录。',
@@ -237,14 +235,22 @@ export const vueQueryClient = new QueryClient({
     },
     mutations: {
       mutationFn: async (variables) => {
+        const authStore = useAuthStore();
         const config = reactive({ ...(variables as IUnConfig) });
         const response = await instance.request<IUnResponseData, IUnRequestData, IUnResponse>({
           method: 'POST',
           ...config,
+          headers: {
+            ...DefaultHeaders,
+            ...config.headers,
+            token: authStore.token,
+            'X-Token': authStore.token,
+            'X-Access-Token': authStore.token,
+          },
         });
         if (!(response?.data?.success ?? true)) {
           if (reSignInCodes.has(response?.data?.code ?? '')) {
-            setToken();
+            authStore.setToken();
             showNetworkError({
               hasPrefix: false,
               message: '请重新登录。',
