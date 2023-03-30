@@ -8,6 +8,7 @@ import {
   MutationCache,
   type VueQueryPluginOptions,
 } from '@tanstack/vue-query';
+import { router } from '@/router';
 import { DefaultHeaders } from '@/constants';
 import { useAuthStore } from '@/stores';
 
@@ -189,8 +190,7 @@ export const vueQueryClient = new QueryClient({
     queries: {
       queryFn: async (context) => {
         const authStore = useAuthStore();
-        const router = useRouter();
-        const { fullPath } = useRoute();
+        const fullPath = router.currentRoute.value.fullPath;
         const queryKey = reactive({ ...context.queryKey });
         const url = queryKey[0] as string;
         const config = reactive({ ...(queryKey[1] as IAxiosRequestConfig) });
@@ -235,8 +235,7 @@ export const vueQueryClient = new QueryClient({
     mutations: {
       mutationFn: async (variables) => {
         const authStore = useAuthStore();
-        const router = useRouter();
-        const { fullPath } = useRoute();
+        const fullPath = router.currentRoute.value.fullPath;
         const config = reactive({ ...(variables as IAxiosRequestConfig) });
         const response = await instance.request<IAxiosResponseData>({
           method: 'POST',
