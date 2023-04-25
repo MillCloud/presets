@@ -1,15 +1,18 @@
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
-import unpluginVueDefineOptions from 'unplugin-vue-define-options';
-import autoImport from 'unplugin-auto-import/vite';
-import vueComponents from 'unplugin-vue-components/vite';
-import uni from '@dcloudio/vite-plugin-uni';
-import tailwindcss from 'tailwindcss';
-// @ts-expect-error no types
-import nested from 'tailwindcss/nesting';
 import postcssPresetEnv from 'postcss-preset-env';
+import unpluginVueDefineOptions from 'unplugin-vue-define-options';
+import uniManifest from '@uni-helper/vite-plugin-uni-manifest';
+import uniPages from '@uni-helper/vite-plugin-uni-pages';
+import uniLayouts from '@uni-helper/vite-plugin-uni-layouts';
+import autoImport from 'unplugin-auto-import/vite';
+import uniComponents from '@uni-helper/vite-plugin-uni-components';
+import { UniUIResolver } from '@uni-helper/vite-plugin-uni-components/resolvers';
+import unocss from 'unocss/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import icons from 'unplugin-icons/vite';
+import uni from '@dcloudio/vite-plugin-uni';
 import uniTailwind from '@uni-helper/vite-plugin-uni-tailwind';
-import tailwindcssConfig from './tailwind.config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,16 +22,7 @@ export default defineConfig({
   },
   css: {
     postcss: {
-      plugins: [
-        nested(),
-        tailwindcss({
-          config: tailwindcssConfig,
-        }),
-        postcssPresetEnv({
-          stage: 3,
-          features: { 'nesting-rules': false },
-        }),
-      ],
+      plugins: [postcssPresetEnv()],
     },
     preprocessorOptions: {
       preprocessorOptions: {
@@ -45,28 +39,18 @@ export default defineConfig({
   },
   plugins: [
     unpluginVueDefineOptions.vite(),
+    uniManifest(),
+    uniPages(),
+    uniLayouts(),
     autoImport({
       imports: ['vue', 'pinia', '@vueuse/core', 'uni-app'],
     }),
-    vueComponents({
-      dirs: ['src/components'],
-      resolvers: [
-        // {
-        //   // FIXME breaks building
-        //   type: 'component',
-        //   resolve: (componentName) => {
-        //     if (componentName.startsWith('Uni')) {
-        //       return {
-        //         name: 'default',
-        //         from: `@dcloudio/uni-ui/lib/${paramCase(componentName)}/${paramCase(
-        //           componentName,
-        //         )}.vue`,
-        //       };
-        //     }
-        //   },
-        // },
-      ],
-      types: [],
+    uniComponents({
+      resolvers: [UniUIResolver(), IconsResolver()],
+    }),
+    unocss(),
+    icons({
+      compiler: 'vue3',
     }),
     uni({
       vueOptions: {},

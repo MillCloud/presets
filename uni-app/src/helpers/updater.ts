@@ -4,7 +4,7 @@
 import { hideLoading, showLoading } from './loading';
 import { showModal } from './modal';
 import { unInstance } from './network';
-import manifest from '@/manifest.json';
+import manifest from '@/../manifest.config';
 
 /* #ifdef APP-PLUS */
 const removeInstalledResources = () => {

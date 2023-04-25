@@ -1,0 +1,47 @@
+# Should trigger when a tag is created
+trigger:
+  branches:
+    include:
+      - refs/tags/v*
+
+pool:
+  name: NAME_HERE
+
+steps:
+  - checkout: self
+    fetchDepth: 1
+    displayName: Checkout
+
+  - task: NodeTool@0
+    inputs:
+      versionSpec: 18.x
+    displayName: Install Node.js
+
+  - script: npm install --location=global --force corepack
+    displayName: Install Corepack
+
+  - script: corepack enable
+    displayName: Install PNPM
+
+  - script: pnpm install
+    displayName: Install Dependencies
+
+  - script: pnpm run lint
+    displayName: Lint
+
+  - script: pnpm run check:types
+    displayName: Check Types
+
+  - script: pnpm run test
+    displayName: Test
+
+  - script: pnpm run build:dev && mkdir -p DEV_DIR_HERE && cp -r ./dist/* DEV_DIR_HERE
+    displayName: Deploy Development Site
+
+  - script: pnpm run build:staging && mkdir -p STAGING_DIR_HERE && cp -r ./dist/* STAGING_DIR_HERE
+    displayName: Deploy Staging Site
+
+  # - script: >-
+  #     curl -H 'Content-Type: application/json' -d '{ "msgtype": "markdown", "markdown": { "content": "# CI Deploy Notify\nBuild: [$(Build.BuildId)]($(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId))\nPipeline: [$(Build.DefinitionName) ($(Build.Reason))]($(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build?definitionId=$(System.DefinitionId))\nRepo: [$(System.TeamProject)/$(Build.Repository.Name)]($(Build.Repository.Uri)?version=GBmain)\nBranch: [$(Build.SourceBranch)]($(Build.Repository.Uri)?version=GT$(Build.SourceBranchName))\n\n🎉 Deploy done! Please check [development mode site with development API](DEV_URL_HERE) and [staging mode site with production API](STAGING_URL_HERE)." } }'
+  #     WECOM_WEBHOOK_HERE
+  #   displayName: Notify

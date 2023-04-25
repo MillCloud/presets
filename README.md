@@ -27,8 +27,13 @@ git config --global init.defaultBranch main
 ### 依赖管理
 
 ```sh
-npm uninstall --location=global corepack
-npm install --location=global npm yarn pnpm
+npm install --location=global --force corepack
+```
+
+在项目下设置对应的包管理工具。
+
+```sh
+corepack enable
 ```
 
 所有 `uni-app` 相关项目使用以下命令安装依赖：

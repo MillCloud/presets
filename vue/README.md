@@ -11,7 +11,7 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 ### UI
 
 - [elmenet-plus](https://element-plus.org) - Vue 生态圈最流行的 UI 框架
-- [tailwindcss](https://tailwindcss.com) - 原子化 CSS
+- [unocss](https://unocss.dev) - 原子化 CSS
 
 <details>
   <summary> element-plus 外的选择 </summary>
@@ -57,5 +57,4 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 - [unplugin-vue-define-options](https://vue-macros.sxzz.moe/macros/define-options.html)
 - [vite-plugin-compression2](https://github.com/nonzzz/vite-compression-plugin)
 - [vite-plugin-inspect](https://github.com/antfu/vite-plugin-inspect)
-- [bumpp](https://github.com/antfu/bumpp)
-- [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog)
+- [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)

@@ -1,11 +1,14 @@
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
+import { warmup } from 'vite-plugin-warmup';
 import pages from 'vite-plugin-pages';
 import layouts from 'vite-plugin-vue-layouts';
 import unpluginVueDefineOptions from 'unplugin-vue-define-options';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
-import iconsResolver from 'unplugin-icons/resolver';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import unocss from 'unocss/vite';
+import IconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
@@ -16,9 +19,6 @@ import { dependencies } from './package.json';
 
 export default defineConfig({
   build: {
-    commonjsOptions: {
-      include: [],
-    },
     target: 'es6',
     cssTarget: 'chrome61',
   },
@@ -31,11 +31,13 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    disabled: false,
     include: Object.keys(dependencies),
     exclude: ['vue-demi'],
   },
   plugins: [
+    warmup({
+      clientFiles: ['./src/**/*.{js,jsx,ts,tsx,vue,json}'],
+    }),
     pages({
       exclude: [
         '**/{components,composables,constants,directives,helpers,styles,types,utils}/**/*.{js,jsx,ts,tsx,vue}',
@@ -44,19 +46,18 @@ export default defineConfig({
     layouts(),
     autoImport({
       imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
+      resolvers: [ElementPlusResolver()],
     }),
     vueComponents({
       dirs: ['src/components'],
       resolvers: [
-        {
-          type: 'component',
-          resolve: (componentName) => {
-            if (componentName === 'VIcon') return { name: 'Icon', from: '@iconify/vue' };
-          },
-        },
-        iconsResolver(),
+        ElementPlusResolver({
+          importStyle: 'sass',
+        }),
+        IconsResolver(),
       ],
     }),
+    unocss(),
     icons({
       compiler: 'vue3',
       defaultClass: 'el-icon',

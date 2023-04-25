@@ -8,10 +8,6 @@ export default defineConfig({
     },
   },
   test: {
-    coverage: {
-      provider: 'c8',
-      reporter: ['text', 'json', 'html'],
-    },
     environmentMatchGlobs: [
       ['**/{constants,helpers,utils}/**', 'node'],
       ['!**/{constants,helpers,utils}/**', 'happy-dom'],

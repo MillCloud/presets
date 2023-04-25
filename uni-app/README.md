@@ -9,7 +9,7 @@ uni-app 模板，适用于小程序和移动端应用开发。
 ### UI
 
 - [uni-ui](https://github.com/dcloudio/uni-ui) - 官方 UI 框架
-- [tailwindcss](https://tailwindcss.com) - 原子化 CSS，[@uni-helper/vite-plugin-uni-tailwind](https://github.com/uni-helper/vite-plugin-uni-tailwind) 提供语法支持
+- [unocss](https://unocss.dev) - 原子化 CSS
 
 <details>
   <summary> uni-ui 外的选择 </summary>
@@ -27,7 +27,7 @@ uni-app 模板，适用于小程序和移动端应用开发。
 
 ### 路由
 
-- [自带路由](https://uniapp.dcloud.net.cn/api/router.html)
+- [@uni-helper/vite-plugin-uni-pages](https://github.com/uni-helper/vite-plugin-uni-pages)
 
 ### 状态管理
 
@@ -45,6 +45,9 @@ uni-app 模板，适用于小程序和移动端应用开发。
 - [@vitejs/plugin-legacy](https://github.com/vitejs/vite/tree/main/packages/plugin-legacy)
 - [@dcloudio/vite-plugin-uni](https://www.npmjs.com/package/@dcloudio/vite-plugin-uni/)
 - [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)
-- [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
-- [bumpp](https://github.com/antfu/bumpp)
-- [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog)
+- [unplugin-icons](https://github.com/antfu/unplugin-icons)
+- [unplugin-vue-define-options](https://vue-macros.sxzz.moe/macros/define-options.html)
+- [@uni-helper/vite-plugin-uni-components](https://github.com/uni-helper/vite-plugin-uni-components)
+- [@uni-helper/vite-plugin-uni-layouts](https://github.com/uni-helper/vite-plugin-uni-layouts)
+- [@uni-helper/vite-plugin-uni-manifest](https://github.com/uni-helper/vite-plugin-uni-manifest)
+- [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)

@@ -9,11 +9,17 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
+    ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElFooter: typeof import('element-plus/es')['ElFooter']
+    ElMain: typeof import('element-plus/es')['ElMain']
+    ElRow: typeof import('element-plus/es')['ElRow']
+    ICarbonNetworkPublic: typeof import('~icons/carbon/network-public')['default']
+    ICarbonVersion: typeof import('~icons/carbon/version')['default']
     ILogosVue: typeof import('~icons/logos/vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    VBackButton: typeof import('./src/components/VBackButton.vue')['default']
-    VIcon: typeof import('@iconify/vue')['Icon']
     VRouterView: typeof import('./src/components/VRouterView.vue')['default']
     VSpacer: typeof import('./src/components/VSpacer.vue')['default']
   }

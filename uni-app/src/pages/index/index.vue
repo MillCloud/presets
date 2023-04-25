@@ -16,7 +16,7 @@ const handleClickPrimaryButton = () => {
 </script>
 
 <template>
-  <view class="container items-center justify-center">
+  <view class="items-center justify-center">
     <image class="m-4 mx-auto block h-20 w-20" src="/static/logo.png" />
     <view class="flex w-full items-center justify-center text-xl">
       <view class="i-logos-vue"></view>

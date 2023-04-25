@@ -22,71 +22,6 @@
       );
     </script>
     <title>uni-app</title>
-    <style>
-      .loader {
-        font-size: 10px;
-        margin: 50px auto;
-        text-indent: -9999em;
-        width: 10em;
-        height: 10em;
-        border-radius: 50%;
-        background: #29d;
-        background: -moz-linear-gradient(left, #29d 10%, rgba(34, 153, 221, 0) 42%);
-        background: -webkit-linear-gradient(left, #29d 10%, rgba(34, 153, 221, 0) 42%);
-        background: -o-linear-gradient(left, #29d 10%, rgba(34, 153, 221, 0) 42%);
-        background: -ms-linear-gradient(left, #29d 10%, rgba(34, 153, 221, 0) 42%);
-        background: linear-gradient(to right, #29d 10%, rgba(34, 153, 221, 0) 42%);
-        position: relative;
-        -webkit-animation: load 1.4s infinite linear;
-        animation: load 1.4s infinite linear;
-        -webkit-transform: translateZ(0);
-        -ms-transform: translateZ(0);
-        transform: translateZ(0);
-      }
-      .loader:before {
-        width: 50%;
-        height: 50%;
-        background: #29d;
-        border-radius: 100% 0 0 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: '';
-      }
-      .loader:after {
-        background: #fff;
-        width: 75%;
-        height: 75%;
-        border-radius: 50%;
-        content: '';
-        margin: auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-      }
-      @-webkit-keyframes load {
-        0% {
-          -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-        }
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
-      @keyframes load {
-        0% {
-          -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-        }
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
-    </style>
     <!--preload-links-->
     <!--app-context-->
   </head>
@@ -95,8 +30,33 @@
       <strong>请允许 JavaScript 执行。</strong>
     </noscript>
     <div id="app" class="relative">
-      <div class="loader"></div>
-    </div>
+      <style>
+        body {
+          margin: 0;
+        }
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+      <div style="display: flex; justify-content: center; padding: 5rem">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          viewBox="0 0 1024 1024"
+          style="font-size: 2.25rem; line-height: 2.5rem; animation: spin 1s linear infinite"
+        >
+          <path
+            fill="currentColor"
+            d="M512 64a32 32 0 0 1 32 32v192a32 32 0 0 1-64 0V96a32 32 0 0 1 32-32zm0 640a32 32 0 0 1 32 32v192a32 32 0 1 1-64 0V736a32 32 0 0 1 32-32zm448-192a32 32 0 0 1-32 32H736a32 32 0 1 1 0-64h192a32 32 0 0 1 32 32zm-640 0a32 32 0 0 1-32 32H96a32 32 0 0 1 0-64h192a32 32 0 0 1 32 32zM195.2 195.2a32 32 0 0 1 45.248 0L376.32 331.008a32 32 0 0 1-45.248 45.248L195.2 240.448a32 32 0 0 1 0-45.248zm452.544 452.544a32 32 0 0 1 45.248 0L828.8 783.552a32 32 0 0 1-45.248 45.248L647.744 692.992a32 32 0 0 1 0-45.248zM828.8 195.264a32 32 0 0 1 0 45.184L692.992 376.32a32 32 0 0 1-45.248-45.248l135.808-135.808a32 32 0 0 1 45.248 0zm-452.544 452.48a32 32 0 0 1 0 45.248L240.448 828.8a32 32 0 0 1-45.248-45.248l135.808-135.808a32 32 0 0 1 45.248 0z"
+          />
+        </svg>
+      </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

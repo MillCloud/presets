@@ -4,7 +4,7 @@ import pkg from '@/../package.json';
 
 <template>
   <div class="flex h-8 items-center justify-center">
-    <v-icon icon="carbon:version" class="el-icon mx-2" />
+    <i-carbon-version class="mx-2"></i-carbon-version>
     <span class="mr-2">v{{ pkg.version }}</span>
   </div>
 </template>

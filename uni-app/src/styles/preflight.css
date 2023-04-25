@@ -1,10 +1,8 @@
-button,
-button::after {
-  all: unset;
-}
+@import './button-preflight.css';
+@import 'modern-normalize';
+@import '@unocss/reset/tailwind-compat.css';
 
-button {
-  box-sizing: border-box;
-
-  -webkit-tap-highlight-color: transparent;
+html,
+page {
+  font-size: var(--font-size, 16px) !important;
 }

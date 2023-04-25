@@ -6,19 +6,18 @@ import type { VueQueryPluginOptions } from '@tanstack/vue-query';
 import { showModal } from './modal';
 import { showToast } from './toast';
 import { useAuthStore } from '@/stores';
-import { DefaultHeaders } from '@/constants';
+import { DefaultBaseUrl, DefaultHeaders } from '@/constants';
 
 const reSignInCodes = new Set(['LOGIN_REQUIRED', 'LOGIN_TOKEN_INVALID', 'LOGIN_SESSION_EXPIRED']);
 
 const instance = un.create({
-  baseUrl: import.meta.env.VITE_REQUEST_BASE_URL || 'https://jsonplaceholder.typicode.com/',
+  baseUrl: DefaultBaseUrl,
   timeout: 30_000,
   paramsSerializer: (params: any) =>
     qs.stringify(
       Object.fromEntries(
         Object.entries(params).filter(
-          ([, v]) =>
-            !['', 'undefined', 'null', undefined, null].includes((v as any)?.toString() ?? v),
+          ([, v]) => !['undefined', 'null', undefined, null].includes((v as any)?.toString() ?? v),
         ),
       ),
     ),

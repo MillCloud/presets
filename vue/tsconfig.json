@@ -1,5 +1,5 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "extends": "@vue/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
     "allowJs": true,
@@ -7,16 +7,16 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "moduleResolution": "node",
     "typeRoots": ["./node_modules/@types", "./src/types"],
     "types": [
-      "element-plus/global",
       "node",
       "type-fest",
       "unplugin-icons/types/vue",
       "unplugin-vue-define-options/macros-global",
       "vite/client",
       "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
+      "vite-plugin-vue-layouts/client.d.ts"
     ]
   },
   "include": [

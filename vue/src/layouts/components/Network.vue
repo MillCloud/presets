@@ -32,7 +32,7 @@ const networkClass = computed(() => {
     class="flex h-8 items-center justify-center"
     :class="networkClass"
   >
-    <v-icon icon="carbon:network-public" class="el-icon mx-2" />
+    <i-carbon-network-public class="mx-2"></i-carbon-network-public>
     <span class="mr-2">
       {{ networkText }}
     </span>
