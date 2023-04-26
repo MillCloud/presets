@@ -1,5 +1,13 @@
+<script setup lang="ts">
+import { Icon } from '@iconify/vue';
+</script>
+
 <template>
   <el-row class="flex flex-col items-center justify-center">
+    <el-row>
+      <span>@iconify/vue</span>
+      <Icon class="el-icon" icon="logos:vue"></Icon>
+    </el-row>
     <el-row>
       <span>unplugin-icons</span>
       <i-logos-vue></i-logos-vue>
