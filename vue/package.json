@@ -22,7 +22,7 @@
     "lint:stylelint": "stylelint \"./**/*.{css,scss,vue}\" --fix --cache --ignore-path=.gitignore",
     "prepare": "is-ci || simple-git-hooks",
     "preview": "vite preview",
-    "release": "commit-and-tag-version",
+    "release": "commit-and-tag-version -a",
     "test": "vitest run --coverage --passWithNoTests"
   },
   "dependencies": {
