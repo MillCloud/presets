@@ -6,7 +6,6 @@ import layouts from 'vite-plugin-vue-layouts';
 import unpluginVueDefineOptions from 'unplugin-vue-define-options';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import unocss from 'unocss/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
@@ -46,16 +45,10 @@ export default defineConfig({
     layouts(),
     autoImport({
       imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
-      resolvers: [ElementPlusResolver()],
     }),
     vueComponents({
       dirs: ['src/components'],
-      resolvers: [
-        ElementPlusResolver({
-          importStyle: 'sass',
-        }),
-        IconsResolver(),
-      ],
+      resolvers: [IconsResolver()],
     }),
     unocss(),
     icons({
