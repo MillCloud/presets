@@ -33,9 +33,9 @@ const handleClickPrimaryButton = () => {
         class="m-4 flex h-8 flex-auto items-center justify-center rounded border border-solid px-4 !text-white transition"
         :class="{
           'border-primary bg-primary': !isPrimaryButtonDisabled,
-          '!border-primary-disabled !bg-primary-disabled': isPrimaryButtonDisabled,
+          '!border-primary-light-5 !bg-primary-light-5': isPrimaryButtonDisabled,
         }"
-        hover-class="bg-primary-darken-1 border-primary-darken-1"
+        hover-class="bg-primary-dark-2 border-primary-dark-2"
         @click="handleClickPrimaryButton"
       >
         Click me
