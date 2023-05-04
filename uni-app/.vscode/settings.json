@@ -63,6 +63,7 @@
   "stylelint.snippet": ["css", "scss", "vue"],
   "stylelint.validate": ["css", "scss", "vue"],
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "vue.codeActions.enabled": false,
   "[javascript]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
