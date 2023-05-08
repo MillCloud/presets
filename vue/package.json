@@ -54,7 +54,7 @@
     "@modyqyw/fabric": "^7.5.0",
     "@types/browser-update": "^3.3.0",
     "@types/eslint": "^8.37.0",
-    "@types/node": "18.16.1",
+    "@types/node": "18.16.6",
     "@types/nprogress": "^0.2.0",
     "@types/qs": "^6.9.7",
     "@types/shelljs": "^0.8.12",
