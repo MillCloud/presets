@@ -11,6 +11,8 @@ JavaScript / TypeScript 项目模板合集。
 ```sh
 # 不自动转换换行符
 git config --global core.autocrlf false
+# 不忽略文件名大小写
+git config --global core.ignorecase false
 # 设置默认分支名为 main
 git config --global init.defaultBranch main
 ```
