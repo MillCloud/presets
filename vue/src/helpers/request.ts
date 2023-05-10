@@ -271,7 +271,6 @@ export const vueQueryClient = new QueryClient({
         }
         return response?.data;
       },
-      retry: 3,
     },
   },
 });
