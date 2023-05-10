@@ -18,19 +18,19 @@ const handleClickPrimaryButton = () => {
 <template>
   <view class="items-center justify-center">
     <image class="m-4 mx-auto block h-20 w-20" src="/static/logo.png" />
-    <view class="flex w-full items-center justify-center text-xl">
+    <view class="w-full flex items-center justify-center text-xl">
       <view class="i-logos-vue"></view>
       <text>{{ title }}</text>
     </view>
-    <view class="flex w-full justify-between">
+    <view class="w-full flex justify-between">
       <button
-        class="m-4 flex h-8 flex-auto items-center justify-center rounded border border-solid border-gray-300 bg-gray-100 px-4 transition"
+        class="m-4 h-8 flex flex-auto items-center justify-center border border-gray-300 rounded border-solid bg-gray-100 px-4 transition"
         hover-class="bg-primary border-primary text-white"
       >
         Click me
       </button>
       <button
-        class="m-4 flex h-8 flex-auto items-center justify-center rounded border border-solid px-4 !text-white transition"
+        class="m-4 h-8 flex flex-auto items-center justify-center border rounded border-solid px-4 transition !text-white"
         :class="{
           'border-primary bg-primary': !isPrimaryButtonDisabled,
           '!border-primary-light-5 !bg-primary-light-5': isPrimaryButtonDisabled,
@@ -41,7 +41,7 @@ const handleClickPrimaryButton = () => {
         Click me
       </button>
     </view>
-    <view class="flex w-full justify-center p-4">
+    <view class="w-full flex justify-center p-4">
       <template v-if="isLoading">Loading...</template>
       <template v-else>{{ data }}</template>
     </view>

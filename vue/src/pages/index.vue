@@ -14,7 +14,7 @@ import { Icon } from '@iconify/vue';
     </el-row>
     <el-row>
       <span>UnoCSS Icon</span>
-      <div class="i-logos:vue el-icon"></div>
+      <div class="el-icon i-logos:vue"></div>
     </el-row>
     <el-row>index</el-row>
     <el-row class="mt-4">

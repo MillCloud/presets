@@ -1,4 +1,8 @@
 <script setup lang="ts">
+defineOptions({
+  name: 'LayoutNetwork',
+});
+
 const network = reactive(useNetwork());
 const networkText = computed(() => {
   if (!network.isSupported) {
@@ -29,7 +33,7 @@ const networkClass = computed(() => {
 <template>
   <div
     v-if="network.isSupported"
-    class="flex h-8 items-center justify-center"
+    class="h-8 flex items-center justify-center"
     :class="networkClass"
   >
     <i-carbon-network-public class="mx-2"></i-carbon-network-public>
