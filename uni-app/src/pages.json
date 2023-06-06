@@ -14,7 +14,7 @@
   "pages": [
     {
       "path": "pages/index/index",
-      "type": "page"
+      "type": "home"
     }
   ],
   "subPackages": []

@@ -35,7 +35,21 @@ const transformers = [
   transformerAttributify({ enable: isMiniprogram }),
 ];
 
-export default defineConfig({
-  presets,
+const config = defineConfig({
+  presets: [
+    presetUno(),
+    presetAttributify(),
+    presetIcons(),
+    presetTypography(),
+    presetWebFonts(),
+    presetElementPlus({
+      selectors: {
+        light: ':root,.root,page',
+        dark: '.dark,.root.dark',
+      },
+    }),
+  ],
   transformers,
 });
+
+export default config;

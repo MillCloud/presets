@@ -1,7 +1,6 @@
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vitest/config';
 import postcssPresetEnv from 'postcss-preset-env';
-import unpluginVueDefineOptions from 'unplugin-vue-define-options';
 import uniManifest from '@uni-helper/vite-plugin-uni-manifest';
 import uniPages from '@uni-helper/vite-plugin-uni-pages';
 import uniLayouts from '@uni-helper/vite-plugin-uni-layouts';
@@ -38,7 +37,6 @@ export default defineConfig({
     exclude: ['vue-demi'],
   },
   plugins: [
-    unpluginVueDefineOptions.vite(),
     uniManifest(),
     uniPages(),
     uniLayouts(),

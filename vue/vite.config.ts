@@ -3,7 +3,6 @@ import { defineConfig } from 'vitest/config';
 import { warmup } from 'vite-plugin-warmup';
 import pages from 'vite-plugin-pages';
 import layouts from 'vite-plugin-vue-layouts';
-import unpluginVueDefineOptions from 'unplugin-vue-define-options';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import unocss from 'unocss/vite';
@@ -55,7 +54,6 @@ export default defineConfig({
       compiler: 'vue3',
       defaultClass: 'el-icon',
     }),
-    unpluginVueDefineOptions.vite(),
     vue(),
     vueJsx(),
     legacy({

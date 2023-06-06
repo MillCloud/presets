@@ -13,7 +13,6 @@
       "node",
       "type-fest",
       "unplugin-icons/types/vue",
-      "unplugin-vue-define-options/macros-global",
       "vite/client",
       "vite-plugin-pages/client",
       "vite-plugin-vue-layouts/client.d.ts"

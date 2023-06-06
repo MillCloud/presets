@@ -18,7 +18,6 @@
       "@uni-helper/uni-cloud-types",
       "@uni-helper/uni-ui-types",
       "type-fest",
-      "unplugin-vue-define-options/macros-global",
       "vite/client"
     ]
   },

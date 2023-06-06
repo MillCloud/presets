@@ -54,7 +54,6 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 - [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)
 - [unplugin-icons](https://github.com/antfu/unplugin-icons)
 - [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
-- [unplugin-vue-define-options](https://vue-macros.sxzz.moe/macros/define-options.html)
 - [vite-plugin-compression2](https://github.com/nonzzz/vite-compression-plugin)
 - [vite-plugin-inspect](https://github.com/antfu/vite-plugin-inspect)
 - [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)

@@ -46,7 +46,6 @@ uni-app 模板，适用于小程序和移动端应用开发。
 - [@dcloudio/vite-plugin-uni](https://www.npmjs.com/package/@dcloudio/vite-plugin-uni/)
 - [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)
 - [unplugin-icons](https://github.com/antfu/unplugin-icons)
-- [unplugin-vue-define-options](https://vue-macros.sxzz.moe/macros/define-options.html)
 - [@uni-helper/vite-plugin-uni-components](https://github.com/uni-helper/vite-plugin-uni-components)
 - [@uni-helper/vite-plugin-uni-layouts](https://github.com/uni-helper/vite-plugin-uni-layouts)
 - [@uni-helper/vite-plugin-uni-manifest](https://github.com/uni-helper/vite-plugin-uni-manifest)
