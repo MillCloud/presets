@@ -13,6 +13,8 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
 import compression from 'vite-plugin-compression2';
 import inspect from 'vite-plugin-inspect';
+import checker from 'vite-plugin-checker';
+// import vueDevtools from 'vite-plugin-vue-devtools';
 import { dependencies } from './package.json';
 
 export default defineConfig({
@@ -63,6 +65,20 @@ export default defineConfig({
     }),
     compression(),
     inspect(),
+    checker({
+      vueTsc: !process.env.VITEST,
+      eslint: process.env.VITEST
+        ? false
+        : {
+            lintCommand: 'eslint ./src',
+          },
+      stylelint: process.env.VITEST
+        ? false
+        : {
+            lintCommand: 'stylelint ./src/**/*.{css,scss,vue}',
+          },
+    }),
+    // vueDevtools(),
   ],
   resolve: {
     alias: {
