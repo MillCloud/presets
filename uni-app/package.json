@@ -56,7 +56,7 @@
     "build:quickapp-webview:dev": "cross-env VITE_MODE=development UNI_OUTPUT_DIR=dist/quickapp-webview uni build -p quickapp-webview",
     "build:quickapp-webview:prod": "npm run build:quickapp-webview",
     "build:quickapp-webview:staging": "cross-env VITE_MODE=staging UNI_OUTPUT_DIR=dist/quickapp-webview uni build -p quickapp-webview",
-    "check:deps": "taze",
+    "check:deps": "taze -f",
     "check:types": "vue-tsc --noEmit",
     "commit": "git-cz",
     "dev:app": "cross-env VITE_MODE=production UNI_OUTPUT_DIR=dist/app uni -p app",

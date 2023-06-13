@@ -9,7 +9,7 @@
     "build:dev": "cross-env VITE_MODE=development vite build",
     "build:prod": "pnpm run build",
     "build:staging": "cross-env VITE_MODE=staging vite build",
-    "check:deps": "taze",
+    "check:deps": "taze -f",
     "check:types": "vue-tsc --noEmit",
     "commit": "git-cz",
     "dev": "cross-env VITE_MODE=development vite",

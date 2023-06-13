@@ -5,7 +5,7 @@
   "description": "A boilerplate for koa. ONLY FOR PROTOTYPING!",
   "type": "module",
   "scripts": {
-    "check:deps": "taze",
+    "check:deps": "taze -f",
     "check:types": "tsc --noEmit",
     "commit": "git-cz",
     "dev": "cross-env NODE_ENV=production nodemon -w src -e .js,.cjs,.mjs,.ts,.cts,.mts,.json --exec tsx ./src/index.ts",
