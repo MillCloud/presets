@@ -1,10 +1,10 @@
 // 小程序更新见 https://uniapp.dcloud.io/api/other/update?id=getupdatemanager
 // 整包更新见 https://ask.dcloud.net.cn/article/34972
 // 热更新见 https://ask.dcloud.net.cn/article/35667
+import manifest from '../manifest.json';
 import { hideLoading, showLoading } from './loading';
 import { showModal } from './modal';
 import { unInstance } from './network';
-import manifest from '@/../manifest.config';
 
 /* #ifdef APP-PLUS */
 const removeInstalledResources = () => {

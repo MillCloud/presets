@@ -21,6 +21,7 @@ const presets = [
   presetTypography(),
   presetWebFonts(),
   presetElementPlus({
+    preferCssVariables: false,
     selectors: {
       light: ':root,.root,page',
       dark: '.dark,.root.dark',
@@ -36,19 +37,7 @@ const transformers = [
 ];
 
 const config = defineConfig({
-  presets: [
-    presetUno(),
-    presetAttributify(),
-    presetIcons(),
-    presetTypography(),
-    presetWebFonts(),
-    presetElementPlus({
-      selectors: {
-        light: ':root,.root,page',
-        dark: '.dark,.root.dark',
-      },
-    }),
-  ],
+  presets,
   transformers,
 });
 
