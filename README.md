@@ -104,7 +104,7 @@ uni-app 模板，适用于小程序和移动端应用开发。
 
 ```sh
 # github
-tiged MillCloud/presets/uni-app your-project-name
+npx tiged MillCloud/presets/uni-app your-project-name
 
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
@@ -118,7 +118,7 @@ koa 模板，只适用于后端服务原型开发。
 
 ```sh
 # github
-tiged MillCloud/presets/koa your-project-name
+npx tiged MillCloud/presets/koa your-project-name
 
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
@@ -134,7 +134,7 @@ nest 模板，适用于后端服务开发，基于 fastify。
 
 ```sh
 # github
-tiged MillCloud/presets/nest your-project-name
+npx tiged MillCloud/presets/nest your-project-name
 
 # gitee
 git clone --depth 1 git@gitee.com:MillCloud/presets
