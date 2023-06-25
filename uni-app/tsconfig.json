@@ -21,6 +21,9 @@
       "vite/client"
     ]
   },
+  "vueCompilerOptions": {
+    "nativeTags": ["block", "component", "template", "slot"]
+  },
   "include": [
     "**/*.js",
     "**/*.cjs",
