@@ -54,7 +54,7 @@ pnpm install
 
 ### 镜像
 
-下载 Node.js 和安装依赖过慢时，可以设置 [npmmirror 镜像](https://npmmirror.com/)。
+下载 Node.js 和安装依赖过慢时，可以设置 [npmmirror 镜像](https://npmmirror.com/)。克隆下来的项目已经设置了该镜像。
 
 也可以使用 [nrm](https://github.com/Pana/nrm) 或 [cgr](https://github.com/daysai/cgr)。
 
@@ -75,7 +75,6 @@ Windows 下可使用 Windows Terminal + Git Bash（安装 Git 时附带），其
 ### 其它注意点
 
 - 请及时更新版本。
-- 如果不是直接安装 Node.js，可能需要 [额外配置 husky](https://typicode.github.io/husky/#/?id=troubleshoot)。
 - 项目下载之后，先初始化成 Git 项目，再安装依赖。
 
 ## [Vue 3](https://vuejs.org/)
@@ -114,7 +113,7 @@ rm -rf presets
 
 ## [Koa](https://koajs.com)
 
-koa 模板，只适用于后端服务原型开发。
+koa 模板，只适用于后端服务原型开发，不应用于生产环境。
 
 ```sh
 # github
