@@ -1,8 +1,8 @@
 <template>
-  <el-row class="flex flex-col items-center justify-center">
-    <el-row>sign-in</el-row>
-    <el-row class="mt-4">
-      <el-button @click="$router.push('/')">INDEX</el-button>
-    </el-row>
-  </el-row>
+  <n-row class="flex flex-col items-center justify-center">
+    <div>sign-in</div>
+    <div class="mt-4">
+      <n-button @click="$router.push('/')">INDEX</n-button>
+    </div>
+  </n-row>
 </template>

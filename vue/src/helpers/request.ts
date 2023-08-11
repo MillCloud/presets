@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import { ElMessageBox, ElNotification, ElMessage } from 'element-plus';
+import { useMessage, useNotification } from 'naive-ui';
 import axios from 'axios';
 import qs from 'qs';
 import {
@@ -32,7 +32,6 @@ const instance = axios.create({
 
 export { instance as axiosInstance };
 
-let hasMessageBox = false;
 export const showRequestError = ({
   hasPrefix = true,
   message,
@@ -143,35 +142,17 @@ export const showRequestError = ({
   ]
     .filter((item) => !!item)
     .join('<br />')}`;
+  const nMessage = useMessage();
+  const notification = useNotification();
 
-  if (type === 'alert' && !hasMessageBox) {
-    hasMessageBox = true;
-    ElMessageBox.alert(content, {
-      title: '错误',
-      type: 'error',
-      dangerouslyUseHTMLString: true,
-    })
-      .catch(() => {
-        hasMessageBox = false;
-      })
-      .finally(() => {
-        hasMessageBox = false;
-      });
-    return;
-  }
   if (type === 'notification') {
-    ElNotification.error({
-      title: '错误',
-      message: content,
-      dangerouslyUseHTMLString: true,
+    notification.error({
+      content,
     });
     return;
   }
   if (type === 'message') {
-    ElMessage.error({
-      message: content,
-      dangerouslyUseHTMLString: true,
-    });
+    nMessage.error(content);
   }
 };
 
