@@ -10,13 +10,14 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 
 ### UI
 
-- [elmenet-plus](https://element-plus.org) - Vue 生态圈最流行的 UI 框架
+- [naive-ui](https://www.naiveui.com) - Naive UI 框架
 - [unocss](https://unocss.dev) - 原子化 CSS
 
 <details>
-  <summary> element-plus 外的选择 </summary>
+  <summary> naive-ui 外的选择 </summary>
 
-- [naive-ui](https://www.naiveui.com/)
+- [element-plus](https://element-plus.org/)
+- [ant-design-vue](https://www.antdv.com/)
 - [vant](https://vant-ui.github.io/vant/)
 - [nut-ui](https://nutui.jd.com/)
 

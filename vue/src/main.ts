@@ -1,13 +1,8 @@
 import App from './App.vue';
 import { pinia } from './stores';
 import { router, routerGuard } from './router';
-import { browserUpdatePlugin, dayjsPlugin, elementPlusPlugin, vueQueryPlugin } from './plugins';
-
-import 'nprogress/nprogress.css';
-import '@/styles/preflight.css';
-import '@/styles/element.scss';
-import '@/styles/global.scss';
-import 'uno.css';
+import { browserUpdatePlugin, dayjsPlugin, vueQueryPlugin } from './plugins';
+import './styles';
 
 const app = createApp(App)
   .use(pinia)
@@ -15,7 +10,6 @@ const app = createApp(App)
   .use(routerGuard)
   .use(browserUpdatePlugin)
   .use(dayjsPlugin)
-  .use(elementPlusPlugin)
   .use(vueQueryPlugin);
 
 app.mount('#app');

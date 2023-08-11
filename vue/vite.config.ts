@@ -5,6 +5,7 @@ import pages from 'vite-plugin-pages';
 import layouts from 'vite-plugin-vue-layouts';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import unocss from 'unocss/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
@@ -45,16 +46,24 @@ export default defineConfig({
     }),
     layouts(),
     autoImport({
-      imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
+      imports: [
+        'vue',
+        'vue-router',
+        'pinia',
+        '@vueuse/core',
+        {
+          'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar'],
+        },
+      ],
     }),
     vueComponents({
       dirs: ['src/components'],
-      resolvers: [IconsResolver()],
+      resolvers: [IconsResolver(), NaiveUiResolver()],
     }),
     unocss(),
     icons({
       compiler: 'vue3',
-      defaultClass: 'el-icon',
+      defaultClass: 'n-icon',
     }),
     vue(),
     vueJsx(),

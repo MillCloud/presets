@@ -3,22 +3,22 @@ import { Icon } from '@iconify/vue';
 </script>
 
 <template>
-  <el-row class="flex flex-col items-center justify-center">
-    <el-row>
+  <n-row class="flex flex-col items-center justify-center">
+    <n-row class="text-center">
       <span>@iconify/vue</span>
-      <Icon class="el-icon" icon="logos:vue"></Icon>
-    </el-row>
-    <el-row>
+      <Icon class="n-icon" icon="logos:vue"></Icon>
+    </n-row>
+    <n-row>
       <span>unplugin-icons</span>
       <i-logos-vue></i-logos-vue>
-    </el-row>
-    <el-row>
+    </n-row>
+    <n-row>
       <span>UnoCSS Icon</span>
-      <div class="el-icon i-logos:vue"></div>
-    </el-row>
-    <el-row>index</el-row>
-    <el-row class="mt-4">
-      <el-button @click="$router.push('/sign-in')">SIGN IN</el-button>
-    </el-row>
-  </el-row>
+      <div class="n-icon i-logos:vue"></div>
+    </n-row>
+    <div>index</div>
+    <div class="mt-4">
+      <n-button @click="$router.push('/sign-in')">SIGN IN</n-button>
+    </div>
+  </n-row>
 </template>

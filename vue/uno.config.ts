@@ -8,16 +8,8 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss';
-import { presetElementPlus } from 'unocss-preset-element-plus';
 
 export default defineConfig({
-  presets: [
-    presetUno(),
-    presetAttributify(),
-    presetIcons(),
-    presetTypography(),
-    presetWebFonts(),
-    presetElementPlus(),
-  ],
+  presets: [presetUno(), presetAttributify(), presetIcons(), presetTypography(), presetWebFonts()],
   transformers: [transformerDirectives(), transformerVariantGroup()],
 });
