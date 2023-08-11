@@ -180,7 +180,7 @@
     "@uni-helper/vite-plugin-uni-pages": "^0.2.2",
     "@uni-helper/vite-plugin-uni-tailwind": "^0.10.0",
     "@unocss/preset-rem-to-px": "^0.52.7",
-    "@unocss/reset": "^0.52.7",
+    "@unocss/reset": "^0.55.0",
     "@vitejs/plugin-legacy": "^4.0.5",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",

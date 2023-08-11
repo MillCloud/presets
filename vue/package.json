@@ -60,7 +60,7 @@
     "@types/statuses": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
-    "@unocss/reset": "^0.53.1",
+    "@unocss/reset": "^0.55.0",
     "@vitejs/plugin-legacy": "^4.0.5",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
