@@ -7,7 +7,7 @@ import { LayoutNetwork, LayoutVersion } from './components';
     <div class="h-full flex flex-col">
       <n-layout-content class="flex items-center justify-center p-20 text-center">
         <router-view v-slot="{ Component, route }">
-          <transition mode="out-in" appear>
+          <transition mode="out-in" name="fade" appear>
             <component :is="Component" :key="route.fullPath"></component>
           </transition>
         </router-view>
@@ -19,3 +19,14 @@ import { LayoutNetwork, LayoutVersion } from './components';
     </div>
   </n-layout>
 </template>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
