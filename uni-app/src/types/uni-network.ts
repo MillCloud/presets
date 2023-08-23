@@ -2,9 +2,7 @@ import type { UnError, UnResponse, UnConfig } from '@uni-helper/uni-network';
 
 type IUnShowErrorType_ = 'toast' | 'modal';
 
-interface IUnRequestData_ {
-  [key: string]: any;
-}
+type IUnRequestData_ = Record<string, any>;
 
 interface IUnResponseData_ {
   success: boolean;
