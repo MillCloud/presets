@@ -41,7 +41,7 @@ corepack enable
 所有 `uni-app` 相关项目使用以下命令安装依赖：
 
 ```sh
-npm install
+npm install --force
 ```
 
 其它项目使用以下命令安装依赖：
