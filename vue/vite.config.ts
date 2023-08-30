@@ -5,7 +5,6 @@ import pages from 'vite-plugin-pages';
 import layouts from 'vite-plugin-vue-layouts';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 import unocss from 'unocss/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
@@ -14,7 +13,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
 import compression from 'vite-plugin-compression2';
 import inspect from 'vite-plugin-inspect';
-// import vueDevtools from 'vite-plugin-vue-devtools';
+import vueDevtools from 'vite-plugin-vue-devtools';
 import { dependencies } from './package.json';
 
 export default defineConfig({
@@ -57,7 +56,7 @@ export default defineConfig({
     }),
     vueComponents({
       dirs: ['src/components'],
-      resolvers: [IconsResolver(), NaiveUiResolver()],
+      resolvers: [IconsResolver()],
     }),
     unocss(),
     icons({
@@ -73,7 +72,7 @@ export default defineConfig({
     }),
     compression(),
     inspect(),
-    // vueDevtools(),
+    vueDevtools(),
   ],
   resolve: {
     alias: {
