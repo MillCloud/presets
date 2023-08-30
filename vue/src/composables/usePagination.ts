@@ -1,4 +1,3 @@
-import { useStorage } from '@vueuse/core';
 import { DefaultPageSize, PageSizeKey, DefaultPageSizes } from '@/constants';
 
 export const usePagination = (

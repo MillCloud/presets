@@ -1,2 +1,2 @@
-export * from './useToken';
 export * from './usePagination';
+export * from './useToken';
