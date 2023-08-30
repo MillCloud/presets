@@ -1,0 +1,21 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["src/**/*", "src/**/*.vue", "*.d.ts", "package.json"],
+  "exclude": ["src/**/__tests__/*", "src/**/*.test.*"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": [
+      "type-fest",
+      "unplugin-icons/types/vue",
+      "vite/client",
+      "vite-plugin-pages/client",
+      "vite-plugin-vue-layouts/client.d.ts",
+      "naive-ui/volar"
+    ]
+  }
+}

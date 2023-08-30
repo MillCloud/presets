@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.app.json",
+  "exclude": [],
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["ESNext"],
+    "types": [
+      "node",
+      "jsdom",
+      "type-fest",
+      "unplugin-icons/types/vue",
+      "vite/client",
+      "vite-plugin-pages/client",
+      "vite-plugin-vue-layouts/client.d.ts",
+      "naive-ui/volar"
+    ]
+  }
+}

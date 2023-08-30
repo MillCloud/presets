@@ -1,34 +1,14 @@
 {
-  "extends": "@vue/tsconfig",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "allowJs": true,
-    "lib": ["ESNext"],
-    "paths": {
-      "@/*": ["./src/*"]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
     },
-    "moduleResolution": "node",
-    "typeRoots": ["./node_modules/@types", "./src/types"],
-    "types": [
-      "node",
-      "type-fest",
-      "unplugin-icons/types/vue",
-      "vite/client",
-      "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client.d.ts",
-      "naive-ui/volar"
-    ]
-  },
-  "include": [
-    "**/*.js",
-    "**/*.cjs",
-    "**/*.mjs",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.cts",
-    "**/*.mts",
-    "**/*.tsx",
-    "**/*.vue"
-  ],
-  "exclude": ["dist", "node_modules", "coverage"]
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+    }
+  ]
 }
