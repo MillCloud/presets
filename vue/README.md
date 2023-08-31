@@ -10,8 +10,9 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 
 ### UI
 
-- [naive-ui](https://www.naiveui.com) - Naive UI 框架
+- [naive-ui](https://www.naiveui.com)
 - [unocss](https://unocss.dev) - 原子化 CSS
+  - [unocss-preset-naive-ui](https://github.com/ModyQyW/unocss-preset-naive-ui) - unocss + naive-ui
 
 <details>
   <summary> naive-ui 外的选择 </summary>
@@ -57,4 +58,6 @@ vue 模板，适用于桌面端网页和移动端网页开发。
 - [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
 - [vite-plugin-compression2](https://github.com/nonzzz/vite-compression-plugin)
 - [vite-plugin-inspect](https://github.com/antfu/vite-plugin-inspect)
+- [vite-plugin-vue-devtools](https://github.com/webfansplz/vite-plugin-vue-devtools)
+- [vite-plugin-warmup](https://github.com/bluwy/vite-plugin-warmup)
 - [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)
