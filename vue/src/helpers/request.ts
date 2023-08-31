@@ -29,7 +29,13 @@ const instance = axios.create({
       ),
   },
 });
-
+instance.interceptors.request.use((config) => {
+  // remove timeout for FormData submitting
+  if (config.headers?.['Content-Type'] === 'multipart/form-data' && !!config.timeout) {
+    config.timeout = 0;
+  }
+  return config;
+});
 export { instance as axiosInstance };
 
 export const showRequestError = ({
@@ -159,11 +165,13 @@ export const showRequestError = ({
 export const vueQueryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
+      if (axios.isAxiosError(error)) return;
       showRequestError({ error: error as IAxiosError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
+      if (axios.isAxiosError(error)) return;
       showRequestError({ error: error as IAxiosError });
     },
   }),
@@ -181,10 +189,10 @@ export const vueQueryClient = new QueryClient({
           ...config,
           headers: {
             ...DefaultHeaders,
-            ...config.headers,
             token: authStore.token,
             'X-Token': authStore.token,
             'X-Access-Token': authStore.token,
+            ...config.headers,
           },
         });
         if (!(response?.data?.success ?? true)) {
@@ -223,10 +231,10 @@ export const vueQueryClient = new QueryClient({
           ...config,
           headers: {
             ...DefaultHeaders,
-            ...config.headers,
             token: authStore.token,
             'X-Token': authStore.token,
             'X-Access-Token': authStore.token,
+            ...config.headers,
           },
         });
         if (!(response?.data?.success ?? true)) {
