@@ -6,7 +6,7 @@ import { Icon } from '@iconify/vue';
   <n-row class="flex flex-col items-center justify-center">
     <n-row class="text-center">
       <span>@iconify/vue</span>
-      <Icon class="n-icon" icon="logos:vue"></Icon>
+      <Icon icon="logos:vue"></Icon>
     </n-row>
     <n-row>
       <span>unplugin-icons</span>
@@ -14,7 +14,7 @@ import { Icon } from '@iconify/vue';
     </n-row>
     <n-row>
       <span>UnoCSS Icon</span>
-      <div class="n-icon i-logos:vue"></div>
+      <div class="i-logos:vue"></div>
     </n-row>
     <div>index</div>
     <div class="mt-4">
