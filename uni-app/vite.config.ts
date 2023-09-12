@@ -5,8 +5,10 @@ import uniManifest from '@uni-helper/vite-plugin-uni-manifest';
 import uniPages from '@uni-helper/vite-plugin-uni-pages';
 import uniLayouts from '@uni-helper/vite-plugin-uni-layouts';
 import autoImport from 'unplugin-auto-import/vite';
+import { UniUseAutoImports } from '@uni-helper/uni-use';
 import uniComponents from '@uni-helper/vite-plugin-uni-components';
 import { UniUIResolver } from '@uni-helper/vite-plugin-uni-components/resolvers';
+import { NutResolver } from 'nutui-uniapp';
 import unocss from 'unocss/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
@@ -24,11 +26,9 @@ export default defineConfig({
       plugins: [postcssPresetEnv()],
     },
     preprocessorOptions: {
-      preprocessorOptions: {
-        scss: {
-          charset: false,
-          additionalData: `@use "@/styles/variables.scss" as *;`,
-        },
+      scss: {
+        charset: false,
+        additionalData: `@import '@/styles/variables.scss';`,
       },
     },
   },
@@ -37,14 +37,16 @@ export default defineConfig({
     exclude: ['vue-demi'],
   },
   plugins: [
-    uniManifest(),
-    uniPages(),
+    uniManifest({ minify: true }),
+    uniPages({ minify: true }),
     uniLayouts(),
     autoImport({
-      imports: ['vue', 'pinia', '@vueuse/core', 'uni-app'],
+      imports: ['vue', 'pinia', 'uni-app', '@vueuse/core', UniUseAutoImports],
     }),
     uniComponents({
-      resolvers: [UniUIResolver(), IconsResolver()],
+      resolvers: [IconsResolver(), UniUIResolver(), NutResolver()],
+      directoryAsNamespace: true,
+      collapseSamePrefixes: true,
     }),
     unocss(),
     icons({
