@@ -89,7 +89,7 @@ export default defineManifestConfig({
   'mp-weixin': {
     appid: 'touristappid',
     usingComponents: true,
-    libVersion: '2.11.2',
+    libVersion: '2.16.1',
     permission: {},
     setting: {
       es6: false,
