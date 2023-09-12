@@ -8,7 +8,8 @@ uni-app 模板，适用于小程序和移动端应用开发。
 
 ### UI
 
-- [uni-ui](https://github.com/dcloudio/uni-ui) - 官方 UI 框架
+- [uni-ui](https://github.com/dcloudio/uni-ui)
+- [nutui-uniapp](https://www.uniapp-nutui.tech/)
 - [unocss](https://unocss.dev) - 原子化 CSS
 
 <details>
@@ -16,6 +17,7 @@ uni-app 模板，适用于小程序和移动端应用开发。
 
 - [tm-ui](https://tmui.design/)
 - [uview-plus](https://github.com/ijry/uview-plus)
+- [uv-ui](https://github.com/climblee/uv-ui)
 - [thor-ui](https://thorui.cn/doc/)
 
 </details>
