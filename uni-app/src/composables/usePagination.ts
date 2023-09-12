@@ -1,4 +1,4 @@
-import { useStorage } from '@vueuse/core';
+import { useStorageAsync } from '@uni-helper/uni-use';
 import { DefaultPageSize, PageSizeKey, DefaultPageSizes } from '@/constants';
 
 export const usePagination = (
@@ -7,7 +7,7 @@ export const usePagination = (
   initialTotal = 0,
 ) => {
   const currentPage = ref(initialCurrentPage);
-  const pageSize = useStorage(PageSizeKey, initialPageSize);
+  const pageSize = useStorageAsync(PageSizeKey, initialPageSize);
   const total = ref(initialTotal);
   watch(pageSize, () => {
     currentPage.value = 1;
