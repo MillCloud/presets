@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.app.json",
+  "exclude": [],
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["ESNext"],
+    "types": [
+      "node",
+      "jsdom",
+      "@dcloudio/types",
+      "@mini-types/alipay",
+      "miniprogram-api-typings",
+      "@uni-helper/uni-app-types",
+      "@uni-helper/uni-cloud-types",
+      "@uni-helper/uni-ui-types",
+      "nutui-uniapp/global.d.ts",
+      "unplugin-icons/types/vue",
+      "type-fest",
+      "vite/client"
+    ]
+  }
+}

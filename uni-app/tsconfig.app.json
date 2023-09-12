@@ -1,0 +1,28 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["src/**/*", "src/**/*.vue", "*.d.ts", "package.json"],
+  "exclude": ["src/**/__tests__/*", "src/**/*.test.*"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": [
+      "@dcloudio/types",
+      "@mini-types/alipay",
+      "miniprogram-api-typings",
+      "@uni-helper/uni-app-types",
+      "@uni-helper/uni-cloud-types",
+      "@uni-helper/uni-ui-types",
+      "nutui-uniapp/global.d.ts",
+      "unplugin-icons/types/vue",
+      "type-fest",
+      "vite/client"
+    ]
+  },
+  "vueCompilerOptions": {
+    "nativeTags": ["block", "component", "template", "slot"]
+  }
+}

@@ -1,39 +1,14 @@
 {
-  "extends": "@vue/tsconfig",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "allowJs": true,
-    "sourceMap": true,
-    "lib": ["ESNext"],
-    "paths": {
-      "@/*": ["./src/*"]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
     },
-    "moduleResolution": "node",
-    "typeRoots": ["./node_modules/@types", "./src/types"],
-    "types": [
-      "@dcloudio/types",
-      "@mini-types/alipay",
-      "miniprogram-api-typings",
-      "@uni-helper/uni-app-types",
-      "@uni-helper/uni-cloud-types",
-      "@uni-helper/uni-ui-types",
-      "type-fest",
-      "vite/client"
-    ]
-  },
-  "vueCompilerOptions": {
-    "nativeTags": ["block", "component", "template", "slot"]
-  },
-  "include": [
-    "**/*.js",
-    "**/*.cjs",
-    "**/*.mjs",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.cts",
-    "**/*.mts",
-    "**/*.tsx",
-    "**/*.vue"
-  ],
-  "exclude": ["dist", "node_modules", "coverage"]
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+    }
+  ]
 }
