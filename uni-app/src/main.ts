@@ -1,27 +1,31 @@
 // check https://wechat-miniprogram.github.io/miniprogram-compat/
 // import 'core-js/actual';
 import 'core-js/actual/structured-clone';
-import 'core-js/actual/array/flat';
-import 'core-js/actual/array/flat-map';
-import 'core-js/actual/object/entries';
-import 'core-js/actual/object/from-entries';
-import 'core-js/actual/object/values';
-import 'core-js/actual/promise';
-import 'core-js/actual/promise/all-settled';
-import 'core-js/actual/promise/finally';
-import 'core-js/actual/string/pad-end';
-import 'core-js/actual/string/pad-start';
-import 'core-js/actual/string/replace-all';
-import 'core-js/actual/string/trim-end';
-import 'core-js/actual/string/trim-start';
+// import 'core-js/actual/array/flat'; // since 2.16.1
+// import 'core-js/actual/array/flat-map'; // since 2.16.1
+// import 'core-js/actual/object/entries'; // since 2.16.1
+// import 'core-js/actual/object/from-entries'; // since 2.16.1
+// import 'core-js/actual/object/values'; // since 2.16.1
+// import 'core-js/actual/promise'; // since 2.11.0
+// import 'core-js/actual/promise/all-settled'; // since 2.16.1
+// import 'core-js/actual/promise/finally'; // since 2.16.1
+// import 'core-js/actual/string/pad-end'; // since 2.16.1
+// import 'core-js/actual/string/pad-start'; // since 2.16.1
+import 'core-js/actual/string/replace-all'; // since 2.16.1 but consider other platforms
+// import 'core-js/actual/string/trim-end'; // since 2.16.1
+// import 'core-js/actual/string/trim-start'; // since 2.16.1
 import { createSSRApp } from 'vue';
 import { pinia } from './stores';
 import App from './App.vue';
 import { dayjsPlugin, vueQueryPlugin } from './plugins';
-
-import '@/styles/preflight.css';
-import '@/styles/global.scss';
-import 'uno.css';
+import './styles';
+// import './styles/button-preflight.css';
+// import 'modern-normalize';
+// import '@unocss/reset/tailwind-compat.css';
+// import './styles/preflight.css';
+// import './styles/nutui.scss';
+// import './styles/global.scss';
+// import 'uno.css';
 
 export function createApp() {
   const app = createSSRApp(App).use(pinia).use(dayjsPlugin).use(vueQueryPlugin);
