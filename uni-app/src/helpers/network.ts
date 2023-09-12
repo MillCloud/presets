@@ -182,11 +182,13 @@ export const showNetworkError = ({
 export const vueQueryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
+      if (un.isCancel(error)) return;
       showNetworkError({ error: error as IUnError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
+      if (un.isCancel(error)) return;
       showNetworkError({ error: error as IUnError });
     },
   }),
@@ -203,10 +205,10 @@ export const vueQueryClient = new QueryClient({
           ...config,
           headers: {
             ...DefaultHeaders,
-            ...config.headers,
             token: authStore.token,
             'X-Token': authStore.token,
             'X-Access-Token': authStore.token,
+            ...config.headers,
           },
         });
         if (!(response?.data?.success ?? true)) {
@@ -241,10 +243,10 @@ export const vueQueryClient = new QueryClient({
           ...config,
           headers: {
             ...DefaultHeaders,
-            ...config.headers,
             token: authStore.token,
             'X-Token': authStore.token,
             'X-Access-Token': authStore.token,
+            ...config.headers,
           },
         });
         if (!(response?.data?.success ?? true)) {
