@@ -165,13 +165,13 @@ export const showRequestError = ({
 export const vueQueryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
-      if (axios.isAxiosError(error)) return;
+      if (axios.isCancel(error)) return;
       showRequestError({ error: error as IAxiosError });
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
-      if (axios.isAxiosError(error)) return;
+      if (axios.isCancel(error)) return;
       showRequestError({ error: error as IAxiosError });
     },
   }),
