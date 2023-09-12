@@ -1,6 +1,6 @@
 import type { AxiosResponse, AxiosError, AxiosRequestConfig } from 'axios';
 
-type IAxiosShowErrorType_ = 'alert' | 'message' | 'notification';
+type IAxiosShowErrorType_ = 'dialog' | 'message' | 'notification';
 
 interface IAxiosResponseData_ {
   success: boolean;

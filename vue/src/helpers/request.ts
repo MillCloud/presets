@@ -1,5 +1,4 @@
-import { reactive } from 'vue';
-import { useMessage, useNotification } from 'naive-ui';
+import { reactive, h } from 'vue';
 import axios from 'axios';
 import qs from 'qs';
 import {
@@ -43,7 +42,7 @@ export const showRequestError = ({
   message,
   response,
   error,
-  type = 'alert',
+  type = 'dialog',
 }: {
   hasPrefix?: boolean;
   message?: string;
@@ -138,27 +137,34 @@ export const showRequestError = ({
     '';
   const errorMessageText = errorMessage ? `错误信息：${errorMessage}` : '';
 
-  const content = `${[
+  const items = [
     hasPrefix ? '发生了错误。' : '',
     errorMessageText,
     errorCodeText,
     methodText,
     urlText,
     statusCodeText,
-  ]
-    .filter((item) => !!item)
-    .join('<br />')}`;
-  const nMessage = useMessage();
-  const notification = useNotification();
-
-  if (type === 'notification') {
-    notification.error({
-      content,
-    });
-    return;
-  }
-  if (type === 'message') {
-    nMessage.error(content);
+  ].filter((item) => !!item);
+  const content = () =>
+    h(
+      'div',
+      null,
+      items.map((item) => h('p', null, item)),
+    );
+  switch (type) {
+    case 'dialog': {
+      window.$dialog.error({ title: '错误', content });
+      break;
+    }
+    case 'notification': {
+      window.$notification.error({ title: '错误', content });
+      return;
+    }
+    case 'message': {
+      window.$message.error(content);
+      break;
+    }
+    // No default
   }
 };
 

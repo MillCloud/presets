@@ -1,9 +1,31 @@
 <script setup lang="ts">
-import { zhCN, dateZhCN } from 'naive-ui';
+import { defineComponent, h } from 'vue';
+import { zhCN, dateZhCN, useMessage, useDialog, useNotification, useLoadingBar } from 'naive-ui';
+import { RouterView } from 'vue-router';
+
+const NaiveConsumer = defineComponent({
+  setup() {
+    window.$dialog = useDialog();
+    window.$message = useMessage();
+    window.$notification = useNotification();
+    window.$loadingBar = useLoadingBar();
+  },
+  render() {
+    return h(RouterView);
+  },
+});
 </script>
 
 <template>
   <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
-    <router-view />
+    <n-loading-bar-provider>
+      <n-dialog-provider>
+        <n-message-provider>
+          <n-notification-provider>
+            <NaiveConsumer></NaiveConsumer>
+          </n-notification-provider>
+        </n-message-provider>
+      </n-dialog-provider>
+    </n-loading-bar-provider>
   </n-config-provider>
 </template>
