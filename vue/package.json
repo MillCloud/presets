@@ -22,7 +22,7 @@
     "lint:stylelint": "stylelint \"./**/*.{css,scss,vue}\" --fix --cache --ignore-path=.gitignore",
     "prepare": "is-ci || simple-git-hooks",
     "preview": "vite preview",
-    "release": "commit-and-tag-version -a",
+    "release": "pnpm install && commit-and-tag-version -a",
     "test:unit": "vitest run --coverage"
   },
   "dependencies": {
@@ -52,6 +52,7 @@
     "@commitlint/prompt": "^17.7.1",
     "@iconify/json": "^2.2.115",
     "@modyqyw/fabric": "^9.0.5",
+    "@plugin-web-update-notification/vite": "^1.6.5",
     "@sicons/antd": "^0.12.0",
     "@sicons/carbon": "^0.12.0",
     "@sicons/fa": "^0.12.0",
