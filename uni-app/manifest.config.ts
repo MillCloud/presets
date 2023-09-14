@@ -40,6 +40,7 @@ export default defineManifestConfig({
     nvue: {
       'flex-direction': 'column',
     },
+    screenOrientation: ['portrait-primary'],
     distribute: {
       android: {
         abiFilters: ['armeabi-v7a', 'arm64-v8a', 'x86'],
@@ -76,7 +77,6 @@ export default defineManifestConfig({
       },
       ios: {},
       // @ts-expect-error type lost
-      orientation: ['portrait-primary'],
       splashscreen: {
         useOriginalMsgbox: true,
       },
