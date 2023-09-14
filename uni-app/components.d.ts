@@ -9,6 +9,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    VSpacer: typeof import('./src/components/VSpacer.vue')['default']
+    NutButton: typeof import('nutui-uniapp/components/button/button.vue')['default']
+    NutCell: typeof import('nutui-uniapp/components/cell/cell.vue')['default']
+    NutConfigProvider: typeof import('nutui-uniapp/components/configprovider/configprovider.vue')['default']
+    VSpacer: typeof import('./src/components/v-spacer/v-spacer.vue')['default']
   }
 }
