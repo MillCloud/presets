@@ -18,14 +18,14 @@ import { createSSRApp } from 'vue';
 import { pinia } from './stores';
 import App from './App.vue';
 import { dayjsPlugin, vueQueryPlugin } from './plugins';
-import './styles';
-// import './styles/button-preflight.css';
-// import 'modern-normalize';
-// import '@unocss/reset/tailwind-compat.css';
-// import './styles/preflight.css';
-// import './styles/nutui.scss';
-// import './styles/global.scss';
-// import 'uno.css';
+
+import './styles/button-preflight.css';
+import 'modern-normalize';
+import '@unocss/reset/tailwind-compat.css';
+import './styles/preflight.css';
+import './styles/nutui.scss';
+import './styles/global.scss';
+import 'virtual:uno.css';
 
 export function createApp() {
   const app = createSSRApp(App).use(pinia).use(dayjsPlugin).use(vueQueryPlugin);
