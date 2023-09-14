@@ -28,3 +28,4 @@ export const PageSizeKey = `pageSize${PascalCaseViteMode}`;
 export const DefaultPageSize = 10;
 /** 默认可选每页条目 */
 export const DefaultPageSizes = [10, 20, 50, 100];
+export const ThemeKey = `theme${PascalCaseViteMode}`;

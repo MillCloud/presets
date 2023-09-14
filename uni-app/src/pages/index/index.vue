@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useQuery } from '@tanstack/vue-query';
+import { useTheme } from '@/composables';
 
 const title = ref('Hello Vue & UniApp');
 
@@ -9,10 +10,7 @@ const { data, isLoading } = useQuery<IUnResponseData, IUnRequestData>({
   queryKey: [computed(() => `/posts/${id.value}`)],
 });
 
-const isPrimaryButtonDisabled = ref(false);
-const handleClickPrimaryButton = () => {
-  isPrimaryButtonDisabled.value = !isPrimaryButtonDisabled.value;
-};
+const { theme, parsedTheme, toggleTheme } = useTheme();
 </script>
 
 <template>
@@ -22,25 +20,11 @@ const handleClickPrimaryButton = () => {
       <view class="i-logos-vue"></view>
       <text>{{ title }}</text>
     </view>
-    <view class="w-full flex justify-between">
-      <button
-        class="m-4 h-8 flex flex-auto items-center justify-center border border-gray-300 rounded border-solid bg-gray-100 px-4 transition"
-        hover-class="bg-primary border-primary text-white"
-      >
-        Click me
-      </button>
-      <button
-        class="m-4 h-8 flex flex-auto items-center justify-center border rounded border-solid px-4 transition !text-white"
-        :class="{
-          'border-primary bg-primary': !isPrimaryButtonDisabled,
-          '!border-primary-light-5 !bg-primary-light-5': isPrimaryButtonDisabled,
-        }"
-        hover-class="bg-primary-dark-2 border-primary-dark-2"
-        @click="handleClickPrimaryButton"
-      >
-        Click me
-      </button>
-    </view>
+    <nut-cell>
+      <nut-button type="primary" class="mx-auto" @click="toggleTheme">
+        Theme: {{ theme }}, ParsedTheme: {{ parsedTheme }}
+      </nut-button>
+    </nut-cell>
     <view class="w-full flex justify-center p-4">
       <template v-if="isLoading">Loading...</template>
       <template v-else>{{ data }}</template>
