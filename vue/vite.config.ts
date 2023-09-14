@@ -14,6 +14,7 @@ import legacy from '@vitejs/plugin-legacy';
 import compression from 'vite-plugin-compression2';
 import inspect from 'vite-plugin-inspect';
 import vueDevtools from 'vite-plugin-vue-devtools';
+import { webUpdateNotice } from '@plugin-web-update-notification/vite';
 import { dependencies } from './package.json';
 
 export default defineConfig({
@@ -109,6 +110,15 @@ export default defineConfig({
     compression(),
     inspect(),
     vueDevtools(),
+    webUpdateNotice({
+      checkInterval: 60 * 60 * 1000, // 60m
+      notificationProps: {
+        title: '📢 更新通知',
+        description: '版本已更新，请刷新页面。',
+        buttonText: '刷新',
+        dismissButtonText: '忽略',
+      },
+    }),
   ],
   resolve: {
     alias: {
