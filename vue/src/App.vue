@@ -3,7 +3,7 @@ import { defineComponent, h } from 'vue';
 import { zhCN, dateZhCN, useMessage, useDialog, useNotification, useLoadingBar } from 'naive-ui';
 import { RouterView } from 'vue-router';
 
-const NaiveConsumer = defineComponent({
+const NaiveUiConsumer = defineComponent({
   setup() {
     window.$dialog = useDialog();
     window.$message = useMessage();
@@ -22,7 +22,7 @@ const NaiveConsumer = defineComponent({
       <n-dialog-provider>
         <n-message-provider>
           <n-notification-provider>
-            <NaiveConsumer></NaiveConsumer>
+            <NaiveUiConsumer></NaiveUiConsumer>
           </n-notification-provider>
         </n-message-provider>
       </n-dialog-provider>

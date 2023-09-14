@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
+import { LogoVue } from '@vicons/ionicons5';
 </script>
 
 <template>
@@ -15,6 +16,12 @@ import { Icon } from '@iconify/vue';
     <n-row>
       <span>UnoCSS Icon</span>
       <div class="n-icon i-logos:vue"></div>
+    </n-row>
+    <n-row>
+      <span>NaiveUi Icon</span>
+      <n-icon>
+        <LogoVue />
+      </n-icon>
     </n-row>
     <div>index</div>
     <div class="mt-4">
