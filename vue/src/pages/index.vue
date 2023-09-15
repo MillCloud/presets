@@ -4,28 +4,28 @@ import { LogoVue } from '@vicons/ionicons5';
 </script>
 
 <template>
-  <n-row class="flex flex-col items-center justify-center">
-    <n-row class="text-center">
-      <span>@iconify/vue</span>
+  <n-grid x-gap="16" y-gap="16" cols="1">
+    <n-gi>
+      <p>@iconify/vue</p>
       <Icon class="n-icon" icon="logos:vue"></Icon>
-    </n-row>
-    <n-row>
-      <span>unplugin-icons</span>
+    </n-gi>
+    <n-gi>
+      <p>unplugin-icons</p>
       <i-logos-vue></i-logos-vue>
-    </n-row>
-    <n-row>
-      <span>UnoCSS Icon</span>
+    </n-gi>
+    <n-gi>
+      <p>UnoCSS Icon</p>
       <div class="n-icon i-logos:vue"></div>
-    </n-row>
-    <n-row>
-      <span>NaiveUi Icon</span>
+    </n-gi>
+    <n-gi>
+      <p>NaiveUi Icon</p>
       <n-icon>
         <LogoVue />
       </n-icon>
-    </n-row>
-    <div>index</div>
-    <div class="mt-4">
+    </n-gi>
+    <n-gi>
+      <p>index</p>
       <n-button @click="$router.push('/sign-in')">SIGN IN</n-button>
-    </div>
-  </n-row>
+    </n-gi>
+  </n-grid>
 </template>

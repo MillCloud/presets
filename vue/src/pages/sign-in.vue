@@ -1,8 +1,8 @@
 <template>
-  <n-row class="flex flex-col items-center justify-center">
-    <div>sign-in</div>
-    <div class="mt-4">
+  <n-grid x-gap="16" y-gap="16" cols="1">
+    <n-gi>
+      <p>sign-in</p>
       <n-button @click="$router.push('/')">INDEX</n-button>
-    </div>
-  </n-row>
+    </n-gi>
+  </n-grid>
 </template>
