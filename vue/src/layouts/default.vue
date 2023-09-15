@@ -1,21 +1,36 @@
 <script setup lang="ts">
-import { LayoutNetwork, LayoutVersion } from './components';
+defineOptions({
+  name: 'DefaultLayout',
+});
+
+const isSiderCollapsed = useStorage('isSiderCollapsed', false);
+const handleSiderUpdateCollapsed = (collapsed: boolean) => {
+  isSiderCollapsed.value = collapsed;
+};
 </script>
 
 <template>
-  <n-layout class="relative h-screen">
-    <div class="h-full flex flex-col">
-      <n-layout-content class="flex items-center justify-center p-20 text-center">
-        <router-view v-slot="{ Component, route }">
-          <transition mode="out-in" appear>
-            <component :is="Component" :key="route.fullPath"></component>
-          </transition>
-        </router-view>
+  <n-layout class="h-screen" embedded>
+    <n-layout-header bordered class="h-16 flex flex-none items-center p-2">
+      header
+    </n-layout-header>
+    <n-layout has-sider class="h-[calc(100vh-4rem)]" embedded>
+      <n-layout-sider
+        collapse-mode="width"
+        :width="256"
+        :collapsed-width="64"
+        content-style="padding: 8px;"
+        bordered
+        show-trigger
+        :collapsed="isSiderCollapsed"
+        @update:collapsed="handleSiderUpdateCollapsed"
+      >
+        <p>sider</p>
+      </n-layout-sider>
+      <n-layout-content content-style="padding: 8px;" embedded>
+        <p>content</p>
+        <n-back-top></n-back-top>
       </n-layout-content>
-      <n-layout-footer class="flex items-center justify-center bg-white">
-        <layout-network />
-        <layout-version />
-      </n-layout-footer>
-    </div>
+    </n-layout>
   </n-layout>
 </template>
