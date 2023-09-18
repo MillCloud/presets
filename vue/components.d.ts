@@ -14,5 +14,6 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     VPagination: typeof import('./src/components/v-pagination/v-pagination.vue')['default']
     VSpacer: typeof import('./src/components/v-spacer/v-spacer.vue')['default']
+    VTransition: typeof import('./src/components/v-transition/v-transition.vue')['default']
   }
 }
