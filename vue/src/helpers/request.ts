@@ -1,4 +1,3 @@
-import { reactive, h } from 'vue';
 import axios from 'axios';
 import qs from 'qs';
 import {
@@ -153,7 +152,7 @@ export const showRequestError = ({
     );
   switch (type) {
     case 'dialog': {
-      window.$dialog.error({ title: '错误', content });
+      window.$dialog.error({ title: '错误', content, positiveText: '确定' });
       break;
     }
     case 'notification': {

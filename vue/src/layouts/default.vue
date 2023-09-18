@@ -1,36 +1,34 @@
 <script setup lang="ts">
+import { LayoutHeader, LayoutSider, LayoutTabs } from './components';
+
 defineOptions({
   name: 'DefaultLayout',
 });
 
-const isSiderCollapsed = useStorage('isSiderCollapsed', false);
-const handleSiderUpdateCollapsed = (collapsed: boolean) => {
-  isSiderCollapsed.value = collapsed;
-};
+// 保活
+const cachedRouteStore = useCachedRoutesStore();
+const include = computed(() => cachedRouteStore.cachedRoutes.map((route) => route.name));
 </script>
 
 <template>
   <n-layout class="h-screen" embedded>
-    <n-layout-header bordered class="h-16 flex flex-none items-center p-2">
-      header
-    </n-layout-header>
+    <layout-header height="4rem"></layout-header>
     <n-layout has-sider class="h-[calc(100vh-4rem)]" embedded>
-      <n-layout-sider
-        collapse-mode="width"
-        :width="256"
-        :collapsed-width="64"
-        content-style="padding: 8px;"
-        bordered
-        show-trigger
-        :collapsed="isSiderCollapsed"
-        @update:collapsed="handleSiderUpdateCollapsed"
-      >
-        <p>sider</p>
-      </n-layout-sider>
-      <n-layout-content content-style="padding: 8px;" embedded>
-        <p>content</p>
+      <layout-sider></layout-sider>
+      <n-layout embedded>
+        <layout-tabs></layout-tabs>
+        <n-layout-content content-style="padding: 8px;" embedded>
+          <n-h2>在这里放置默认布局的内容</n-h2>
+          <router-view v-slot="{ Component, route }">
+            <v-transition>
+              <keep-alive :include="include">
+                <component :is="Component" :key="route.fullPath" />
+              </keep-alive>
+            </v-transition>
+          </router-view>
+        </n-layout-content>
         <n-back-top></n-back-top>
-      </n-layout-content>
+      </n-layout>
     </n-layout>
   </n-layout>
 </template>

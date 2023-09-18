@@ -1,8 +1,12 @@
 <template>
-  <n-row class="flex flex-col items-center justify-center">
-    <n-row>404 我们是怎么来到这里的？</n-row>
-    <n-row class="mt-4">
-      <n-button @click="$router.back()">Go Back</n-button>
-    </n-row>
-  </n-row>
+  <n-card>
+    <n-result status="404" title="我们是怎么来到这里的？">
+      <template #footer>
+        <n-space justify="center">
+          <n-button @click="$router.back()">返回上一页</n-button>
+          <n-button @click="$router.replace('/dashboard')">返回控制台</n-button>
+        </n-space>
+      </template>
+    </n-result>
+  </n-card>
 </template>

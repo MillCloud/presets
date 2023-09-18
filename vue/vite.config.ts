@@ -1,8 +1,9 @@
 import { fileURLToPath } from 'node:url';
 import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import { warmup } from 'vite-plugin-warmup';
-import pages from 'vite-plugin-pages';
-import layouts from 'vite-plugin-vue-layouts';
+import vueRouter from 'unplugin-vue-router/vite';
+import { VueRouterAutoImports, getPascalCaseRouteName } from 'unplugin-vue-router';
+import layouts from 'vite-plugin-vue-meta-layouts';
 import autoImport from 'unplugin-auto-import/vite';
 import vueComponents from 'unplugin-vue-components/vite';
 import unocss from 'unocss/vite';
@@ -73,16 +74,27 @@ export default defineConfig({
     warmup({
       clientFiles: ['./src/**/*.{js,jsx,ts,tsx,vue,json}'],
     }),
-    pages({
+    vueRouter({
       exclude: [
-        '**/{components,composables,constants,directives,helpers,styles,types,utils}/**/*.{js,jsx,ts,tsx,vue}',
-      ],
+        'components',
+        'composables',
+        'constants',
+        'directives',
+        'helpers',
+        'styles',
+        'types',
+        'utils',
+      ].map((item) => `**/${item}/**/*.{js,jsx,ts,tsx,vue}`),
+      getRouteName: getPascalCaseRouteName,
     }),
     layouts(),
     autoImport({
+      dirs: ['helpers', 'composables', 'constants', 'helpers', 'stores', 'utils'].map(
+        (item) => `src/${item}/**`,
+      ),
       imports: [
         'vue',
-        'vue-router',
+        VueRouterAutoImports,
         'pinia',
         '@vueuse/core',
         {

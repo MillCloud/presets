@@ -1,10 +1,1 @@
 // global styles
-
-.fade-in-enter-active,
-.fade-in-leave-active {
-  transition: all 0.25s cubic-bezier(0.55, 0, 0.1, 1);
-}
-.fade-in-enter-from,
-.fade-in-leave-active {
-  @apply opacity-0;
-}

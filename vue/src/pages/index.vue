@@ -1,31 +1,18 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
-import { LogoVue } from '@vicons/ionicons5';
+definePage({
+  name: 'Index',
+  meta: {
+    layout: 'simple',
+  },
+});
 </script>
 
 <template>
-  <n-grid x-gap="16" y-gap="16" cols="1">
+  <n-grid x-gap="8" y-gap="8" :cols="1" class="text-center">
     <n-gi>
-      <p>@iconify/vue</p>
-      <Icon class="n-icon" icon="logos:vue"></Icon>
-    </n-gi>
-    <n-gi>
-      <p>unplugin-icons</p>
-      <i-logos-vue></i-logos-vue>
-    </n-gi>
-    <n-gi>
-      <p>UnoCSS Icon</p>
-      <div class="n-icon i-logos:vue"></div>
-    </n-gi>
-    <n-gi>
-      <p>NaiveUi Icon</p>
-      <n-icon>
-        <LogoVue />
-      </n-icon>
-    </n-gi>
-    <n-gi>
-      <p>index</p>
-      <n-button @click="$router.push('/sign-in')">SIGN IN</n-button>
+      <n-h6>首页 Index</n-h6>
+      <n-p>你可以在这里做屏幕检测、自动登录、外部登录后跳转等操作</n-p>
+      <n-button @click="$router.push('/auth')">点击前往登录页面 SignIn</n-button>
     </n-gi>
   </n-grid>
 </template>

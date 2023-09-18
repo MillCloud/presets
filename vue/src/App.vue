@@ -1,7 +1,12 @@
-<script setup lang="ts">
-import { defineComponent, h } from 'vue';
-import { zhCN, dateZhCN, useMessage, useDialog, useNotification, useLoadingBar } from 'naive-ui';
-import { RouterView } from 'vue-router';
+<script setup lang="tsx">
+import { zhCN, dateZhCN, lightTheme, darkTheme, type GlobalTheme } from 'naive-ui';
+import { type ParsedTheme } from '@/composables';
+
+const { parsedTheme } = useTheme();
+const themeMapping: Record<ParsedTheme, GlobalTheme> = {
+  light: lightTheme,
+  dark: darkTheme,
+};
 
 const NaiveUiConsumer = defineComponent({
   setup() {
@@ -9,20 +14,19 @@ const NaiveUiConsumer = defineComponent({
     window.$message = useMessage();
     window.$notification = useNotification();
     window.$loadingBar = useLoadingBar();
-  },
-  render() {
-    return h(RouterView);
+    return () => <router-view></router-view>;
   },
 });
 </script>
 
 <template>
-  <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
+  <n-config-provider :theme="themeMapping[parsedTheme]" :locale="zhCN" :date-locale="dateZhCN">
     <n-loading-bar-provider>
       <n-dialog-provider>
         <n-message-provider>
           <n-notification-provider>
             <NaiveUiConsumer></NaiveUiConsumer>
+            <n-global-style></n-global-style>
           </n-notification-provider>
         </n-message-provider>
       </n-dialog-provider>

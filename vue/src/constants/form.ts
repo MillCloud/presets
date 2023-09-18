@@ -10,18 +10,18 @@ export const UploadRequireErrorMessage = '请上传';
 
 /** 账号键 */
 export const UsernameKey = `username${PascalCaseViteMode}`;
-/** 账号 */
-export const UsernameRegExp = /^.*$/;
+/** 账号，以大小写字母或数字开头，后面任意 */
+export const UsernameRegExp = /^[A-Za-z\d].+$/;
 /** 默认账号 */
 export const DefaultUsername = '';
 /** 账号不符合格式错误信息 */
 export const UsernameRegExpErrorMessage = '账号格式不正确，请检查';
 /** 账号未填写错误信息 */
 export const UsernameRequireErrorMessage = '请填写账号';
-/** 密码 */
-export const PasswordRegExp = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
+/** 密码，至少 8位，包含大小写字母和数字 */
+export const PasswordRegExp = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
 /** 密码不符合格式错误信息 */
-export const PasswordRegExpErrorMessage = '密码至少 8 位，必须包含字母和数字';
+export const PasswordRegExpErrorMessage = '密码至少 8 位，必须包含大小写字母和数字';
 /** 两次密码不一致错误信息 */
 export const PasswordShouldBeEqualErrorMessage = '两次密码输入不一致，请检查';
 /** 两次密码一致错误信息 */
@@ -43,4 +43,6 @@ export const EmailRegExp =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\])|(([a-zA-Z\-\d]+\.)+[a-zA-Z]{2,}))$/;
 /** 邮箱不符合格式错误信息 */
 export const EmailRegExpErrorMessage = '邮箱格式不正确';
+/** 邮箱未填写错误信息 */
+export const EmailRequireErrorMessage = '请填写邮箱';
 /* eslint-enable unicorn/better-regex */

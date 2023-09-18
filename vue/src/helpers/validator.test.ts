@@ -22,7 +22,8 @@ describe('helpers/validator', () => {
     expect(validatePassword('1111111')).toBe(false);
     expect(validatePassword('11111111')).toBe(false);
     expect(validatePassword('111111111')).toBe(false);
-    expect(validatePassword('aaaa1111')).toBe(true);
-    expect(validatePassword('aaaa1111.')).toBe(true);
+    expect(validatePassword('aaaa1111')).toBe(false);
+    expect(validatePassword('aaaa1111.')).toBe(false);
+    expect(validatePassword('aAaa1111')).toBe(true);
   });
 });
