@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
-  "include": ["*.config.*", "*.conf.*", "package.json"],
+  "include": ["*.config.*", "*.conf.*", "scripts/**", "package.json"],
   "compilerOptions": {
     "composite": true,
     "module": "ESNext",
