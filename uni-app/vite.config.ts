@@ -41,6 +41,9 @@ export default defineConfig({
     uniPages({ minify: true }),
     uniLayouts(),
     autoImport({
+      dirs: ['helpers', 'composables', 'constants', 'helpers', 'stores', 'utils'].map(
+        (item) => `src/${item}/**`,
+      ),
       imports: ['vue', 'pinia', 'uni-app', '@vueuse/core', UniUseAutoImports],
     }),
     uniComponents({
