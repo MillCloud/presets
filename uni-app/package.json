@@ -206,7 +206,7 @@
     "@uni-helper/vite-plugin-uni-layouts": "^0.1.3",
     "@uni-helper/vite-plugin-uni-manifest": "^0.2.0",
     "@uni-helper/vite-plugin-uni-pages": "^0.2.9",
-    "@uni-helper/vite-plugin-uni-tailwind": "^0.11.0",
+    "@uni-helper/vite-plugin-uni-tailwind": "^0.12.0",
     "@unocss/preset-rem-to-px": "^0.56.0",
     "@unocss/reset": "^0.56.0",
     "@vitejs/plugin-legacy": "^4.1.1",
