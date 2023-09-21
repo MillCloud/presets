@@ -223,7 +223,7 @@ export const vueQueryClient = new QueryClient({
         }
         return response?.data;
       },
-      retry: 3,
+      retry: 1,
       refetchOnWindowFocus: import.meta.env.PROD,
     },
     mutations: {
