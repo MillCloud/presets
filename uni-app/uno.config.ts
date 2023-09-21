@@ -7,16 +7,17 @@ import {
   presetWebFonts,
   transformerDirectives,
   transformerVariantGroup,
+  type Preset,
+  type SourceCodeTransformer,
 } from 'unocss';
 import presetRemToPx from '@unocss/preset-rem-to-px';
 // import { presetAntd } from 'unocss-preset-antd';
 // import { presetElementPlus } from 'unocss-preset-element-plus';
 // import { presetNaiveUi } from 'unocss-preset-naive-ui';
-import { transformerAttributify } from 'unocss-applet';
+import { transformerApplet, transformerAttributify } from 'unocss-applet';
+import { isMp, isQuickapp } from '@uni-helper/uni-env';
 
-const isMiniprogram = (process.env.UNI_PLATFORM || 'h5')?.toLowerCase().startsWith('mp') || false;
-
-const presets = [
+const presets: Preset[] = [
   presetUno(),
   presetAttributify(),
   presetIcons(),
@@ -38,13 +39,14 @@ const presets = [
   //   },
   // }),
 ];
-if (isMiniprogram) presets.push(presetRemToPx());
+if (isMp || isQuickapp) {
+  presets.push(presetRemToPx());
+}
 
-const transformers = [
-  transformerDirectives(),
-  transformerVariantGroup(),
-  transformerAttributify({ enable: isMiniprogram }),
-];
+const transformers: SourceCodeTransformer[] = [transformerDirectives(), transformerVariantGroup()];
+if (isMp || isQuickapp) {
+  transformers.push(transformerApplet(), transformerAttributify({ enable: isMp }));
+}
 
 const config = defineConfig({
   presets,
