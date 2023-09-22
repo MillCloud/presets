@@ -101,6 +101,7 @@ export default defineConfig({
           'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar'],
         },
       ],
+      vueTemplate: true,
     }),
     vueComponents({
       resolvers: [IconsResolver()],

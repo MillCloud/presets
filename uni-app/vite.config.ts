@@ -46,6 +46,7 @@ export default defineConfig({
         (item) => `src/${item}/**`,
       ),
       imports: ['vue', 'pinia', 'uni-app', '@vueuse/core', UniUseAutoImports],
+      vueTemplate: true,
     }),
     uniComponents({
       resolvers: [IconsResolver(), UniUIResolver(), NutResolver()],
