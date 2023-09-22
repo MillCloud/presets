@@ -18,6 +18,9 @@
       "@uni-helper/uni-ui-types",
       "nutui-uniapp/global.d.ts",
       "unplugin-icons/types/vue",
+      "unplugin-vue-macros/macros-global",
+      "@vue-macros/volar/define-options",
+      "@vue-macros/volar/define-slots",
       "type-fest",
       "vite/client"
     ]

@@ -12,6 +12,7 @@ import { NutResolver } from 'nutui-uniapp';
 import unocss from 'unocss/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
+import vueMacros from 'unplugin-vue-macros/vite';
 import uni from '@dcloudio/vite-plugin-uni';
 import uniTailwind from '@uni-helper/vite-plugin-uni-tailwind';
 
@@ -55,6 +56,7 @@ export default defineConfig({
     icons({
       compiler: 'vue3',
     }),
+    vueMacros(),
     uni({
       vueOptions: {},
       vueJsxOptions: {},
