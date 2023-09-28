@@ -13,7 +13,6 @@
       "type-fest",
       "unplugin-icons/types/vue",
       "vite/client",
-      "vite-plugin-pages/client",
       "vite-plugin-vue-meta-layouts/client.d.ts",
       "naive-ui/volar"
     ]
