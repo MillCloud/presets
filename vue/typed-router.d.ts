@@ -45,7 +45,7 @@ declare module 'vue-router/auto/routes' {
     'AuthIndex': RouteRecordInfo<'AuthIndex', '/auth', Record<never, never>, Record<never, never>>,
     'Dashboard': RouteRecordInfo<'Dashboard', '/dashboard', Record<never, never>, Record<never, never>>,
     'ExamplesIndex': RouteRecordInfo<'ExamplesIndex', '/examples', Record<never, never>, Record<never, never>>,
-    'ExamplesExample2': RouteRecordInfo<'ExamplesExample2', '/examples/icon', Record<never, never>, Record<never, never>>,
+    'ExamplesIcon': RouteRecordInfo<'ExamplesIcon', '/examples/icon', Record<never, never>, Record<never, never>>,
     'ExamplesManualPage': RouteRecordInfo<'ExamplesManualPage', '/examples/manual-page', Record<never, never>, Record<never, never>>,
     'ExamplesProPage': RouteRecordInfo<'ExamplesProPage', '/examples/pro-page', Record<never, never>, Record<never, never>>,
   }
