@@ -211,7 +211,7 @@ export const vueQueryClient = new QueryClient({
             ...config.headers,
           },
         });
-        if (!(response?.data?.success ?? true)) {
+        if (!(response?.data?.success ?? false)) {
           if (reSignInCodes.has(response?.data?.code ?? '')) {
             authStore.setToken();
             showNetworkError({
@@ -249,7 +249,7 @@ export const vueQueryClient = new QueryClient({
             ...config.headers,
           },
         });
-        if (!(response?.data?.success ?? true)) {
+        if (!(response?.data?.success ?? false)) {
           if (reSignInCodes.has(response?.data?.code ?? '')) {
             authStore.setToken();
             showNetworkError({
