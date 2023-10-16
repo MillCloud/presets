@@ -61,7 +61,7 @@
     "type-fest": "^4.3.1",
     "typescript": "^5.2.2"
   },
-  "packageManager": "pnpm@8.7.6",
+  "packageManager": "pnpm@8.9.2",
   "engines": {
     "node": "18"
   }
