@@ -1,7 +1,6 @@
 module.exports = {
   scripts: {
-    prerelease: "conc \"pnpm:lint\" \"pnpm:check:types\" \"pnpm:test:unit\"",
-    postbump: "pnpm run build && git add . -A",
+    prerelease: "pnpm install && conc \"pnpm:lint\" \"pnpm:check:types\" \"pnpm:test:unit\"",
     posttag: "git push --follow-tags"
   },
 };
