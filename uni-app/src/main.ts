@@ -23,7 +23,6 @@ import './styles/button-preflight.css';
 import 'modern-normalize';
 import '@unocss/reset/tailwind-compat.css';
 import './styles/preflight.css';
-import './styles/nutui.scss';
 import './styles/global.scss';
 import 'virtual:uno.css';
 

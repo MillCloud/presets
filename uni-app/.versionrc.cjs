@@ -1,6 +1,7 @@
 module.exports = {
   scripts: {
-    prerelease: "conc \"npm:lint\" \"npm:check:types\" \"npm:test:unit\"",
+    prerelease: "pnpm install && conc \"pnpm:lint\" \"pnpm:check:types\" \"pnpm:test:unit\"",
+    postbump: "pnpm run build:mp-weixin && git add . -A",
     posttag: "git push --follow-tags"
   },
 };

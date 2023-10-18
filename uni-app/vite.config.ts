@@ -8,7 +8,6 @@ import autoImport from 'unplugin-auto-import/vite';
 import { UniUseAutoImports } from '@uni-helper/uni-use';
 import uniComponents from '@uni-helper/vite-plugin-uni-components';
 import { UniUIResolver } from '@uni-helper/vite-plugin-uni-components/resolvers';
-import { NutResolver } from 'nutui-uniapp';
 import unocss from 'unocss/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
@@ -49,7 +48,7 @@ export default defineConfig({
       vueTemplate: true,
     }),
     uniComponents({
-      resolvers: [IconsResolver(), UniUIResolver(), NutResolver()],
+      resolvers: [IconsResolver(), UniUIResolver()],
       directoryAsNamespace: true,
       collapseSamePrefixes: true,
     }),

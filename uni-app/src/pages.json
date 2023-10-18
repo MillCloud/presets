@@ -1,1 +1,10 @@
-{"globalStyle":{"navigationBarTextStyle":"black","navigationBarTitleText":"uni-app","navigationBarBackgroundColor":"#F8F8F8","backgroundColor":"#F8F8F8"},"pages":[{"path":"pages/index/index","type":"home"}],"subPackages":[]}
+{
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "pages": [{ "path": "pages/index/index", "type": "home" }],
+  "subPackages": []
+}
