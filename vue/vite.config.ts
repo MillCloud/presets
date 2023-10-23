@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url';
-import { defineConfig, splitVendorChunkPlugin } from 'vite';
+import { defineConfig } from 'vite';
 import { warmup } from 'vite-plugin-warmup';
 import vueRouter from 'unplugin-vue-router/vite';
 import { VueRouterAutoImports, getPascalCaseRouteName } from 'unplugin-vue-router';
@@ -22,40 +22,6 @@ export default defineConfig({
   build: {
     target: 'es6',
     cssTarget: 'chrome61',
-    rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          if (id.startsWith('~icons/')) return 'icons';
-          if (!id.includes('node_modules')) return;
-          const array = id.split('node_modules/');
-          const entry = array.at(-1) ?? '';
-          if (!entry) return;
-          const name = entry.startsWith('@')
-            ? entry.split('/').slice(0, 2).join('/')
-            : entry.split('/')[0];
-          if (name === 'vue' || name.startsWith('@vue/')) return 'vue';
-          if (name === 'vue-router') return 'vue-router';
-          if (name === 'pinia' || name.startsWith('pinia-plugin')) return 'pinia';
-          if (name === 'ant-design-vue' || name.startsWith('@ant-design/')) return 'ant-design';
-          if (name === 'element-plus' || name.startsWith('@element-plus/')) return 'element-plus';
-          if (name === 'naive-ui') return 'naive-ui';
-          if (name.startsWith('@vicons/')) return 'vicons';
-          if (name.startsWith('@ricons/')) return 'ricons';
-          if (name.startsWith('@sicons/')) return 'sicons';
-          if (name === 'xe-utils' || name.startsWith('vxe-table')) return 'vxe-table';
-          if (name === 'echarts' || name === 'zrender') return 'echarts';
-          if (name.startsWith('@wangeditor/')) return 'wangeditor';
-          if (name.startsWith('@faker-js/')) return 'faker-js';
-          if (name === 'lodash' || name === 'lodash-es') return 'lodash';
-          if (name === 'axios') return 'axios';
-          if (name === '@tanstack/vue-query') return 'vue-query';
-          if (name === 'dayjs') return 'dayjs';
-          if (name === 'qs') return 'qs';
-          if (name.startsWith('@iconify/')) return 'iconify';
-          return 'vendor';
-        },
-      },
-    },
   },
   css: {
     preprocessorOptions: {
@@ -70,7 +36,6 @@ export default defineConfig({
     exclude: ['vue-demi'],
   },
   plugins: [
-    splitVendorChunkPlugin(),
     warmup({
       clientFiles: ['./src/**/*.{js,jsx,ts,tsx,vue,json}'],
     }),
