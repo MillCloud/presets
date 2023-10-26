@@ -15,14 +15,15 @@ git config --global core.autocrlf false
 git config --global core.ignorecase false
 # 设置默认分支名为 main
 git config --global init.defaultBranch main
+# 移除多余分支
+git config --global remote.origin.prune true
+# 推送时直接发布新分支
+git config --global push.autoSetupRemote true
 ```
 
 ### [Node.js](https://nodejs.org/)
 
-使用最新的 Node.js LTS。
-
-- 2023-10-24: v20
-- 2022-10-25: v18
+使用最新的 Node.js LTS（截至 2023 年 10 月 26 日为 v20）。
 
 请自行修改 `HBuilderX` 使用的 Node.js 和 npm 路径。
 
