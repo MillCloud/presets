@@ -13,7 +13,6 @@ import IconsResolver from 'unplugin-icons/resolver';
 import icons from 'unplugin-icons/vite';
 import vueMacros from 'unplugin-vue-macros/vite';
 import uni from '@dcloudio/vite-plugin-uni';
-import uniTailwind from '@uni-helper/vite-plugin-uni-tailwind';
 
 // https://vitejs.dev/config/
 export default defineConfig({
