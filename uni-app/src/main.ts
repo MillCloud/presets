@@ -20,8 +20,7 @@ import App from './App.vue';
 import { dayjsPlugin, vueQueryPlugin } from './plugins';
 
 import './styles/button-preflight.css';
-import 'modern-normalize';
-import '@unocss/reset/tailwind-compat.css';
+import '@unocss-applet/reset/uni-app/tailwind-compat.css';
 import './styles/preflight.css';
 import './styles/global.scss';
 import 'virtual:uno.css';

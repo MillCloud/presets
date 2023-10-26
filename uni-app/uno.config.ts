@@ -1,7 +1,5 @@
 import {
   defineConfig,
-  presetUno,
-  presetAttributify,
   presetIcons,
   presetTypography,
   presetWebFonts,
@@ -11,15 +9,14 @@ import {
   type SourceCodeTransformer,
 } from 'unocss';
 import presetRemToPx from '@unocss/preset-rem-to-px';
+import { presetUni } from '@uni-helper/unocss-preset-uni';
 // import { presetAntd } from 'unocss-preset-antd';
 // import { presetElementPlus } from 'unocss-preset-element-plus';
 // import { presetNaiveUi } from 'unocss-preset-naive-ui';
-import { transformerApplet, transformerAttributify } from 'unocss-applet';
-import { isMp, isQuickapp } from '@uni-helper/uni-env';
+import { isMp } from '@uni-helper/uni-env';
 
 const presets: Preset[] = [
-  presetUno(),
-  presetAttributify(),
+  presetUni({ remRpx: false }),
   presetIcons(),
   presetTypography(),
   presetWebFonts(),
@@ -39,14 +36,11 @@ const presets: Preset[] = [
   //   },
   // }),
 ];
-if (isMp || isQuickapp) {
+if (isMp) {
   presets.push(presetRemToPx());
 }
 
 const transformers: SourceCodeTransformer[] = [transformerDirectives(), transformerVariantGroup()];
-if (isMp || isQuickapp) {
-  transformers.push(transformerApplet(), transformerAttributify({ enable: isMp }));
-}
 
 const config = defineConfig({
   presets,
