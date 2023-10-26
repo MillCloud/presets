@@ -66,7 +66,6 @@ export default defineConfig({
         modernPolyfills: true,
       },
     }),
-    uniTailwind(),
   ],
   resolve: {
     alias: {
